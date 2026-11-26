@@ -49,6 +49,8 @@ export const CampusMap: React.FC<CampusMapProps> = ({
   onViewerReady,
 }) => {
   const viewerRef = useRef<any>(null);
+  const isInitializedRef = useRef<boolean>(false);
+  const updateLODRef = useRef<(() => void) | null>(null);
   const satelliteLayerRef = useRef<Cesium.ImageryLayer | null>(null);
   const osmLayerRef = useRef<Cesium.ImageryLayer | null>(null);
   const [currentLOD, setCurrentLOD] = useState<BuildingLOD>('LOD3');
@@ -56,7 +58,8 @@ export const CampusMap: React.FC<CampusMapProps> = ({
   // Initialize camera and imagery layers once viewer is mounted
   const handleViewerLoaded = useCallback(
     async (viewer: Cesium.Viewer) => {
-      if (!viewer || viewer.isDestroyed()) return;
+      if (!viewer || viewer.isDestroyed() || isInitializedRef.current) return;
+      isInitializedRef.current = true;
 
       // Enable atmospheric effects, lighting & shadows
       viewer.scene.globe.enableLighting = true;
@@ -64,19 +67,20 @@ export const CampusMap: React.FC<CampusMapProps> = ({
       viewer.scene.highDynamicRange = true;
       viewer.shadows = true;
 
-      // Dynamic Camera Distance calculation for automatic LOD transitions
+      // Dynamic Camera Distance calculation with hysteresis to prevent rapid LOD thrashing
       const updateLOD = () => {
         if (!viewer || viewer.isDestroyed()) return;
         const height = viewer.camera.positionCartographic.height;
-        if (height > 1000) {
-          setCurrentLOD('LOD1');
-        } else if (height > 350) {
-          setCurrentLOD('LOD2');
-        } else {
-          setCurrentLOD('LOD3');
-        }
+        setCurrentLOD((prev) => {
+          if (prev === 'LOD3' && height > 375) return 'LOD2';
+          if (prev === 'LOD2' && height < 325) return 'LOD3';
+          if (prev === 'LOD2' && height > 1050) return 'LOD1';
+          if (prev === 'LOD1' && height < 950) return 'LOD2';
+          return prev;
+        });
       };
 
+      updateLODRef.current = updateLOD;
       viewer.camera.moveEnd.addEventListener(updateLOD);
 
       // Fly to initial SAHE campus view
@@ -100,21 +104,26 @@ export const CampusMap: React.FC<CampusMapProps> = ({
           'https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer',
           { enablePickFeatures: false }
         );
-        const satLayer = viewer.imageryLayers.addImageryProvider(esriProvider);
-        satelliteLayerRef.current = satLayer;
-        satLayer.show = layers.satellite;
+        if (!viewer.isDestroyed()) {
+          const satLayer = viewer.imageryLayers.addImageryProvider(esriProvider);
+          satelliteLayerRef.current = satLayer;
+          satLayer.show = layers.satellite;
+        }
       } catch (err) {
         console.warn('Esri satellite imagery fallback load error:', err);
       }
 
-      // Add OpenStreetMap layer as alternate base map
+      // Add OpenStreetMap layer as alternate vector street base map
       try {
         const osmProvider = new Cesium.UrlTemplateImageryProvider({
           url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
           maximumLevel: 19,
         });
-        const osmLayer = viewer.imageryLayers.addImageryProvider(osmProvider, 0);
-        osmLayerRef.current = osmLayer;
+        if (!viewer.isDestroyed()) {
+          const osmLayer = viewer.imageryLayers.addImageryProvider(osmProvider, 0);
+          osmLayerRef.current = osmLayer;
+          osmLayer.show = !layers.satellite;
+        }
       } catch (err) {
         console.warn('OSM layer load error:', err);
       }
@@ -123,19 +132,31 @@ export const CampusMap: React.FC<CampusMapProps> = ({
         onViewerReady(viewer);
       }
     },
-    [onViewerReady, layers.satellite]
+    [onViewerReady]
   );
 
   useEffect(() => {
-    if (viewerRef.current?.cesiumElement) {
+    if (viewerRef.current?.cesiumElement && !isInitializedRef.current) {
       handleViewerLoaded(viewerRef.current.cesiumElement);
     }
+
+    return () => {
+      if (viewerRef.current?.cesiumElement && updateLODRef.current) {
+        const v = viewerRef.current.cesiumElement as Cesium.Viewer;
+        if (!v.isDestroyed()) {
+          v.camera.moveEnd.removeEventListener(updateLODRef.current);
+        }
+      }
+    };
   }, [handleViewerLoaded]);
 
-  // Update satellite imagery layer visibility
+  // Update imagery layer visibility cleanly without reinitializing viewer or flying camera
   useEffect(() => {
     if (satelliteLayerRef.current) {
       satelliteLayerRef.current.show = layers.satellite;
+    }
+    if (osmLayerRef.current) {
+      osmLayerRef.current.show = !layers.satellite;
     }
   }, [layers.satellite]);
 

@@ -80,6 +80,7 @@ export function App() {
     isColliding,
     currentSpeedKmh,
     position: fpPosition,
+    getCurrentPosition,
     enterFirstPerson,
     exitFirstPerson,
     handleVirtualMovement,
@@ -234,11 +235,12 @@ export function App() {
       return;
     }
     const interval = setInterval(() => {
-      const discoveries = getNearbyDiscoveries(fpPosition.lat, fpPosition.lon, 65);
+      const currentPos = getCurrentPosition ? getCurrentPosition() : fpPosition;
+      const discoveries = getNearbyDiscoveries(currentPos.lat, currentPos.lon, 65);
       setNearestDiscovery(discoveries.nearestBuilding || discoveries.nearestPoi || null);
     }, 400);
     return () => clearInterval(interval);
-  }, [isFirstPersonActive, fpPosition.lat, fpPosition.lon]);
+  }, [isFirstPersonActive, getCurrentPosition, fpPosition]);
 
   // Toggle between Architectural Twin and Geographic Mode
   const handleToggleRenderMode = useCallback(() => {
@@ -254,20 +256,29 @@ export function App() {
     });
   }, []);
 
-  // Simulated initial loading progress
+  // Initial loading progress with fallback dismiss
   useEffect(() => {
-    const timer1 = setTimeout(() => setLoadProgress(65), 500);
-    const timer2 = setTimeout(() => setLoadProgress(90), 1200);
-    const timer3 = setTimeout(() => {
+    const timer1 = setTimeout(() => setLoadProgress(65), 400);
+    const timer2 = setTimeout(() => setLoadProgress(90), 1000);
+    const fallbackTimer = setTimeout(() => {
       setLoadProgress(100);
       setIsLoading(false);
-    }, 2000);
+    }, 2800);
 
     return () => {
       clearTimeout(timer1);
       clearTimeout(timer2);
-      clearTimeout(timer3);
+      clearTimeout(fallbackTimer);
     };
+  }, []);
+
+  // Handle viewer ready callback from CampusMap
+  const handleViewerReady = useCallback((viewerInstance: Cesium.Viewer) => {
+    setViewer(viewerInstance);
+    setLoadProgress(100);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 350);
   }, []);
 
   // Show location error if any
@@ -420,7 +431,7 @@ export function App() {
         onSelectBuilding={handleSelectBuilding}
         onHoverBuilding={setHoveredBuildingId}
         onSelectPoi={handleSelectPoi}
-        onViewerReady={setViewer}
+        onViewerReady={handleViewerReady}
       />
 
       {/* Top Floating Navigation Bar (Hidden in First-Person) */}
@@ -615,8 +626,13 @@ export function App() {
         </div>
       )}
 
-      {/* Initial Application Loading Screen */}
-      {isLoading && <LoadingScreen progress={loadProgress} />}
+      {/* Initial Application Loading Screen with Fail-safe bypass */}
+      {isLoading && (
+        <LoadingScreen
+          progress={loadProgress}
+          onDismiss={() => setIsLoading(false)}
+        />
+      )}
     </div>
   );
 }

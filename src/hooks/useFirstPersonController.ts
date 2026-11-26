@@ -327,12 +327,17 @@ export function useFirstPersonController(viewer: Cesium.Viewer | null) {
     pitchRef.current = Math.max(-Math.PI / 3, Math.min(Math.PI / 3, pitchRef.current - deltaPitch * 0.04));
   }, []);
 
+  const getCurrentPosition = useCallback(() => {
+    return { ...posRef.current };
+  }, []);
+
   return {
     isActive,
     isSprinting,
     isColliding,
     currentSpeedKmh,
     position: posRef.current,
+    getCurrentPosition,
     enterFirstPerson,
     exitFirstPerson,
     handleVirtualMovement,

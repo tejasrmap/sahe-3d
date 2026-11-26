@@ -97,21 +97,35 @@ export const IndoorMapCanvas: React.FC<IndoorMapCanvasProps> = ({
 
   // Compute indoor path points if navigating to a target room
   const navigationRoutePoints = useMemo(() => {
-    if (!targetRoom || targetRoom.floor !== floor.floorNumber) return null;
+    if (!targetRoom) return null;
 
-    // Start at main corridor junction or staircase
     const startX = (floor.planWidth / 2) * SCALE;
     const startY = (floor.planLength - 2) * SCALE;
-
     const midY = 16 * SCALE; // main corridor centerline
-    const targetDoorX = (targetRoom.position.x + targetRoom.dimensions.width / 2) * SCALE;
-    const targetDoorY = (targetRoom.position.y + (targetRoom.position.y < 16 ? targetRoom.dimensions.length : 0)) * SCALE;
+
+    // Target room is on current floor: route straight to room entrance
+    if (targetRoom.floor === floor.floorNumber) {
+      const targetDoorX = (targetRoom.position.x + targetRoom.dimensions.width / 2) * SCALE;
+      const targetDoorY = (targetRoom.position.y + (targetRoom.position.y < 16 ? targetRoom.dimensions.length : 0)) * SCALE;
+
+      return [
+        { x: startX, y: startY },
+        { x: startX, y: midY },
+        { x: targetDoorX, y: midY },
+        { x: targetDoorX, y: targetDoorY },
+      ];
+    }
+
+    // Target room is on another floor: route to connecting vertical transit hub (Staircase / Elevator)
+    const stairs = floor.staircases?.[0] || { position: { x: 4, y: 14 } };
+    const stairX = (stairs.position.x + 2) * SCALE;
+    const stairY = (stairs.position.y + 2) * SCALE;
 
     return [
       { x: startX, y: startY },
       { x: startX, y: midY },
-      { x: targetDoorX, y: midY },
-      { x: targetDoorX, y: targetDoorY },
+      { x: stairX, y: midY },
+      { x: stairX, y: stairY },
     ];
   }, [targetRoom, floor]);
 

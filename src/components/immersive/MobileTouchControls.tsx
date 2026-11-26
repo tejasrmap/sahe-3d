@@ -25,6 +25,7 @@ export const MobileTouchControls: React.FC<MobileTouchControlsProps> = ({
 
   // Joystick touch handlers
   const handleJoystickTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    e.stopPropagation();
     const touch = e.touches[0];
     const rect = joystickBaseRef.current?.getBoundingClientRect();
     if (!rect) return;
@@ -35,6 +36,7 @@ export const MobileTouchControls: React.FC<MobileTouchControlsProps> = ({
   };
 
   const handleJoystickTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    e.stopPropagation();
     if (!touchStartRef.current) return;
     const touch = e.touches[0];
     const dx = touch.clientX - touchStartRef.current.x;
@@ -55,7 +57,8 @@ export const MobileTouchControls: React.FC<MobileTouchControlsProps> = ({
     onMove(normX, normY, isSprinting);
   };
 
-  const handleJoystickTouchEnd = () => {
+  const handleJoystickTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
+    e.stopPropagation();
     setIsJoystickActive(false);
     setStickPos({ x: 0, y: 0 });
     touchStartRef.current = null;
@@ -64,12 +67,14 @@ export const MobileTouchControls: React.FC<MobileTouchControlsProps> = ({
 
   // Look touch area handlers
   const handleLookTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    e.stopPropagation();
     const touch = e.touches[0];
     lookTouchIdRef.current = touch.identifier;
     lastLookPosRef.current = { x: touch.clientX, y: touch.clientY };
   };
 
   const handleLookTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    e.stopPropagation();
     if (lookTouchIdRef.current === null) return;
     const touch = Array.from(e.touches).find((t) => t.identifier === lookTouchIdRef.current);
     if (!touch) return;
@@ -81,7 +86,8 @@ export const MobileTouchControls: React.FC<MobileTouchControlsProps> = ({
     onLook(dx, dy);
   };
 
-  const handleLookTouchEnd = () => {
+  const handleLookTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
+    e.stopPropagation();
     lookTouchIdRef.current = null;
   };
 

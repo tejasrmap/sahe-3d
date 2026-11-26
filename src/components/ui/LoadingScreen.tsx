@@ -1,16 +1,29 @@
-import React from 'react';
-import { Compass, Sparkles, Globe, MapPin } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Compass, Sparkles, Globe, MapPin, ArrowRight } from 'lucide-react';
 import { CAMPUS_CONFIG } from '../../data/campusConfig';
 
 interface LoadingScreenProps {
   progress?: number;
   statusMessage?: string;
+  onDismiss?: () => void;
 }
 
 export const LoadingScreen: React.FC<LoadingScreenProps> = ({
   progress = 85,
   statusMessage = 'Initializing SAHE 3D Geospatial Digital Twin...',
+  onDismiss,
 }) => {
+  const [showManualBypass, setShowManualBypass] = useState(false);
+
+  useEffect(() => {
+    // Show manual entrance option after 3.2 seconds if loading takes longer
+    const timer = setTimeout(() => {
+      setShowManualBypass(true);
+    }, 3200);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#080B12] text-white overflow-hidden selection:bg-emerald-500 selection:text-black">
       {/* Background ambient decorative glowing orbs */}
@@ -62,17 +75,28 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({
         </div>
 
         {/* Status text */}
-        <div className="flex items-center gap-2 text-xs text-slate-400">
+        <div className="flex items-center gap-2 text-xs text-slate-400 mb-2">
           <Globe className="w-3.5 h-3.5 text-emerald-400 animate-pulse" />
           <span>{statusMessage}</span>
         </div>
 
         {/* Location coordinates badge */}
-        <div className="mt-8 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900/60 border border-white/10 text-[11px] text-slate-400 backdrop-blur-md">
+        <div className="mt-4 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900/60 border border-white/10 text-[11px] text-slate-400 backdrop-blur-md">
           <MapPin className="w-3 h-3 text-emerald-400" />
           <span>{CAMPUS_CONFIG.latitude.toFixed(4)}° N, {CAMPUS_CONFIG.longitude.toFixed(4)}° E</span>
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping ml-1" />
         </div>
+
+        {/* Manual launch fallback button */}
+        {showManualBypass && onDismiss && (
+          <button
+            onClick={onDismiss}
+            className="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 border border-emerald-500/40 text-emerald-300 hover:text-white text-xs font-semibold transition-all shadow-lg shadow-emerald-950/40"
+          >
+            <span>Enter Campus Explorer Directly</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </button>
+        )}
       </div>
     </div>
   );

@@ -50,7 +50,7 @@ export const IconButton: React.FC<IconButtonProps> = ({
       title={effectiveTitle}
       aria-label={effectiveTitle}
       className={clsx(
-        'relative inline-flex items-center justify-center rounded-xl transition-all duration-200 backdrop-blur-md active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed',
+        'relative inline-flex items-center justify-center rounded-xl transition-all duration-200 backdrop-blur-md active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950',
         sizeClasses[size],
         variantClasses[variant],
         className

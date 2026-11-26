@@ -104,6 +104,16 @@ export const RoomDetailsCard: React.FC<RoomDetailsCardProps> = ({
           </p>
         )}
 
+        {/* Layout Confidence & Academic Classification */}
+        <div className="flex items-center justify-between text-[10.5px] px-2.5 py-1.5 rounded-lg bg-slate-900/60 border border-white/5">
+          <span className="text-slate-400">Blueprint Fidelity:</span>
+          <span className={`font-semibold ${
+            room.confidence === 'verified-blueprint' ? 'text-emerald-400' : 'text-cyan-400'
+          }`}>
+            {room.confidence === 'verified-blueprint' ? '● Verified Blueprint' : '○ Source-Based Layout'}
+          </span>
+        </div>
+
         {/* Equipment & Lab Facilities */}
         {room.equipment && room.equipment.length > 0 && (
           <div className="space-y-1.5">

@@ -98,7 +98,7 @@ export const IndoorExplorationModal: React.FC<IndoorExplorationModalProps> = ({
                 {indoorData.buildingName}
               </h1>
               <span className="text-[11px] text-slate-400 block truncate">
-                {activeFloor.name}
+                {indoorData.confidence === 'procedurally-estimated' ? '○ Procedural Architectural Layout' : '● Source-Based Floor Blueprint'} · {activeFloor.name}
               </span>
             </div>
           </div>
