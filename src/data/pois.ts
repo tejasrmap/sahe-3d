@@ -177,5 +177,83 @@ export const CAMPUS_POIS: POI[] = [
     "icon": "Sparkles",
     "operatingHours": "07:00 AM - 09:00 PM",
     "imageUrl": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "poi-saraswathi-statue",
+    "name": "Saraswathi Devi Statue & Garden Circle",
+    "category": "academic",
+    "latitude": 16.485255,
+    "longitude": 80.692944,
+    "description": "Historic landmark roundabout garden circle on Saraswathi Statue Road, serving as a tranquil gathering hub.",
+    "icon": "Landmark",
+    "operatingHours": "24/7",
+    "imageUrl": "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "poi-vl-dutt-statue",
+    "name": "Dr. V L Dutt Memorial Statue",
+    "category": "academic",
+    "latitude": 16.485115,
+    "longitude": 80.691504,
+    "description": "Memorial courtyard monument inside the VR Siddhartha CSE quadrangle honoring industrialist patron Dr. V L Dutt.",
+    "icon": "Award",
+    "buildingId": "cse-it-complex",
+    "operatingHours": "08:00 AM - 07:00 PM",
+    "imageUrl": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "poi-ramakrishna-statue",
+    "name": "Sri Ramakrishna Paramahamsa Statue",
+    "category": "academic",
+    "latitude": 16.484531,
+    "longitude": 80.692271,
+    "description": "Cultural monument rotary island prominently situated on the main academic avenue.",
+    "icon": "Landmark",
+    "operatingHours": "24/7",
+    "imageUrl": "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "poi-canara-bank",
+    "name": "Canara Bank Campus Branch & ATM",
+    "category": "atm",
+    "latitude": 16.482779,
+    "longitude": 80.690652,
+    "description": "Full-service commercial bank branch and ATM counter adjacent to the university sports ground.",
+    "icon": "CreditCard",
+    "operatingHours": "10:00 AM - 04:00 PM",
+    "imageUrl": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "poi-ev-charging",
+    "name": "Tata Power EV Charging Station",
+    "category": "student_services",
+    "latitude": 16.482014,
+    "longitude": 80.692594,
+    "description": "Dual-gun fast electric vehicle charging plaza facilitating green mobility across SAHE campus.",
+    "icon": "Zap",
+    "operatingHours": "24/7",
+    "imageUrl": "https://images.unsplash.com/photo-1558441719-798835848bb4?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "poi-basketball-court",
+    "name": "VRSEC Basketball & Volleyball Courts",
+    "category": "sports",
+    "latitude": 16.484868,
+    "longitude": 80.695083,
+    "description": "Floodlit outdoor international-standard acrylic basketball court and synthetic volleyball arena.",
+    "icon": "Trophy",
+    "operatingHours": "06:00 AM - 08:30 PM",
+    "imageUrl": "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "poi-bus-stop",
+    "name": "Siddhartha College Bus Stop (NH65)",
+    "category": "entrance",
+    "latitude": 16.481923,
+    "longitude": 80.691233,
+    "description": "Official municipal and RTC public transit bus shelter positioned directly outside the SAHE Main Gate.",
+    "icon": "Bus",
+    "operatingHours": "05:00 AM - 11:30 PM",
+    "imageUrl": "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=600&q=80"
   }
 ];
