@@ -11,6 +11,39 @@ interface POILayerProps {
   onSelectPoi: (poi: POI) => void;
 }
 
+const getPoiHexColor = (category: POI['category']) => {
+  switch (category) {
+    case 'entrance':
+      return '#10B981'; // emerald
+    case 'library':
+    case 'academic':
+      return '#3B82F6'; // blue
+    case 'laboratory':
+      return '#6366F1'; // indigo
+    case 'food':
+      return '#F59E0B'; // amber
+    case 'sports':
+      return '#14B8A6'; // teal
+    case 'medical':
+      return '#EF4444'; // red
+    case 'hostel':
+      return '#EC4899'; // pink
+    case 'atm':
+      return '#8B5CF6'; // purple
+    case 'parking':
+    default:
+      return '#64748B'; // slate
+  }
+};
+
+// Pre-compute static POI Cartesian positions and colors to eliminate GC allocations
+const PRECOMPUTED_POIS = CAMPUS_POIS.map((poi) => ({
+  poi,
+  position: Cesium.Cartesian3.fromDegrees(poi.longitude, poi.latitude, 6),
+  color: Cesium.Color.fromCssColorString(getPoiHexColor(poi.category)),
+  labelColor: Cesium.Color.fromCssColorString('#E2E8F0'),
+}));
+
 export const POILayer: React.FC<POILayerProps> = ({
   visible = true,
   showLabels = true,
@@ -19,37 +52,10 @@ export const POILayer: React.FC<POILayerProps> = ({
 }) => {
   if (!visible) return null;
 
-  const getPoiColor = (category: POI['category']) => {
-    switch (category) {
-      case 'entrance':
-        return '#10B981'; // emerald
-      case 'library':
-      case 'academic':
-        return '#3B82F6'; // blue
-      case 'laboratory':
-        return '#6366F1'; // indigo
-      case 'food':
-        return '#F59E0B'; // amber
-      case 'sports':
-        return '#14B8A6'; // teal
-      case 'medical':
-        return '#EF4444'; // red
-      case 'hostel':
-        return '#EC4899'; // pink
-      case 'atm':
-        return '#8B5CF6'; // purple
-      case 'parking':
-      default:
-        return '#64748B'; // slate
-    }
-  };
-
   return (
     <>
-      {CAMPUS_POIS.map((poi) => {
+      {PRECOMPUTED_POIS.map(({ poi, position, color, labelColor }) => {
         const isSelected = selectedPoiId === poi.id;
-        const color = Cesium.Color.fromCssColorString(getPoiColor(poi.category));
-        const position = Cesium.Cartesian3.fromDegrees(poi.longitude, poi.latitude, 6);
 
         return (
           <React.Fragment key={poi.id}>
@@ -60,30 +66,29 @@ export const POILayer: React.FC<POILayerProps> = ({
                 pixelSize: isSelected ? 16 : 10,
                 color: isSelected ? Cesium.Color.fromCssColorString('#22C55E') : color,
                 outlineColor: Cesium.Color.WHITE,
-                outlineWidth: isSelected ? 3 : 2,
+                outlineWidth: isSelected ? 3 : 1.5,
                 disableDepthTestDistance: 1200,
-                scaleByDistance: new Cesium.NearFarScalar(50, 1.2, 1600, 0.6),
+                distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 1500),
               }}
               onClick={() => onSelectPoi(poi)}
             />
 
-            {/* POI Text Label */}
+            {/* POI Floating Label */}
             {showLabels && (
               <Entity
-                position={Cesium.Cartesian3.fromDegrees(poi.longitude, poi.latitude, 9)}
+                position={position}
                 label={{
                   text: poi.name,
-                  font: '500 11px Inter, sans-serif',
+                  font: isSelected ? 'bold 12px Inter, sans-serif' : '11px Inter, sans-serif',
                   style: Cesium.LabelStyle.FILL_AND_OUTLINE,
-                  fillColor: Cesium.Color.WHITE,
+                  fillColor: isSelected ? Cesium.Color.fromCssColorString('#22C55E') : labelColor,
                   outlineColor: Cesium.Color.BLACK,
                   outlineWidth: 2,
                   verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
-                  horizontalOrigin: Cesium.HorizontalOrigin.CENTER,
+                  pixelOffset: new Cesium.Cartesian2(0, -10),
                   disableDepthTestDistance: 1200,
-                  pixelOffset: new Cesium.Cartesian2(0, -8),
-                  scaleByDistance: new Cesium.NearFarScalar(50, 1.0, 1200, 0.4),
-                  distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 800),
+                  distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 1000),
+                  scaleByDistance: new Cesium.NearFarScalar(50, 1.0, 1000, 0.4),
                 }}
                 onClick={() => onSelectPoi(poi)}
               />

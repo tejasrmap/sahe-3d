@@ -1,0 +1,54 @@
+{
+  "viewports": {
+    "desktop-1920x1080": {
+      "layoutIssues": {
+        "hasHorizontalScroll": false,
+        "docWidth": 1920,
+        "bodyScrollWidth": 1920
+      },
+      "loadDurationMs": 17675,
+      "perfTiming": {
+        "domContentLoaded": 5053.60000000149,
+        "loadComplete": 5061.89999999851
+      }
+    },
+    "laptop-1366x768": {
+      "layoutIssues": {
+        "hasHorizontalScroll": false,
+        "docWidth": 1366,
+        "bodyScrollWidth": 1366
+      },
+      "loadDurationMs": 15645,
+      "perfTiming": {
+        "domContentLoaded": 3127.7000000029802,
+        "loadComplete": 3159.7000000029802
+      }
+    },
+    "tablet-768x1024": {
+      "layoutIssues": {
+        "hasHorizontalScroll": false,
+        "docWidth": 768,
+        "bodyScrollWidth": 768
+      },
+      "loadDurationMs": 14621,
+      "perfTiming": {
+        "domContentLoaded": 2710.89999999851,
+        "loadComplete": 2727.8000000044703
+      }
+    },
+    "mobile-390x844": {
+      "layoutIssues": {
+        "hasHorizontalScroll": false,
+        "docWidth": 390,
+        "bodyScrollWidth": 390
+      },
+      "loadDurationMs": 14017,
+      "perfTiming": {
+        "domContentLoaded": 2333.39999999851,
+        "loadComplete": 2349.2999999970198
+      }
+    }
+  },
+  "consoleErrors": [],
+  "performanceMetrics": {}
+}

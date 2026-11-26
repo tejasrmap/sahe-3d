@@ -16,6 +16,7 @@ import {
   Compass,
   Sparkles,
   Info,
+  Search,
 } from 'lucide-react';
 
 interface IndoorExplorationModalProps {
@@ -34,6 +35,7 @@ export const IndoorExplorationModal: React.FC<IndoorExplorationModalProps> = ({
   const [selectedRoom, setSelectedRoom] = useState<IndoorRoom | null>(null);
   const [targetRoom, setTargetRoom] = useState<IndoorRoom | null>(null);
   const [filterCategory, setFilterCategory] = useState<string | null>(null);
+  const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false);
 
   // Load building indoor data when opened
   useEffect(() => {
@@ -116,6 +118,16 @@ export const IndoorExplorationModal: React.FC<IndoorExplorationModalProps> = ({
 
         {/* Right: Floor Badge & Close Button */}
         <div className="flex items-center gap-2">
+          {/* Mobile Search Toggle */}
+          <button
+            type="button"
+            onClick={() => setIsMobileSearchOpen((prev) => !prev)}
+            className="md:hidden p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 transition-colors"
+            title="Search Rooms"
+          >
+            <Search className="w-4 h-4 text-emerald-400" />
+          </button>
+
           <GlassPanel className="hidden sm:flex items-center gap-1.5 px-3 py-1 text-xs font-bold text-emerald-400 border border-emerald-500/30 rounded-xl">
             <Layers className="w-3.5 h-3.5" />
             <span>Floor {activeFloor.levelLabel} of {indoorData.totalFloors}</span>
@@ -131,6 +143,21 @@ export const IndoorExplorationModal: React.FC<IndoorExplorationModalProps> = ({
           </button>
         </div>
       </header>
+
+      {/* Mobile Search Bar Drawer */}
+      {isMobileSearchOpen && (
+        <div className="md:hidden px-4 py-2 bg-slate-950/95 border-b border-white/10 z-30 animate-fade-in">
+          <IndoorSearch
+            buildingData={indoorData}
+            onSelectRoom={(room, targetFloor) => {
+              handleSelectRoomFromSearch(room, targetFloor);
+              setIsMobileSearchOpen(false);
+            }}
+            activeCategory={filterCategory}
+            onSelectCategory={setFilterCategory}
+          />
+        </div>
+      )}
 
       {/* Main Body */}
       <div className="relative flex-1 w-full h-[calc(100vh-64px)] overflow-hidden">
@@ -160,7 +187,7 @@ export const IndoorExplorationModal: React.FC<IndoorExplorationModalProps> = ({
 
         {/* Selected Room Details Drawer (Floating Bottom Right) */}
         {selectedRoom && (
-          <div className="absolute right-4 bottom-4 z-40">
+          <div className="absolute left-4 right-4 sm:left-auto sm:right-4 bottom-4 z-40 max-w-sm">
             <RoomDetailsCard
               room={selectedRoom}
               onClose={() => setSelectedRoom(null)}

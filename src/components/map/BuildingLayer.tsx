@@ -9,6 +9,24 @@ import { BuildingLOD } from '../../systems/architecture/buildingGenerator';
 
 export type MapRenderMode = 'geographic' | 'architectural';
 
+// Pre-compute geographic Cartesian geometries to eliminate GC pressure during render loops
+const GEOGRAPHIC_BUILDING_CACHE = CAMPUS_BUILDINGS.map((building) => {
+  const flatFootprint: number[] = [];
+  for (const [lon, lat] of building.footprint) {
+    flatFootprint.push(lon, lat);
+  }
+  return {
+    building,
+    positions: Cesium.Cartesian3.fromDegreesArray(flatFootprint),
+    centerPos: Cesium.Cartesian3.fromDegrees(
+      building.longitude,
+      building.latitude,
+      building.height + 4
+    ),
+    baseColor: Cesium.Color.fromCssColorString(building.color || '#3B82F6'),
+  };
+});
+
 interface BuildingLayerProps {
   visible?: boolean;
   showLabels?: boolean;
@@ -63,17 +81,10 @@ export const BuildingLayer: React.FC<BuildingLayerProps> = ({
   // GEOGRAPHIC SATELLITE MODE (Classic extruded geometry)
   return (
     <>
-      {CAMPUS_BUILDINGS.map((building) => {
+      {GEOGRAPHIC_BUILDING_CACHE.map(({ building, positions, centerPos, baseColor }) => {
         const isSelected = selectedBuildingId === building.id;
         const isHovered = hoveredBuildingId === building.id;
 
-        const flatFootprint: number[] = [];
-        for (const [lon, lat] of building.footprint) {
-          flatFootprint.push(lon, lat);
-        }
-        const positions = Cesium.Cartesian3.fromDegreesArray(flatFootprint);
-
-        const baseColor = Cesium.Color.fromCssColorString(building.color || '#3B82F6');
         let fillColor: Cesium.Color;
         let outlineColor: Cesium.Color;
 
@@ -87,12 +98,6 @@ export const BuildingLayer: React.FC<BuildingLayerProps> = ({
           fillColor = baseColor.withAlpha(0.7);
           outlineColor = Cesium.Color.WHITE.withAlpha(0.4);
         }
-
-        const centerPos = Cesium.Cartesian3.fromDegrees(
-          building.longitude,
-          building.latitude,
-          building.height + 4
-        );
 
         return (
           <React.Fragment key={building.id}>

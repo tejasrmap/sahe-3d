@@ -89,7 +89,7 @@ export const CampusSearch: React.FC<CampusSearchProps> = ({
           }}
           onFocus={() => setIsOpen(true)}
           onKeyDown={handleKeyDown}
-          placeholder="Search SAHE campus, buildings, labs, departments..."
+          placeholder="Search SAHE campus, buildings, labs..."
           className="w-full h-11 pl-10 pr-24 rounded-xl bg-slate-900/80 border border-white/10 text-slate-100 placeholder:text-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500/40 backdrop-blur-xl shadow-glass transition-all duration-200"
         />
 
