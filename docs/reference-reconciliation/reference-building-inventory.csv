@@ -1,0 +1,26 @@
+Ref_Index,Name,Category,Ref_X,Ref_Y,Ref_Height,Estimated_Lat,Estimated_Lon,Description,Campus_Zone
+0,"CSE, AI, ECE, EIE Departments, VRSEC",academic,485,285,8.0,16.484936,80.691436,"VR Siddhartha Engineering College Main Academic Complex",North-West Cluster
+1,"S&H Block I",academic,792,342,6.5,16.484797,80.692956,"Solar-roofed block on VRSEC EEE Block Rd",Central-East Cluster
+2,"Civil Block",academic,922,250,8.0,16.485318,80.693673,"Large block on VRSEC Civil Block Rd",North-East Cluster
+3,"HCL TSS Vijayawada",academic,447,222,6.5,16.485233,80.691283,"Corporate training and collaboration wing in CSE block",North-West Cluster
+4,"VRSEC Library",academic,873,458,7.0,16.484257,80.693293,"Central library facility on VRSEC Library Rd",Central Spine
+5,"YV Rao Siddhartha College of Education",academic,623,613,5.0,16.483366,80.691928,"Education college block beside Entrance Rd",South-Central
+6,"SAHE Main Gate",landmark,492,858,6.5,16.482082,80.691110,"Maroon entrance arch on the NH65 highway",South Entrance
+7,"PVP Siddhartha Institute of Technology",academic,920,-200,9.0,16.487561,80.693947,"Sister institution campus situated to the north",North Boundary
+8,"VR Siddhartha Canteen",food,630,148,5.0,16.485688,80.692257,"Main campus dining hall and student canteen",North Cluster
+9,"SAHE Boys Hostel",hostels,1298,245,10.5,16.485520,80.695582,"Multi-story student residency complex",East Campus
+10,"ELVY Stays Hostel for Men",hostels,1475,666,5.0,16.483505,80.696213,"Private affiliated student residency near campus",South-East Periphery
+11,"VRSEC Basketball Court",sports,1215,368,4.0,16.484868,80.695083,"Outdoor sports court facility",East Campus
+12,"SAHE Cricket Ground",sports,438,616,4.0,16.483264,80.690989,"Running track and athletic cricket oval",South-West Campus
+13,"Canara Bank",services,383,708,5.0,16.482779,80.690652,"Bank branch and ATM near athletic ground",South-West Campus
+14,"Ramakrishna Statue",landmark,662,383,5.0,16.484531,80.692271,"Central rotary statue by the main academic avenue",Central Spine
+15,"Mech Block",academic,792,157,7.0,16.485720,80.693073,"Solar-roofed mechanical workshop block",North Cluster
+16,"S&H Block II",academic,915,345,6.5,16.484841,80.693577,"Science & Humanities annex block",Central-East Cluster
+17,"CSE Seminar Hall",academic,448,244,7.5,16.485123,80.691274,"Tiered seminar auditorium within CSE complex",North-West Cluster
+18,"V L Dutt Statue",landmark,494,250,4.0,16.485115,80.691504,"Memorial courtyard statue inside CSE quadrangle",North-West Cluster
+19,"Saraswathi Statue & KachhaPi",landmark,778,249,4.0,16.485255,80.692944,"Historic garden circle on Saraswathi Statue Rd",Central Spine
+20,"Pranayuv Technologies",services,685,243,6.0,16.485240,80.692476,"Incubation and technology innovation center",Central Cluster
+21,"Siddhartha Deemed to be University",academic,680,326,6.0,16.484824,80.692398,"University administrative headquarters",Central Spine
+22,"SMT Velagapudi Durgamba Siddhartha College",academic,588,756,7.5,16.482636,80.691661,"Affiliated college campus block",South Campus
+23,"Pragathi Boys Hostel",hostels,978,468,8.0,16.484257,80.693819,"Student hostel near Tummala Venkata Subbarao St",South-East Cluster
+24,"Tata Power Charging Station",services,790,900,4.0,16.482014,80.692594,"EV charging infrastructure station",South Entrance

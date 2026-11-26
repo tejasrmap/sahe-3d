@@ -1,0 +1,26 @@
+Reference_Place_Name,Reference_Category,Our_Entity_ID,Our_Entity_Name,Match_Type,Geospatial_Agreement,Action_Taken
+"CSE, AI, ECE, EIE Departments, VRSEC",academic,cse-it-complex,"VR Siddhartha CSE & Computing Complex",Direct Physical Match,Exact OSM Footprint Match (Way 403282758),Retained verified 119-node architectural polygon
+"S&H Block I",academic,ece-eee-block,"Electronics & Electrical Sciences Block",Structural Component,Exact Footprint Match (Way 1324048133),Added S&H Block I as official block alias
+"Civil Block",academic,mech-civil-block,"Mechanical & Civil Engineering Block",Direct Physical Match,Exact Footprint Match (Way 1324048130),Added Civil Block & S&H II aliases
+"HCL TSS Vijayawada",academic,poi-cse-lab,"NVIDIA AI Supercomputing & HCL Tech Hub",Internal Facility,Direct Spatial Match,Incorporated HCL TSS into CSE complex facilities
+"VRSEC Library",academic,admin-central-library,"Central Administration & Dr. VR Library",Direct Physical Match,Exact Footprint Match (Way 1324048132),Synchronized Library Road naming
+"YV Rao Siddhartha College of Education",academic,poi-education-college,"YV Rao Siddhartha College of Education",Physical Match,Calibrated to real building Way 1320825688,Added verified POI & description
+"SAHE Main Gate",landmark,main-entrance-portal,"SAHE University Grand Entrance Arch & Security",Direct Physical Match,Exact Footprint Match (Way 1320824131),Retained verified 6m x 7m portal geometry
+"PVP Siddhartha Institute of Technology",academic,poi-pvpsit-campus,"PVP Siddhartha Institute of Technology",External Landmark,Located at north perimeter,Added directional reference POI
+"VR Siddhartha Canteen",food,cafeteria-complex,"Central Cafeteria & Student Food Court",Direct Physical Match,Exact Footprint Match (Way 403282859),Updated name aliases to include VRSEC Canteen
+"SAHE Boys Hostel",hostels,boys-hostel-complex,"Siddhartha Boys Residency & Hostel",Direct Physical Match,Exact Footprint Match (Way 1318966334),Confirmed sub-meter rooftop alignment
+"ELVY Stays Hostel for Men",hostels,poi-elvy-hostel,"ELVY Stays Student Residency",External Facility,East boundary,Documented in peripheral directory
+"VRSEC Basketball Court",sports,poi-basketball-court,"VRSEC Basketball & Volleyball Courts",Physical Facility,Accurate Sports Coordinate,Added dedicated sports POI
+"SAHE Cricket Ground",sports,poi-sports-ground,"University Athletic Ground & Cricket Oval",Direct Physical Match,OSM Pitch Match (Way 1418702314),Confirmed running track alignment
+"Canara Bank",services,poi-canara-bank,"Canara Bank Campus Branch & ATM",Direct Physical Match,Dispensary/Bank Hub,Added dedicated banking POI
+"Ramakrishna Statue",landmark,poi-ramakrishna-statue,"Sri Ramakrishna Paramahamsa Statue",Physical Monument,Central Avenue Island,Added cultural monument POI
+"Mech Block",academic,mech-civil-block,"Mechanical & Civil Engineering Block",Wing Match,OSM Mech Workshop Wings (Ways 1324048128/9),Cross-referenced workshop wings
+"S&H Block II",academic,mech-civil-block,"Mechanical & Civil Engineering Block",Wing Match,OSM Annex (Way 1324048131),Documented annex wing
+"CSE Seminar Hall",academic,cse-it-complex,"VR Siddhartha CSE & Computing Complex",Indoor Feature,Ground floor auditorium,Documented in indoor digital twin
+"V L Dutt Statue",landmark,poi-vl-dutt-statue,"Dr. V L Dutt Memorial Statue",Physical Monument,CSE Courtyard,Added courtyard landmark POI
+"Saraswathi Statue & KachhaPi",landmark,poi-saraswathi-statue,"Saraswathi Devi Statue & Garden Circle",Physical Monument,Central Roundabout,Added historic roundabout POI
+"Pranayuv Technologies",services,ece-eee-block,"Electronics & Electrical Sciences Block",Incubation Center,ECE Block Ground Floor,Added incubation center to facilities
+"Siddhartha Deemed to be University",academic,admin-central-library,"Central Administration & Dr. VR Library",Administrative Seat,Exact Footprint Match (Way 1324048132),Added university administrative branding
+"SMT Velagapudi Durgamba Siddhartha College",academic,poi-velagapudi-college,"SMT Velagapudi Durgamba Siddhartha College",Campus Facility,South campus sector,Added education POI
+"Pragathi Boys Hostel",hostels,poi-pragathi-hostel,"Pragathi Boys Hostel",External Facility,East boundary sector,Documented in peripheral directory
+"Tata Power Charging Station",services,poi-ev-charging,"Tata Power EV Charging Station",Physical Facility,Parking Plaza entrance,Added green mobility POI

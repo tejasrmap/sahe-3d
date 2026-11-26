@@ -20,6 +20,9 @@ export const CAMPUS_BUILDINGS: Building[] = [
     "facilities": [
       "High Performance Cloud Computing Lab",
       "NVIDIA AI Research Center",
+      "HCL TSS Vijayawada Training Center",
+      "CSE Tiered Seminar Auditorium",
+      "Dr. V L Dutt Courtyard Memorial",
       "Cybersecurity Defense Lab",
       "Smart Interactive Classrooms (12)",
       "Faculty Research Cubicles",
@@ -525,6 +528,8 @@ export const CAMPUS_BUILDINGS: Building[] = [
     "facilities": [
       "Cadence & Synopsys VLSI Design Center",
       "Texas Instruments Embedded Systems Lab",
+      "S&H Block I (Science & Humanities)",
+      "Pranayuv Technologies Incubation Hub",
       "High Voltage & Power Systems Testbed",
       "Analog & Digital Signal Processing Labs",
       "RF & Microwave Anechoic Test Setup"
@@ -765,6 +770,8 @@ export const CAMPUS_BUILDINGS: Building[] = [
     ],
     "facilities": [
       "Siemens Industrial Automation CoE",
+      "Solar-Roofed Heavy Mechanical Workshops",
+      "S&H Block II Annex Wings",
       "Strength of Materials & Concrete Testing Lab",
       "Robotics & CNC Machining Cell",
       "Fluid Mechanics & Hydraulics Flume",
@@ -967,7 +974,9 @@ export const CAMPUS_BUILDINGS: Building[] = [
       "University Central Library Services"
     ],
     "facilities": [
+      "VRSEC Central Library (3 Floors)",
       "Central Digital Knowledge Center",
+      "Siddhartha Deemed to be University Secretariat",
       "Main Boardroom & VIP Senate Hall",
       "Fee Payment & Admissions Counter",
       "24/7 Air-Conditioned Reading Halls",
@@ -1157,6 +1166,7 @@ export const CAMPUS_BUILDINGS: Building[] = [
       "Campus Hospitality & Catering Directorate"
     ],
     "facilities": [
+      "VR Siddhartha Canteen (Main Student Canteen)",
       "South Indian & North Indian Dining Halls",
       "Fast Food & Fresh Juice Kiosks",
       "Coffee & Bakery Lounge",

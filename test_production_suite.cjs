@@ -62,7 +62,7 @@ test('12 campus buildings cataloged with complete properties', () => {
   });
 });
 
-test('15 campus POIs cataloged with valid categories', () => {
+test('22 campus POIs cataloged with valid categories', () => {
   const poiText = fs.readFileSync(path.join(__dirname, 'src/data/pois.ts'), 'utf8');
   const poiIds = [
     'poi-main-gate',
@@ -79,7 +79,14 @@ test('15 campus POIs cataloged with valid categories', () => {
     'poi-girls-hostel',
     'poi-parking',
     'poi-placement-cell',
-    'poi-restroom-hub'
+    'poi-restroom-hub',
+    'poi-saraswathi-statue',
+    'poi-vl-dutt-statue',
+    'poi-ramakrishna-statue',
+    'poi-canara-bank',
+    'poi-ev-charging',
+    'poi-basketball-court',
+    'poi-bus-stop'
   ];
   poiIds.forEach(id => {
     assert.ok(poiText.includes(`"id": "${id}"`), `Missing POI id: ${id}`);
