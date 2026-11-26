@@ -1,0 +1,20 @@
+{
+  "url": "http://localhost:3000/",
+  "consoleErrors": [],
+  "consoleWarnings": [],
+  "failedRequests": [],
+  "passedChecks": [
+    "HTTP status: 200",
+    "Title matches: \"SAHE Campus Explorer | 3D Digital Twin\"",
+    "Cesium Viewer container mounted successfully",
+    "Captured screenshot-1-campus-map.png",
+    "Directory Sidebar toggled",
+    "Building selected and clicked",
+    "Building Details Drawer rendered correctly",
+    "Search suggestions rendered successfully for query \"Library\"",
+    "Search result selected via Enter key",
+    "Route computed: Distance, travel time & turn-by-turn directions verified",
+    "Mobile viewport rendered and verified (390x844)"
+  ],
+  "failedChecks": []
+}

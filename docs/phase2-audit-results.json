@@ -1,0 +1,19 @@
+{
+  "url": "http://localhost:3000/",
+  "consoleErrors": [],
+  "consoleWarnings": [],
+  "failedRequests": [],
+  "passedChecks": [
+    "HTTP status: 200",
+    "CameraPresetsBar and Mode Switcher mounted and visible",
+    "Captured screenshot-phase2-architectural-twin.png",
+    "Switched to Architectural 3D perspective preset",
+    "CSE Complex selected, panel opened with Photo-Calibrated Digital Twin badge",
+    "360 degree Building Orbit activated and turntable running",
+    "Captured screenshot-phase2-building-orbit.png",
+    "Successfully toggled into Geographic Satellite Mode",
+    "Captured screenshot-phase2-geographic-mode.png",
+    "Ground level eye-perspective verified"
+  ],
+  "failedChecks": []
+}

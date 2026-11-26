@@ -1,0 +1,17 @@
+{
+  "url": "http://localhost:3000/",
+  "consoleErrors": [],
+  "passedChecks": [
+    "HTTP status: 200",
+    "Selected CSE & Computing Complex",
+    "Explore Interior button displayed in BuildingDetailsPanel",
+    "Indoor Exploration Environment launched (Building Title, Ground Floor & Controls verified)",
+    "Floor switched to Floor 2 (Level 2 +8.4m verified)",
+    "RoomDetailsCard opened with capacity, dimensions, and navigation button",
+    "Active Indoor Navigation route drawn on floor plan with waypoint beacon",
+    "3D Isometric View perspective toggle verified",
+    "Indoor search auto-navigated to NVIDIA AI Supercomputing Center on Ground Floor",
+    "Seamless transition back to outdoor 3D campus viewer verified"
+  ],
+  "failedChecks": []
+}
