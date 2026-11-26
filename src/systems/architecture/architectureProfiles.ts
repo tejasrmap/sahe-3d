@@ -1,0 +1,575 @@
+export type ArchitecturalStyle =
+  | 'modern-institutional'
+  | 'classical-academic'
+  | 'industrial-engineering'
+  | 'acoustic-auditorium'
+  | 'pavilion-dining'
+  | 'high-bay-sports'
+  | 'residential-dormitory'
+  | 'clinical-healthcare'
+  | 'monumental-portal'
+  | 'canopy-infrastructure';
+
+export type RoofType =
+  | 'flat-parapet'
+  | 'curved-acoustic'
+  | 'barrel-vault'
+  | 'terrace-pergola'
+  | 'solar-canopy'
+  | 'monumental-arch';
+
+export type ArchitectureConfidence =
+  | 'verified-photo-calibrated'
+  | 'verified-geometry-estimated-facade'
+  | 'procedurally-estimated';
+
+export interface WindowPattern {
+  widthMeters: number;
+  heightMeters: number;
+  sillHeightMeters: number;
+  spacingMeters: number;
+  glassColor: string; // CSS hex or rgba
+  frameColor: string;
+  isRibbon: boolean;
+  emissiveNight: boolean;
+}
+
+export interface EntranceConfig {
+  hasPortico: boolean;
+  widthMeters: number;
+  depthMeters: number;
+  heightMeters: number;
+  columnsCount: number;
+  canopyColor: string;
+  hasSteps: boolean;
+  doorGlazingColor: string;
+}
+
+export interface RoofDetails {
+  roofType: RoofType;
+  parapetHeightMeters: number;
+  hasElevatorPenthouse: boolean;
+  penthouseHeightMeters: number;
+  hasHVACUnits: boolean;
+  hasSolarPanels: boolean;
+  solarCoveragePercent?: number;
+  roofColor: string;
+}
+
+export interface ArchitecturalProfile {
+  id: string;
+  style: ArchitecturalStyle;
+  wallColor: string;
+  trimColor: string;
+  accentColor: string;
+  floorHeightMeters: number;
+  floorDividerThickness: number;
+  windowPattern: WindowPattern;
+  entrance: EntranceConfig;
+  roof: RoofDetails;
+  confidence: ArchitectureConfidence;
+  confidenceNotes: string;
+}
+
+export const ARCHITECTURAL_PROFILES: Record<string, ArchitecturalProfile> = {
+  'cse-it-complex': {
+    id: 'cse-it-complex',
+    style: 'modern-institutional',
+    wallColor: '#E2E8F0', // off-white modern concrete
+    trimColor: '#3B82F6', // tech cobalt blue
+    accentColor: '#1E293B', // dark charcoal trim
+    floorHeightMeters: 4.2,
+    floorDividerThickness: 0.35,
+    windowPattern: {
+      widthMeters: 2.2,
+      heightMeters: 1.8,
+      sillHeightMeters: 0.9,
+      spacingMeters: 0.8,
+      glassColor: '#1E3A8A', // deep reflective blue glass
+      frameColor: '#0F172A',
+      isRibbon: true,
+      emissiveNight: true,
+    },
+    entrance: {
+      hasPortico: true,
+      widthMeters: 14,
+      depthMeters: 6,
+      heightMeters: 5.5,
+      columnsCount: 4,
+      canopyColor: '#2563EB',
+      hasSteps: true,
+      doorGlazingColor: '#38BDF8',
+    },
+    roof: {
+      roofType: 'flat-parapet',
+      parapetHeightMeters: 1.2,
+      hasElevatorPenthouse: true,
+      penthouseHeightMeters: 3.5,
+      hasHVACUnits: true,
+      hasSolarPanels: true,
+      solarCoveragePercent: 60,
+      roofColor: '#64748B',
+    },
+    confidence: 'verified-photo-calibrated',
+    confidenceNotes: 'Footprint verified from OSM 403282758 (119 nodes). 5-story computing block with modern ribbon windows and rooftop server HVAC.',
+  },
+
+  'ece-eee-block': {
+    id: 'ece-eee-block',
+    style: 'modern-institutional',
+    wallColor: '#F1F5F9',
+    trimColor: '#6366F1',
+    accentColor: '#334155',
+    floorHeightMeters: 4.0,
+    floorDividerThickness: 0.3,
+    windowPattern: {
+      widthMeters: 1.8,
+      heightMeters: 1.6,
+      sillHeightMeters: 1.0,
+      spacingMeters: 1.0,
+      glassColor: '#312E81',
+      frameColor: '#1E293B',
+      isRibbon: false,
+      emissiveNight: true,
+    },
+    entrance: {
+      hasPortico: true,
+      widthMeters: 10,
+      depthMeters: 5,
+      heightMeters: 4.8,
+      columnsCount: 2,
+      canopyColor: '#4F46E5',
+      hasSteps: true,
+      doorGlazingColor: '#818CF8',
+    },
+    roof: {
+      roofType: 'flat-parapet',
+      parapetHeightMeters: 1.0,
+      hasElevatorPenthouse: true,
+      penthouseHeightMeters: 3.2,
+      hasHVACUnits: true,
+      hasSolarPanels: true,
+      solarCoveragePercent: 50,
+      roofColor: '#64748B',
+    },
+    confidence: 'verified-photo-calibrated',
+    confidenceNotes: 'Footprint verified from OSM 1324048133. 4-story electrical sciences wing with continuous chajjas and rooftop solar arrays.',
+  },
+
+  'mech-civil-block': {
+    id: 'mech-civil-block',
+    style: 'industrial-engineering',
+    wallColor: '#CBD5E1',
+    trimColor: '#DC2626', // engineering terracotta/crimson
+    accentColor: '#475569',
+    floorHeightMeters: 4.4,
+    floorDividerThickness: 0.4,
+    windowPattern: {
+      widthMeters: 2.4,
+      heightMeters: 2.0,
+      sillHeightMeters: 0.8,
+      spacingMeters: 1.2,
+      glassColor: '#1E293B',
+      frameColor: '#0F172A',
+      isRibbon: true,
+      emissiveNight: false,
+    },
+    entrance: {
+      hasPortico: true,
+      widthMeters: 16,
+      depthMeters: 7,
+      heightMeters: 6.0,
+      columnsCount: 4,
+      canopyColor: '#991B1B',
+      hasSteps: true,
+      doorGlazingColor: '#64748B',
+    },
+    roof: {
+      roofType: 'flat-parapet',
+      parapetHeightMeters: 1.4,
+      hasElevatorPenthouse: true,
+      penthouseHeightMeters: 4.0,
+      hasHVACUnits: true,
+      hasSolarPanels: true,
+      solarCoveragePercent: 40,
+      roofColor: '#475569',
+    },
+    confidence: 'verified-photo-calibrated',
+    confidenceNotes: 'Footprint verified from OSM 1324048130. High ground floor workshop bays for heavy equipment testing and Siemens CoE.',
+  },
+
+  'admin-central-library': {
+    id: 'admin-central-library',
+    style: 'classical-academic',
+    wallColor: '#F8FAFC',
+    trimColor: '#059669', // institutional emerald
+    accentColor: '#0F172A',
+    floorHeightMeters: 4.2,
+    floorDividerThickness: 0.45,
+    windowPattern: {
+      widthMeters: 2.0,
+      heightMeters: 2.4,
+      sillHeightMeters: 0.6,
+      spacingMeters: 0.8,
+      glassColor: '#064E3B', // solar control emerald-tinted glass
+      frameColor: '#1E293B',
+      isRibbon: false,
+      emissiveNight: true,
+    },
+    entrance: {
+      hasPortico: true,
+      widthMeters: 18,
+      depthMeters: 8,
+      heightMeters: 7.5,
+      columnsCount: 6,
+      canopyColor: '#047857',
+      hasSteps: true,
+      doorGlazingColor: '#34D399',
+    },
+    roof: {
+      roofType: 'flat-parapet',
+      parapetHeightMeters: 1.5,
+      hasElevatorPenthouse: true,
+      penthouseHeightMeters: 3.5,
+      hasHVACUnits: true,
+      hasSolarPanels: true,
+      solarCoveragePercent: 55,
+      roofColor: '#94A3B8',
+    },
+    confidence: 'verified-photo-calibrated',
+    confidenceNotes: 'Footprint verified from OSM 1324048132. Flagship administration building with monumental 6-column ceremonial portico and central courtyard.',
+  },
+
+  'auditorium-complex': {
+    id: 'auditorium-complex',
+    style: 'acoustic-auditorium',
+    wallColor: '#B91C1C', // signature red/terracotta acoustic brick
+    trimColor: '#FEF08A',
+    accentColor: '#1E293B',
+    floorHeightMeters: 8.5,
+    floorDividerThickness: 0.2,
+    windowPattern: {
+      widthMeters: 1.0,
+      heightMeters: 1.0,
+      sillHeightMeters: 5.0,
+      spacingMeters: 4.0,
+      glassColor: '#0F172A',
+      frameColor: '#450A0A',
+      isRibbon: false,
+      emissiveNight: false,
+    },
+    entrance: {
+      hasPortico: true,
+      widthMeters: 22,
+      depthMeters: 9,
+      heightMeters: 6.5,
+      columnsCount: 6,
+      canopyColor: '#7F1D1D',
+      hasSteps: true,
+      doorGlazingColor: '#F59E0B',
+    },
+    roof: {
+      roofType: 'curved-acoustic',
+      parapetHeightMeters: 1.8,
+      hasElevatorPenthouse: true,
+      penthouseHeightMeters: 4.5,
+      hasHVACUnits: true,
+      hasSolarPanels: false,
+      roofColor: '#334155',
+    },
+    confidence: 'verified-photo-calibrated',
+    confidenceNotes: 'Footprint verified from OSM 403282757 and Wikimedia Commons photographic archive. Enclosed volume with terracotta facade and broad entrance lobby.',
+  },
+
+  'cafeteria-complex': {
+    id: 'cafeteria-complex',
+    style: 'pavilion-dining',
+    wallColor: '#F8FAFC',
+    trimColor: '#D97706',
+    accentColor: '#78350F',
+    floorHeightMeters: 4.8,
+    floorDividerThickness: 0.3,
+    windowPattern: {
+      widthMeters: 3.2,
+      heightMeters: 2.8,
+      sillHeightMeters: 0.3,
+      spacingMeters: 0.4,
+      glassColor: '#1E293B',
+      frameColor: '#B45309',
+      isRibbon: true,
+      emissiveNight: true,
+    },
+    entrance: {
+      hasPortico: true,
+      widthMeters: 12,
+      depthMeters: 5,
+      heightMeters: 4.2,
+      columnsCount: 4,
+      canopyColor: '#F59E0B',
+      hasSteps: false,
+      doorGlazingColor: '#FCD34D',
+    },
+    roof: {
+      roofType: 'terrace-pergola',
+      parapetHeightMeters: 1.0,
+      hasElevatorPenthouse: false,
+      penthouseHeightMeters: 0,
+      hasHVACUnits: true,
+      hasSolarPanels: false,
+      roofColor: '#D97706',
+    },
+    confidence: 'verified-geometry-estimated-facade',
+    confidenceNotes: 'Footprint verified from OSM 403282859. Modern dining pavilion with floor-to-ceiling glass and shaded terrace canopy.',
+  },
+
+  'sports-arena': {
+    id: 'sports-arena',
+    style: 'high-bay-sports',
+    wallColor: '#0D9488',
+    trimColor: '#14B8A6',
+    accentColor: '#134E4A',
+    floorHeightMeters: 6.5,
+    floorDividerThickness: 0.25,
+    windowPattern: {
+      widthMeters: 3.0,
+      heightMeters: 1.2,
+      sillHeightMeters: 4.5,
+      spacingMeters: 0.6,
+      glassColor: '#115E59',
+      frameColor: '#042F2E',
+      isRibbon: true,
+      emissiveNight: true,
+    },
+    entrance: {
+      hasPortico: true,
+      widthMeters: 10,
+      depthMeters: 4,
+      heightMeters: 4.5,
+      columnsCount: 2,
+      canopyColor: '#0F766E',
+      hasSteps: true,
+      doorGlazingColor: '#2DD4BF',
+    },
+    roof: {
+      roofType: 'barrel-vault',
+      parapetHeightMeters: 1.0,
+      hasElevatorPenthouse: false,
+      penthouseHeightMeters: 0,
+      hasHVACUnits: true,
+      hasSolarPanels: true,
+      solarCoveragePercent: 40,
+      roofColor: '#1E293B',
+    },
+    confidence: 'verified-geometry-estimated-facade',
+    confidenceNotes: 'Footprint verified from OSM 403282763. High-bay multi-sport badminton and gymnasium with clerestory ribbon windows and arched truss roof.',
+  },
+
+  'boys-hostel-complex': {
+    id: 'boys-hostel-complex',
+    style: 'residential-dormitory',
+    wallColor: '#E0F2FE',
+    trimColor: '#0284C7',
+    accentColor: '#0369A1',
+    floorHeightMeters: 3.6,
+    floorDividerThickness: 0.25,
+    windowPattern: {
+      widthMeters: 1.4,
+      heightMeters: 1.5,
+      sillHeightMeters: 1.0,
+      spacingMeters: 0.8,
+      glassColor: '#0C4A6E',
+      frameColor: '#075985',
+      isRibbon: false,
+      emissiveNight: true,
+    },
+    entrance: {
+      hasPortico: true,
+      widthMeters: 8,
+      depthMeters: 4,
+      heightMeters: 3.8,
+      columnsCount: 2,
+      canopyColor: '#0284C7',
+      hasSteps: true,
+      doorGlazingColor: '#38BDF8',
+    },
+    roof: {
+      roofType: 'flat-parapet',
+      parapetHeightMeters: 1.2,
+      hasElevatorPenthouse: true,
+      penthouseHeightMeters: 3.0,
+      hasHVACUnits: false,
+      hasSolarPanels: true,
+      solarCoveragePercent: 70,
+      roofColor: '#64748B',
+    },
+    confidence: 'procedurally-estimated',
+    confidenceNotes: 'Estimated institutional residential architecture. 5-story dormitory block with uniform repeating student room windows and exterior stair towers.',
+  },
+
+  'girls-hostel-complex': {
+    id: 'girls-hostel-complex',
+    style: 'residential-dormitory',
+    wallColor: '#FDF2F8',
+    trimColor: '#DB2777',
+    accentColor: '#9D174D',
+    floorHeightMeters: 3.6,
+    floorDividerThickness: 0.25,
+    windowPattern: {
+      widthMeters: 1.4,
+      heightMeters: 1.5,
+      sillHeightMeters: 1.0,
+      spacingMeters: 0.8,
+      glassColor: '#831843',
+      frameColor: '#701A75',
+      isRibbon: false,
+      emissiveNight: true,
+    },
+    entrance: {
+      hasPortico: true,
+      widthMeters: 8,
+      depthMeters: 4,
+      heightMeters: 3.8,
+      columnsCount: 2,
+      canopyColor: '#DB2777',
+      hasSteps: true,
+      doorGlazingColor: '#F472B6',
+    },
+    roof: {
+      roofType: 'flat-parapet',
+      parapetHeightMeters: 1.2,
+      hasElevatorPenthouse: true,
+      penthouseHeightMeters: 3.0,
+      hasHVACUnits: false,
+      hasSolarPanels: true,
+      solarCoveragePercent: 70,
+      roofColor: '#64748B',
+    },
+    confidence: 'procedurally-estimated',
+    confidenceNotes: 'Estimated institutional residential architecture. 5-story secured women residency compound with central courtyard.',
+  },
+
+  'health-center': {
+    id: 'health-center',
+    style: 'clinical-healthcare',
+    wallColor: '#FFFFFF',
+    trimColor: '#EF4444',
+    accentColor: '#991B1B',
+    floorHeightMeters: 4.0,
+    floorDividerThickness: 0.2,
+    windowPattern: {
+      widthMeters: 1.6,
+      heightMeters: 1.6,
+      sillHeightMeters: 1.0,
+      spacingMeters: 1.2,
+      glassColor: '#1E293B',
+      frameColor: '#DC2626',
+      isRibbon: false,
+      emissiveNight: true,
+    },
+    entrance: {
+      hasPortico: true,
+      widthMeters: 10,
+      depthMeters: 5,
+      heightMeters: 4.2,
+      columnsCount: 2,
+      canopyColor: '#DC2626',
+      hasSteps: false, // ambulance / stretcher accessible ramp
+      doorGlazingColor: '#F87171',
+    },
+    roof: {
+      roofType: 'flat-parapet',
+      parapetHeightMeters: 0.9,
+      hasElevatorPenthouse: false,
+      penthouseHeightMeters: 0,
+      hasHVACUnits: true,
+      hasSolarPanels: false,
+      roofColor: '#CBD5E1',
+    },
+    confidence: 'verified-geometry-estimated-facade',
+    confidenceNotes: '2-story campus medical center with dedicated ambulance emergency drop-off portico and barrier-free ramp.',
+  },
+
+  'main-entrance-portal': {
+    id: 'main-entrance-portal',
+    style: 'monumental-portal',
+    wallColor: '#10B981',
+    trimColor: '#059669',
+    accentColor: '#064E3B',
+    floorHeightMeters: 7.0,
+    floorDividerThickness: 0.2,
+    windowPattern: {
+      widthMeters: 1.2,
+      heightMeters: 1.4,
+      sillHeightMeters: 1.2,
+      spacingMeters: 1.0,
+      glassColor: '#022C22',
+      frameColor: '#064E3B',
+      isRibbon: false,
+      emissiveNight: true,
+    },
+    entrance: {
+      hasPortico: true,
+      widthMeters: 24,
+      depthMeters: 6,
+      heightMeters: 7.5,
+      columnsCount: 4,
+      canopyColor: '#059669',
+      hasSteps: false,
+      doorGlazingColor: '#6EE7B7',
+    },
+    roof: {
+      roofType: 'monumental-arch',
+      parapetHeightMeters: 1.2,
+      hasElevatorPenthouse: false,
+      penthouseHeightMeters: 0,
+      hasHVACUnits: false,
+      hasSolarPanels: true,
+      solarCoveragePercent: 30,
+      roofColor: '#065F46',
+    },
+    confidence: 'verified-photo-calibrated',
+    confidenceNotes: 'Verified monumental university gateway arch on VR Siddhartha College Road with dual security kiosks and overhead signage truss.',
+  },
+
+  'parking-plaza': {
+    id: 'parking-plaza',
+    style: 'canopy-infrastructure',
+    wallColor: '#334155',
+    trimColor: '#64748B',
+    accentColor: '#1E293B',
+    floorHeightMeters: 3.5,
+    floorDividerThickness: 0.1,
+    windowPattern: {
+      widthMeters: 0,
+      heightMeters: 0,
+      sillHeightMeters: 0,
+      spacingMeters: 0,
+      glassColor: '#0F172A',
+      frameColor: '#1E293B',
+      isRibbon: false,
+      emissiveNight: false,
+    },
+    entrance: {
+      hasPortico: false,
+      widthMeters: 0,
+      depthMeters: 0,
+      heightMeters: 0,
+      columnsCount: 0,
+      canopyColor: '#475569',
+      hasSteps: false,
+      doorGlazingColor: '#334155',
+    },
+    roof: {
+      roofType: 'solar-canopy',
+      parapetHeightMeters: 0.2,
+      hasElevatorPenthouse: false,
+      penthouseHeightMeters: 0,
+      hasHVACUnits: false,
+      hasSolarPanels: true,
+      solarCoveragePercent: 90,
+      roofColor: '#1E293B',
+    },
+    confidence: 'verified-geometry-estimated-facade',
+    confidenceNotes: 'Covered parking facility with solar photovoltaic canopies shading 400+ two-wheelers and staff vehicles.',
+  },
+};
