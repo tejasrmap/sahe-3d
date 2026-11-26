@@ -1,0 +1,181 @@
+import { POI } from '../types/campus';
+
+export const CAMPUS_POIS: POI[] = [
+  {
+    "id": "poi-main-gate",
+    "name": "Main Campus Gate & Security Desk",
+    "category": "entrance",
+    "latitude": 16.4818,
+    "longitude": 80.6912,
+    "description": "Primary university ceremonial gateway with visitor passes, digital RFID checkpoints, and 24/7 security control.",
+    "icon": "DoorOpen",
+    "buildingId": "main-entrance-portal",
+    "operatingHours": "24/7",
+    "imageUrl": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "poi-central-lib",
+    "name": "Central Knowledge Repository & Library",
+    "category": "library",
+    "latitude": 16.484799,
+    "longitude": 80.692914,
+    "description": "3 floors of academic texts, IEEE, ACM, Springer journals, digital thesis database, and quiet study alcoves.",
+    "icon": "BookOpen",
+    "buildingId": "admin-central-library",
+    "operatingHours": "08:00 AM - 08:00 PM",
+    "imageUrl": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "poi-cse-lab",
+    "name": "NVIDIA AI Supercomputing Lab",
+    "category": "laboratory",
+    "latitude": 16.48519,
+    "longitude": 80.691393,
+    "description": "Enterprise-grade GPU computing cluster for neural network research, LLM fine-tuning, and machine vision systems.",
+    "icon": "Cpu",
+    "buildingId": "cse-it-complex",
+    "operatingHours": "08:00 AM - 07:00 PM",
+    "imageUrl": "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "poi-canteen-court",
+    "name": "Main University Cafeteria & Food Court",
+    "category": "food",
+    "latitude": 16.484258,
+    "longitude": 80.693294,
+    "description": "Multi-cuisine fresh meals, Andhra meals, South Indian breakfast, fruit juices, and student lounge patio.",
+    "icon": "Coffee",
+    "buildingId": "cafeteria-complex",
+    "operatingHours": "07:30 AM - 08:30 PM",
+    "imageUrl": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "poi-auditorium",
+    "name": "Dr. Zakir Husain Auditorium",
+    "category": "academic",
+    "latitude": 16.484113,
+    "longitude": 80.692476,
+    "description": "1,500 capacity auditorium for annual convocations, technical fests, hackathons, and guest keynote addresses.",
+    "icon": "Drama",
+    "buildingId": "auditorium-complex",
+    "operatingHours": "09:00 AM - 06:00 PM",
+    "imageUrl": "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "poi-siemens-coe",
+    "name": "Siemens Centre of Excellence",
+    "category": "laboratory",
+    "latitude": 16.485271,
+    "longitude": 80.693554,
+    "description": "Industry 4.0 automation, smart robotics arms, CNC testbeds, and advanced digital manufacturing labs.",
+    "icon": "Cog",
+    "buildingId": "mech-civil-block",
+    "operatingHours": "08:30 AM - 05:00 PM",
+    "imageUrl": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "poi-sports-ground",
+    "name": "University Athletic Ground & Cricket Oval",
+    "category": "sports",
+    "latitude": 16.483625,
+    "longitude": 80.690951,
+    "description": "Full standard turf cricket pitch, 400m running track, football field, and spectators pavilion.",
+    "icon": "Trophy",
+    "operatingHours": "05:30 AM - 08:00 PM",
+    "imageUrl": "https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "poi-indoor-gym",
+    "name": "Indoor Badminton Courts & Fitness Gym",
+    "category": "sports",
+    "latitude": 16.483332,
+    "longitude": 80.692106,
+    "description": "Air-conditioned gym with treadmills, free weights, and 4 international-spec synthetic badminton courts.",
+    "icon": "Dumbbell",
+    "buildingId": "sports-arena",
+    "operatingHours": "06:00 AM - 08:00 PM",
+    "imageUrl": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "poi-sbi-atm",
+    "name": "State Bank of India (SBI) ATM & Branch",
+    "category": "atm",
+    "latitude": 16.4827,
+    "longitude": 80.6921,
+    "description": "24/7 on-campus cash withdrawal, cash deposit machine (CDM), and student banking kiosk.",
+    "icon": "CreditCard",
+    "operatingHours": "24/7",
+    "imageUrl": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "poi-medical-dispensary",
+    "name": "Campus Medical Health Post",
+    "category": "medical",
+    "latitude": 16.483,
+    "longitude": 80.6928,
+    "description": "Resident doctor consultation, trauma emergency stabilization, first aid, and ambulance transfer point.",
+    "icon": "HeartPulse",
+    "buildingId": "health-center",
+    "operatingHours": "24/7",
+    "imageUrl": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "poi-boys-hostel",
+    "name": "Siddhartha Boys Hostel Mess & Lounge",
+    "category": "hostel",
+    "latitude": 16.48555,
+    "longitude": 80.6946,
+    "description": "Residential block with dining halls, Wi-Fi connectivity, recreation game zone, and warden office.",
+    "icon": "Building",
+    "buildingId": "boys-hostel-complex",
+    "operatingHours": "24 Hours",
+    "imageUrl": "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "poi-girls-hostel",
+    "name": "Aditya Women's Hostel Compound",
+    "category": "hostel",
+    "latitude": 16.4839,
+    "longitude": 80.6951,
+    "description": "Secure residential compound with dedicated dining, landscaped private garden, and security post.",
+    "icon": "Building2",
+    "buildingId": "girls-hostel-complex",
+    "operatingHours": "24 Hours",
+    "imageUrl": "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "poi-parking",
+    "name": "Main Visitor & Student Vehicle Parking",
+    "category": "parking",
+    "latitude": 16.4825,
+    "longitude": 80.6918,
+    "description": "Sheltered two-wheeler and four-wheeler parking bays with smart automated entry slip barriers.",
+    "icon": "Car",
+    "buildingId": "parking-plaza",
+    "operatingHours": "06:30 AM - 09:30 PM",
+    "imageUrl": "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "poi-placement-cell",
+    "name": "Training & Placement Cell (TPO)",
+    "category": "student_services",
+    "latitude": 16.48475,
+    "longitude": 80.6931,
+    "description": "Dedicated recruitment interview suites, group discussion conference rooms, and career counseling office.",
+    "icon": "Briefcase",
+    "buildingId": "admin-central-library",
+    "operatingHours": "09:00 AM - 05:00 PM",
+    "imageUrl": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "poi-restroom-hub",
+    "name": "Accessible Restrooms & Water Station",
+    "category": "restrooms",
+    "latitude": 16.4844,
+    "longitude": 80.6927,
+    "description": "Centrally located wheelchair-accessible restrooms, UV drinking water stations, and hygiene hub.",
+    "icon": "Sparkles",
+    "operatingHours": "07:00 AM - 09:00 PM",
+    "imageUrl": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80"
+  }
+];
