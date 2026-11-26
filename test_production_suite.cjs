@@ -35,7 +35,7 @@ test('Campus Center coordinate matches reference 16.4842° N, 80.6928° E', () =
 test('Campus boundary polygon is closed and non-empty', () => {
   const configText = fs.readFileSync(path.join(__dirname, 'src/data/campusConfig.ts'), 'utf8');
   assert.ok(configText.includes('boundary: ['), 'Boundary array missing');
-  assert.ok(configText.includes('[80.690800, 16.481800]'), 'Boundary start/end point verified');
+  assert.ok(configText.includes('16.48168'), 'Boundary rectified start point verified');
 });
 
 // 2. Building and POI datasets

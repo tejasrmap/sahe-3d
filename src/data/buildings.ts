@@ -6,8 +6,8 @@ export const CAMPUS_BUILDINGS: Building[] = [
     "name": "VR Siddhartha CSE & Computing Complex",
     "code": "CSE-BLK",
     "category": "academic",
-    "latitude": 16.48519,
-    "longitude": 80.691393,
+    "latitude": 16.485196,
+    "longitude": 80.691326,
     "height": 26,
     "floors": 5,
     "description": "State-of-the-art five-story computing complex housing Computer Science & Engineering, Artificial Intelligence, Data Science labs, Nvidia AI Deep Learning Supercomputing clusters, and modern smart seminar halls.",
@@ -513,8 +513,8 @@ export const CAMPUS_BUILDINGS: Building[] = [
     "name": "Electronics & Electrical Sciences Block",
     "code": "EE-BLK",
     "category": "academic",
-    "latitude": 16.485267,
-    "longitude": 80.692469,
+    "latitude": 16.485292,
+    "longitude": 80.69238,
     "height": 24,
     "floors": 4,
     "description": "Comprehensive engineering block housing Electronics & Communication Engineering (ECE) and Electrical & Electronics Engineering (EEE), featuring state-of-the-art VLSI, Embedded Systems, and Renewable Energy Microgrid testing labs.",
@@ -753,8 +753,8 @@ export const CAMPUS_BUILDINGS: Building[] = [
     "name": "Mechanical & Civil Engineering Block",
     "code": "ME-CE",
     "category": "academic",
-    "latitude": 16.485271,
-    "longitude": 80.693554,
+    "latitude": 16.48525,
+    "longitude": 80.693635,
     "height": 22,
     "floors": 4,
     "description": "Houses Mechanical, Civil, and Production Engineering, heavy machinery test floors, materials characterization, CAD/CAM simulation stations, and the collaborative Siemens Centre of Excellence (CoE).",
@@ -954,8 +954,8 @@ export const CAMPUS_BUILDINGS: Building[] = [
     "name": "Central Administration & Dr. VR Library",
     "code": "ADMIN-LIB",
     "category": "administration",
-    "latitude": 16.484799,
-    "longitude": 80.692914,
+    "latitude": 16.484796,
+    "longitude": 80.692981,
     "height": 20,
     "floors": 4,
     "description": "The administrative heart of SAHE University. Accommodates the Vice-Chancellor's Secretariat, Registrar's Office, Dean of Academic Affairs, Examination Cell, along with a massive 3-tier Central Library with over 120,000 volumes, e-journals, and digital knowledge repository.",
@@ -1077,8 +1077,8 @@ export const CAMPUS_BUILDINGS: Building[] = [
     "name": "Dr. Zakir Husain Central Auditorium",
     "code": "AUD-CTR",
     "category": "auditorium",
-    "latitude": 16.484113,
-    "longitude": 80.692476,
+    "latitude": 16.48413,
+    "longitude": 80.692521,
     "height": 18,
     "floors": 2,
     "description": "Grand air-conditioned acoustic auditorium with 1,500 seating capacity for international symposiums, national conferences, university convocations, and cultural galas, flanked by an open-air amphitheatre.",
@@ -1148,8 +1148,8 @@ export const CAMPUS_BUILDINGS: Building[] = [
     "name": "Central Cafeteria & Student Food Court",
     "code": "CAFE",
     "category": "cafeteria",
-    "latitude": 16.484258,
-    "longitude": 80.693294,
+    "latitude": 16.484198,
+    "longitude": 80.693365,
     "height": 12,
     "floors": 2,
     "description": "Multi-cuisine student food court offering hygienic vegetarian and non-vegetarian meals, fresh juice bars, snacks, espresso stations, and outdoor shaded pergola seating for over 800 students.",
@@ -1215,8 +1215,8 @@ export const CAMPUS_BUILDINGS: Building[] = [
     "name": "Indoor Sports Complex & Gymnasium",
     "code": "SPORT-CTR",
     "category": "sports",
-    "latitude": 16.483332,
-    "longitude": 80.692106,
+    "latitude": 16.483287,
+    "longitude": 80.692101,
     "height": 14,
     "floors": 2,
     "description": "Modern multi-discipline indoor athletic stadium with teakwood badminton courts, table tennis tables, chess arenas, yoga studio, and a fully equipped cardio & strength training gym.",
@@ -1262,8 +1262,8 @@ export const CAMPUS_BUILDINGS: Building[] = [
     "name": "Siddhartha Boys Residency & Hostel",
     "code": "HSTL-B",
     "category": "hostel",
-    "latitude": 16.48555,
-    "longitude": 80.6946,
+    "latitude": 16.485343,
+    "longitude": 80.695713,
     "height": 22,
     "floors": 5,
     "description": "Comfortable on-campus residential towers for male students, complete with Wi-Fi, study halls, recreation spaces, hygienic mess facility, and round-the-clock biometric security.",
@@ -1280,24 +1280,24 @@ export const CAMPUS_BUILDINGS: Building[] = [
     ],
     "footprint": [
       [
-        80.6942,
-        16.4853
+        80.695531,
+        16.485528
       ],
       [
-        80.695,
-        16.4853
+        80.695925,
+        16.4854965
       ],
       [
-        80.695,
-        16.4858
+        80.6958955,
+        16.485157
       ],
       [
-        80.6942,
-        16.4858
+        80.6955015,
+        16.4851885
       ],
       [
-        80.6942,
-        16.4853
+        80.695531,
+        16.485528
       ]
     ],
     "color": "#06B6D4",
@@ -1310,8 +1310,8 @@ export const CAMPUS_BUILDINGS: Building[] = [
     "name": "Aditya Women's Residency & Hostel",
     "code": "HSTL-G",
     "category": "hostel",
-    "latitude": 16.4839,
-    "longitude": 80.6951,
+    "latitude": 16.484003,
+    "longitude": 80.695196,
     "height": 22,
     "floors": 5,
     "description": "Safe, serene residential accommodations for female students with lush garden courtyards, study lounges, 24/7 CCTV surveillance, female security wardens, and gym.",
@@ -1326,24 +1326,32 @@ export const CAMPUS_BUILDINGS: Building[] = [
     ],
     "footprint": [
       [
-        80.6947,
-        16.4836
+        80.695113,
+        16.4841395
       ],
       [
-        80.6955,
-        16.4836
+        80.6953669,
+        16.4840553
       ],
       [
-        80.6955,
-        16.4842
+        80.6952992,
+        16.4838675
       ],
       [
-        80.6947,
-        16.4842
+        80.6951417,
+        16.4839197
       ],
       [
-        80.6947,
-        16.4836
+        80.6951224,
+        16.4838662
+      ],
+      [
+        80.6950259,
+        16.4838982
+      ],
+      [
+        80.695113,
+        16.4841395
       ]
     ],
     "color": "#F43F5E",
@@ -1356,9 +1364,9 @@ export const CAMPUS_BUILDINGS: Building[] = [
     "name": "University Health & Medical Center",
     "code": "MED-CTR",
     "category": "medical",
-    "latitude": 16.483,
-    "longitude": 80.6928,
-    "height": 10,
+    "latitude": 16.482809,
+    "longitude": 80.693648,
+    "height": 8,
     "floors": 2,
     "description": "Fully staffed healthcare clinic offering outpatient consultations, routine wellness screenings, emergency trauma stabilization, pharmacy, and an on-call 24/7 ambulance.",
     "departments": [
@@ -1372,24 +1380,24 @@ export const CAMPUS_BUILDINGS: Building[] = [
     ],
     "footprint": [
       [
-        80.6926,
-        16.48285
+        80.6935596,
+        16.4828809
       ],
       [
-        80.693,
-        16.48285
+        80.6937633,
+        16.4828175
       ],
       [
-        80.693,
-        16.48315
+        80.6937361,
+        16.4827369
       ],
       [
-        80.6926,
-        16.48315
+        80.6935323,
+        16.4828003
       ],
       [
-        80.6926,
-        16.48285
+        80.6935596,
+        16.4828809
       ]
     ],
     "color": "#EF4444",
@@ -1402,9 +1410,9 @@ export const CAMPUS_BUILDINGS: Building[] = [
     "name": "SAHE University Grand Entrance Arch & Security",
     "code": "GATE-1",
     "category": "entrance",
-    "latitude": 16.4818,
-    "longitude": 80.6912,
-    "height": 8,
+    "latitude": 16.481751,
+    "longitude": 80.691194,
+    "height": 7,
     "floors": 1,
     "description": "Primary university ceremonial gateway on VR Siddhartha College Road off Bandar Road, featuring automated boom barriers, visitor registration kiosks, security command desk, and bus turnaround bays.",
     "departments": [
@@ -1418,24 +1426,24 @@ export const CAMPUS_BUILDINGS: Building[] = [
     ],
     "footprint": [
       [
-        80.691,
-        16.48165
+        80.6911654,
+        16.4817269
       ],
       [
-        80.69145,
-        16.48165
+        80.691176,
+        16.4817834
       ],
       [
-        80.69145,
-        16.48195
+        80.6912217,
+        16.4817755
       ],
       [
-        80.691,
-        16.48195
+        80.6912111,
+        16.481719
       ],
       [
-        80.691,
-        16.48165
+        80.6911654,
+        16.4817269
       ]
     ],
     "color": "#10B981",
@@ -1448,8 +1456,8 @@ export const CAMPUS_BUILDINGS: Building[] = [
     "name": "Multi-Zone Vehicle Parking Facility",
     "code": "PARK-A",
     "category": "parking",
-    "latitude": 16.4825,
-    "longitude": 80.6918,
+    "latitude": 16.482538,
+    "longitude": 80.691939,
     "height": 4,
     "floors": 1,
     "description": "Designated solar-canopied parking zone for faculty four-wheelers, student two-wheelers, electric vehicle charging spots, and college bus fleet bays.",
@@ -1464,24 +1472,40 @@ export const CAMPUS_BUILDINGS: Building[] = [
     ],
     "footprint": [
       [
-        80.6915,
-        16.4823
+        80.6918384,
+        16.4827577
       ],
       [
-        80.6921,
-        16.4823
+        80.6921524,
+        16.4826465
       ],
       [
-        80.6921,
-        16.4827
+        80.6920396,
+        16.4823539
       ],
       [
-        80.6915,
-        16.4827
+        80.6919575,
+        16.482383
       ],
       [
-        80.6915,
-        16.4823
+        80.6919325,
+        16.4823183
+      ],
+      [
+        80.6918412,
+        16.4823507
+      ],
+      [
+        80.6918661,
+        16.4824154
+      ],
+      [
+        80.6917257,
+        16.4824652
+      ],
+      [
+        80.6918384,
+        16.4827577
       ]
     ],
     "color": "#64748B",

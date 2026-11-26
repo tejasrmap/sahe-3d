@@ -1,0 +1,16 @@
+poi_id,poi_name,category,building_id,existing_lat,existing_lon,verified_lat,verified_lon,accuracy_tier
+poi-main-gate,Main Campus Gate & Security Desk,entrance,main-entrance-portal,16.481800,80.691200,16.481751,80.691194,VERIFIED
+poi-central-lib,Central Knowledge Repository & Library,library,admin-central-library,16.484799,80.692914,16.484796,80.692981,VERIFIED
+poi-cse-lab,NVIDIA AI Supercomputing Lab,laboratory,cse-it-complex,16.485190,80.691393,16.485196,80.691326,VERIFIED
+poi-canteen-court,Main University Cafeteria & Food Court,food,cafeteria-complex,16.484258,80.693294,16.484198,80.693365,VERIFIED
+poi-auditorium,Dr. Zakir Husain Auditorium,academic,auditorium-complex,16.484113,80.692476,16.484130,80.692521,VERIFIED
+poi-siemens-coe,Siemens Centre of Excellence,laboratory,mech-civil-block,16.485271,80.693554,16.485250,80.693635,VERIFIED
+poi-sports-ground,University Athletic Ground & Cricket Oval,sports,sports-arena,16.483625,80.690951,16.483370,80.691073,VERIFIED
+poi-indoor-gym,Indoor Badminton Courts & Fitness Gym,sports,sports-arena,16.483332,80.692106,16.483287,80.692101,VERIFIED
+poi-sbi-atm,State Bank of India (SBI) ATM & Branch,atm,health-center,16.482700,80.692100,16.482809,80.693648,HIGH CONFIDENCE
+poi-medical-dispensary,Campus Medical Health Post,medical,health-center,16.483000,80.692800,16.482809,80.693648,VERIFIED
+poi-boys-hostel,Siddhartha Boys Hostel Mess & Lounge,hostel,boys-hostel-complex,16.485550,80.694600,16.485343,80.695713,HIGH CONFIDENCE
+poi-girls-hostel,Aditya Women's Hostel Compound,hostel,girls-hostel-complex,16.483900,80.695100,16.484003,80.695196,HIGH CONFIDENCE
+poi-parking,Main Visitor & Student Vehicle Parking,parking,parking-plaza,16.482500,80.691800,16.482538,80.691939,VERIFIED
+poi-placement-cell,Training & Placement Cell (TPO),student_services,admin-central-library,16.484750,80.693100,16.484796,80.692981,VERIFIED
+poi-restroom-hub,Accessible Restrooms & Water Station,restrooms,auditorium-complex,16.484400,80.692700,16.484250,80.692800,VERIFIED

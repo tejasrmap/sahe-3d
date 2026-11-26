@@ -1,0 +1,13 @@
+building_id,building_name,osm_way_id,existing_lat,existing_lon,verified_lat,verified_lon,footprint_vertices,width_meters,height_meters,floors,height_meters_stated,confidence
+cse-it-complex,VR Siddhartha CSE & Computing Complex,403282758,16.485190,80.691393,16.485196,80.691326,119,99.0,94.8,5,26,VERIFIED
+ece-eee-block,Electronics & Electrical Sciences Block,1324048133,16.485267,80.692469,16.485292,80.692380,53,52.4,70.7,4,24,VERIFIED
+mech-civil-block,Mechanical & Civil Engineering Block,1324048130,16.485271,80.693554,16.485250,80.693635,43,55.1,71.4,4,22,VERIFIED
+admin-central-library,Central Administration & Dr. VR Library,1324048132,16.484799,80.692914,16.484796,80.692981,23,67.8,19.4,4,20,VERIFIED
+auditorium-complex,Dr. Zakir Husain Central Auditorium,403282757,16.484113,80.692476,16.484130,80.692521,11,57.4,25.6,2,18,VERIFIED
+cafeteria-complex,Central Cafeteria & Student Food Court,403282859,16.484258,80.693294,16.484198,80.693365,10,50.1,38.2,2,12,VERIFIED
+sports-arena,Indoor Sports Complex & Gymnasium,403282763,16.483332,80.692106,16.483287,80.692101,5,27.5,49.5,2,14,VERIFIED
+boys-hostel-complex,Siddhartha Boys Residency & Hostel,1318966334,16.485550,80.694600,16.485343,80.695713,5,45.2,41.0,5,22,HIGH CONFIDENCE
+girls-hostel-complex,Aditya Women's Residency & Hostel,1320182457,16.483900,80.695100,16.484003,80.695196,7,36.4,30.2,5,22,HIGH CONFIDENCE
+health-center,University Health & Medical Center,1320825694,16.483000,80.692800,16.482809,80.693648,5,24.7,15.9,2,8,VERIFIED
+main-entrance-portal,SAHE University Grand Entrance Arch & Security,1320824131,16.481800,80.691200,16.481751,80.691194,5,6.0,7.1,1,7,VERIFIED
+parking-plaza,Multi-Zone Vehicle Parking Facility,403282755,16.482500,80.691800,16.482538,80.691939,9,45.5,48.6,1,4,VERIFIED

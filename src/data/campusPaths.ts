@@ -5,84 +5,84 @@ export const CAMPUS_PATH_NETWORK: CampusPathNetwork = {
   {
     "id": "node-gate",
     "name": "Main Entrance Gate",
-    "latitude": 16.4818,
-    "longitude": 80.6912,
+    "latitude": 16.481751,
+    "longitude": 80.691194,
     "category": "entrance",
     "buildingId": "main-entrance-portal"
   },
   {
     "id": "node-junc-south",
     "name": "South Avenue Junction",
-    "latitude": 16.4824,
-    "longitude": 80.6915,
+    "latitude": 16.4821,
+    "longitude": 80.6914,
     "category": "junction"
   },
   {
     "id": "node-parking",
     "name": "Parking Plaza Entry",
-    "latitude": 16.4825,
-    "longitude": 80.6918,
+    "latitude": 16.482538,
+    "longitude": 80.691939,
     "category": "amenity",
     "buildingId": "parking-plaza"
   },
   {
     "id": "node-atm",
     "name": "SBI ATM & Banking Kiosk",
-    "latitude": 16.4827,
-    "longitude": 80.6921,
+    "latitude": 16.482809,
+    "longitude": 80.693648,
     "category": "amenity"
   },
   {
     "id": "node-sports-complex",
     "name": "Sports Complex Entrance",
-    "latitude": 16.483332,
-    "longitude": 80.692106,
+    "latitude": 16.483287,
+    "longitude": 80.692101,
     "category": "building",
     "buildingId": "sports-arena"
   },
   {
     "id": "node-athletic-ground",
     "name": "Athletic Field Entry",
-    "latitude": 16.483625,
-    "longitude": 80.691,
+    "latitude": 16.48337,
+    "longitude": 80.691073,
     "category": "amenity"
   },
   {
     "id": "node-health-center",
     "name": "Health Center",
-    "latitude": 16.483,
-    "longitude": 80.6928,
+    "latitude": 16.482809,
+    "longitude": 80.693648,
     "category": "building",
     "buildingId": "health-center"
   },
   {
     "id": "node-junc-central",
     "name": "Central Campus Circle",
-    "latitude": 16.4839,
-    "longitude": 80.6922,
+    "latitude": 16.4844,
+    "longitude": 80.6923,
     "category": "junction"
   },
   {
     "id": "node-auditorium",
     "name": "Auditorium Portico",
-    "latitude": 16.484113,
-    "longitude": 80.692476,
+    "latitude": 16.48413,
+    "longitude": 80.692521,
     "category": "building",
     "buildingId": "auditorium-complex"
   },
   {
     "id": "node-canteen",
     "name": "Cafeteria Court",
-    "latitude": 16.484258,
-    "longitude": 80.693294,
+    "latitude": 16.484198,
+    "longitude": 80.693365,
     "category": "building",
     "buildingId": "cafeteria-complex"
   },
   {
     "id": "node-admin-lib",
     "name": "Administration & Library Portico",
-    "latitude": 16.484799,
-    "longitude": 80.692914,
+    "latitude": 16.484796,
+    "longitude": 80.692981,
     "category": "building",
     "buildingId": "admin-central-library"
   },
@@ -120,16 +120,16 @@ export const CAMPUS_PATH_NETWORK: CampusPathNetwork = {
   {
     "id": "node-boys-hostel",
     "name": "Boys Hostel Gate",
-    "latitude": 16.48555,
-    "longitude": 80.6946,
+    "latitude": 16.485343,
+    "longitude": 80.695713,
     "category": "building",
     "buildingId": "boys-hostel-complex"
   },
   {
     "id": "node-girls-hostel",
     "name": "Girls Hostel Gate",
-    "latitude": 16.4839,
-    "longitude": 80.6951,
+    "latitude": 16.484003,
+    "longitude": 80.695196,
     "category": "building",
     "buildingId": "girls-hostel-complex"
   }
