@@ -2285,7 +2285,7 @@ export const CAMPUS_BUILDINGS: Building[] = [
     "category": "parking",
     "latitude": 16.48238,
     "longitude": 80.69096,
-    "height": 4.5,
+    "height": 3.8,
     "floors": 1,
     "description": "Covered solar-canopied parking zone dedicated to student two-wheelers, with CCTV security, marked lanes, and helmet storage lockers.",
     "departments": [
@@ -2329,7 +2329,7 @@ export const CAMPUS_BUILDINGS: Building[] = [
     "category": "parking",
     "latitude": 16.48224,
     "longitude": 80.69176,
-    "height": 4.5,
+    "height": 3.8,
     "floors": 1,
     "description": "Secondary covered vehicle parking facility for staff and student motorbikes, situated conveniently near the campus entrance security gate.",
     "departments": [
