@@ -293,9 +293,14 @@ async function runPhase4Audit() {
   console.log('\n=== Phase 4 Indoor Exploration Audit Results ===');
   console.log('Passed Checks (' + results.passedChecks.length + '):');
   results.passedChecks.forEach((c) => console.log('  [PASS]', c));
-  if (results.failedChecks.length > 0) {
+  if (results.failedChecks.length > 0 || results.consoleErrors.length > 0) {
     console.log('Failed Checks (' + results.failedChecks.length + '):');
     results.failedChecks.forEach((c) => console.log('  [FAIL]', c));
+    if (results.consoleErrors.length > 0) {
+      console.log('Console Errors (' + results.consoleErrors.length + '):');
+      results.consoleErrors.forEach((c) => console.log('  [CONSOLE ERROR]', c));
+    }
+    process.exitCode = 1;
   } else {
     console.log('ALL PHASE 4 CHECKS PASSED PERFECTLY (0 Failures)');
   }
@@ -303,4 +308,7 @@ async function runPhase4Audit() {
   fs.writeFileSync(path.join(__dirname, 'docs', 'phase-4-audit-results.json'), JSON.stringify(results, null, 2));
 }
 
-runPhase4Audit();
+runPhase4Audit().catch((err) => {
+  console.error('Phase 4 browser audit failed to start or complete:', err);
+  process.exitCode = 1;
+});
