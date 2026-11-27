@@ -10,6 +10,8 @@ export interface BuildingEntrance {
   facadeOrientation: 'north' | 'south' | 'east' | 'west';
   distanceToFacadeMeters: number;
   confidence: 'verified-aerial' | 'survey-anchor';
+  doorAnchor?: [number, number]; // [lon, lat] physical doorway on facade
+  approachPoint?: [number, number]; // [lon, lat] pedestrian approach point
 }
 
 export const BUILDING_ENTRANCES: BuildingEntrance[] = [
@@ -296,8 +298,10 @@ export const BUILDING_ENTRANCES: BuildingEntrance[] = [
     "elevationMeters": 19.0,
     "connectedPathNodeId": "node-gate",
     "facadeOrientation": "north",
-    "distanceToFacadeMeters": 1.5,
-    "confidence": "verified-aerial"
+    "distanceToFacadeMeters": 2.8,
+    "confidence": "verified-aerial",
+    "doorAnchor": [80.691414, 16.482227],
+    "approachPoint": [80.691430, 16.482250]
   },
   {
     "buildingId": "sbi-ncc-bank-block",
@@ -309,8 +313,10 @@ export const BUILDING_ENTRANCES: BuildingEntrance[] = [
     "elevationMeters": 19.0,
     "connectedPathNodeId": "node-sbi-ncc",
     "facadeOrientation": "east",
-    "distanceToFacadeMeters": 1.8,
-    "confidence": "verified-aerial"
+    "distanceToFacadeMeters": 3.1,
+    "confidence": "verified-aerial",
+    "doorAnchor": [80.691310, 16.482305],
+    "approachPoint": [80.691340, 16.482280]
   },
   {
     "buildingId": "parking-plaza",
@@ -322,8 +328,10 @@ export const BUILDING_ENTRANCES: BuildingEntrance[] = [
     "elevationMeters": 19.0,
     "connectedPathNodeId": "node-parking",
     "facadeOrientation": "east",
-    "distanceToFacadeMeters": 2.0,
-    "confidence": "verified-aerial"
+    "distanceToFacadeMeters": 3.5,
+    "confidence": "verified-aerial",
+    "doorAnchor": [80.691121, 16.482333],
+    "approachPoint": [80.691150, 16.482380]
   },
   {
     "buildingId": "bike-stand-2",
@@ -335,8 +343,10 @@ export const BUILDING_ENTRANCES: BuildingEntrance[] = [
     "elevationMeters": 19.0,
     "connectedPathNodeId": "node-bike-stand-2",
     "facadeOrientation": "west",
-    "distanceToFacadeMeters": 2.0,
-    "confidence": "verified-aerial"
+    "distanceToFacadeMeters": 3.8,
+    "confidence": "verified-aerial",
+    "doorAnchor": [80.691589, 16.482290],
+    "approachPoint": [80.691550, 16.482240]
   },
   {
     "buildingId": "health-center",
