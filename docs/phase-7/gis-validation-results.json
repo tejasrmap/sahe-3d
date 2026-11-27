@@ -1,0 +1,36 @@
+{
+  "validation_timestamp": "2026-11-27T06:55:00Z",
+  "total_buildings_validated": 26,
+  "total_outdoor_facilities_validated": 7,
+  "total_entrances_validated": 26,
+  "total_navigation_nodes": 38,
+  "total_navigation_edges": 38,
+  "checks": {
+    "polygon_closure": {
+      "passed": true,
+      "failed_count": 0,
+      "failures": []
+    },
+    "boundary_containment": {
+      "passed": true,
+      "failed_count": 0,
+      "failures": []
+    },
+    "pairwise_overlap": {
+      "passed": true,
+      "overlapping_pairs_count": 0,
+      "overlaps": []
+    },
+    "entrance_exteriority": {
+      "passed": true,
+      "failed_count": 0,
+      "failures": []
+    },
+    "navigation_reachability": {
+      "passed": true,
+      "unreachable_nodes_count": 0,
+      "unreachable_nodes": []
+    }
+  },
+  "status": "ALL_CHECKS_PASSED"
+}

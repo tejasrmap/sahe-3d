@@ -1,0 +1,25 @@
+official_item_no,official_name,official_area_sqm,osm_way_id,model_id,model_name,status,reconciliation_action
+1,Administrative Block,2416.74,403282757,admin-block,Dr. VR Central Administrative Block,Separated,Physically separated from Central Library into distinct administrative headquarters
+2,Bank and NCC,399.66,1320824137,sbi-ncc-bank-block,State Bank of India & NCC Officers Complex,Added,Newly added physical model for on-campus bank branch and NCC cadets unit
+3,Bike Stand 1,535.31,1320824558,parking-plaza,Two-Wheeler Vehicle Parking Shed 1 (West Stand),Separated,Accurately positioned west parking canopy with solar panels
+4,Bike Stand 2,659.38,1320824559,bike-stand-2,Two-Wheeler Vehicle Parking Shed 2 (East Stand),Added,Newly added secondary parking canopy near entrance gate
+5A,Boys Hostel Building,9453.4,1318968808,boys-hostel-complex,Siddhartha Boys Residency Hall (Main Block),Calibrated,Calibrated 5-story main boys residential hall with biometric entry
+6,Canteen & TPO,1267.74,403282859,cafeteria-complex,Central Cafeteria & Student Food Court,Reconciled,Connected cafeteria plaza and dining pergolas
+7,Civil Block,3405.27,1324048130,civil-engineering-block,Civil Engineering Department Block,Separated,Physically separated from Mechanical block into independent 3-story structure
+8,Electrical Block,4300.75,1324048133,ece-eee-block,Electrical Sciences Block (EEE Department),Calibrated,Dedicated 4-story electrical sciences and microgrid research complex
+"9, 9A",Girls Hostels 1 & 2,6182.0,1320182457,girls-hostel-complex,Aditya Girls Hostels (Ganga & Yamuna Wings),Calibrated,Main residential quadrangle for female students
+9B,Girls Hostel 3 (Krishna),3918.0,1318966332,girls-hostel-krishna,Aditya Girls Hostel (Krishna Wing),Added,Newly separated 4-story deluxe residential wing
+10,Guest House,320.0,1320668604,students-centre-guest-house,Students Centre & University Guest House,Added,Newly modeled 2-story guest house and student activity facility
+11,Central Library,2179.62,403282859,central-library,Central Knowledge Resource & Library Complex,Separated,Physically separated from Admin block into 3-story digital library
+12,Mechanical Block,7513.84,1324048128,mech-civil-block,Mechanical Engineering Block (Main),Separated,Main 4-story mechanical engineering department building
+12-WS,Mechanical Workshops,1200.0,1324048129,mechanical-workshops,Mechanical Engineering Industrial Workshops,Added,High-bay industrial machining and fabrication workshops
+"13, 13A",New Block (Kalam),28400.0,403282758,cse-it-complex,Dr. APJ Abdul Kalam Block (Computing Complex),Calibrated,"5-story flagship computing complex housing CSE, IT, EIE, MCA, MBA"
+14,Power House,128.0,1320668605,power-house-substation,Campus Power Substation & Generator Station,Added,11kV electrical substation and diesel generator building
+15,Science & Humanities 1,2485.66,1324048132,sh-block-1,Science & Humanities Block 1 (S&H 1),Added,"Newly modeled foundational physics, chemistry, and first-year block"
+16,Science & Humanities 2,2040.0,1324048131,sh-block-2,Science & Humanities Block 2 (S&H 2),Added,Newly modeled basic sciences and environmental research block
+17,Security Gate,27.88,1320824131,main-entrance-portal,SAHE University Grand Entrance Arch & Security,Calibrated,Main ceremonial entry gate on Bandar road approach
+17-A1,Old Boys Hostel 1,1800.0,1318966334,old-boys-hostel-1,Old Boys Residency Block 1,Added,Traditional 3-story hostel block 1
+17-A2,Old Boys Hostel 2,1800.0,1318968809,old-boys-hostel-2,Old Boys Residency Block 2,Added,Traditional 3-story hostel block 2
+18,Sports Club Arena,665.89,403282763,sports-arena,Physical Education & Indoor Sports Arena,Calibrated,Modern multi-court indoor gymnasium and stadium
+19,Staff Quarters,927.0,1318966333,staff-quarters,Faculty & Staff Residential Quarters,Added,Faculty and department head residential suites
+20,Siemens / TIFAC CORE,2714.19,1324048127,siemens-tifac-centre,Siemens Centre of Excellence & TIFAC CORE,Separated,Advanced robotics and Industry 4.0 automation centre

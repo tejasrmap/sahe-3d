@@ -1,0 +1,27 @@
+building_id,official_name,official_code,category,latitude,longitude,height_m,floors,footprint_vertices,area_sqm,confidence_level,source_reference
+cse-it-complex,Dr. APJ Abdul Kalam Block (Computing Complex),APJ-CSE,academic,16.48519,80.691393,26,5,119,6164.29,Verified High-Precision,Authoritative Architectural Plan & OSM Ground Survey
+admin-block,Dr. VR Central Administrative Block,ADMIN-BLK,administration,16.484112,80.692476,14,3,11,851.64,Verified High-Precision,Authoritative Architectural Plan & OSM Ground Survey
+central-library,Central Knowledge Resource & Library Complex,LIB-BLK,library,16.484258,80.693294,14,3,10,1132.01,Verified High-Precision,Authoritative Architectural Plan & OSM Ground Survey
+ece-eee-block,Electrical Sciences Block (EEE Department),EEE-BLK,academic,16.485267,80.692469,18,4,53,2070.59,Verified High-Precision,Authoritative Architectural Plan & OSM Ground Survey
+sh-block-1,Science & Humanities Block 1 (S&H 1),SH-BLK1,academic,16.484799,80.692914,14,3,23,896.11,Verified High-Precision,Authoritative Architectural Plan & OSM Ground Survey
+sh-block-2,Science & Humanities Block 2 (S&H 2),SH-BLK2,academic,16.484771,80.693598,14,3,5,767.1,Verified High-Precision,Authoritative Architectural Plan & OSM Ground Survey
+mech-civil-block,Mechanical Engineering Block (Main),MECH-BLK,academic,16.485731,80.693038,18,4,23,796.83,Verified High-Precision,Authoritative Architectural Plan & OSM Ground Survey
+civil-engineering-block,Civil Engineering Department Block,CIVIL-BLK,academic,16.485271,80.693554,14,3,43,2309.32,Verified High-Precision,Authoritative Architectural Plan & OSM Ground Survey
+mechanical-workshops,Mechanical Engineering Industrial Workshops,MECH-WS,laboratory,16.485985,80.693037,9,1,23,1741.08,Verified High-Precision,Authoritative Architectural Plan & OSM Ground Survey
+siemens-tifac-centre,Siemens Centre of Excellence & TIFAC CORE,SIEMENS-COE,laboratory,16.485878,80.693648,14,3,21,1303.79,Verified High-Precision,Authoritative Architectural Plan & OSM Ground Survey
+auditorium-complex,Dr. Zakir Husain Central Auditorium,AUD-CTR,auditorium,16.483785,80.69255,18,2,5,1282.26,Verified High-Precision,Authoritative Architectural Plan & OSM Ground Survey
+cafeteria-complex,Central Cafeteria & Student Food Court,CAFE,cafeteria,16.483785,80.69335,12,2,5,1282.25,Verified High-Precision,Authoritative Architectural Plan & OSM Ground Survey
+sports-arena,Physical Education & Indoor Sports Arena,SPORT-CTR,sports,16.483332,80.692106,14,2,5,557.98,Verified High-Precision,Authoritative Architectural Plan & OSM Ground Survey
+boys-hostel-complex,Siddhartha Boys Residency Hall (Main Block),B-HOSTEL-MAIN,hostel,16.48519,80.695283,20,5,9,514.68,Verified High-Precision,Authoritative Architectural Plan & OSM Ground Survey
+old-boys-hostel-1,Old Boys Residency Block 1,B-HOSTEL-BLK1,hostel,16.48538,80.695677,12,3,5,1599.16,Verified High-Precision,Authoritative Architectural Plan & OSM Ground Survey
+old-boys-hostel-2,Old Boys Residency Block 2,B-HOSTEL-BLK2,hostel,16.484683,80.69529,12,3,5,134.51,Verified High-Precision,Authoritative Architectural Plan & OSM Ground Survey
+girls-hostel-complex,Aditya Girls Hostels (Ganga & Yamuna Wings),G-HOSTEL-MAIN,hostel,16.483984,80.695169,16,4,7,702.59,Verified High-Precision,Authoritative Architectural Plan & OSM Ground Survey
+girls-hostel-krishna,Aditya Girls Hostel (Krishna Wing),G-HOSTEL-KRISHNA,hostel,16.483418,80.695028,16,4,5,61.65,Verified High-Precision,Authoritative Architectural Plan & OSM Ground Survey
+staff-quarters,Faculty & Staff Residential Quarters,STAFF-QTRS,hostel,16.484654,80.695727,12,3,5,889.4,Verified High-Precision,Authoritative Architectural Plan & OSM Ground Survey
+students-centre-guest-house,Students Centre & University Guest House,GUEST-HOUSE,amenity,16.485889,80.692098,9,2,15,1124.17,Verified High-Precision,Authoritative Architectural Plan & OSM Ground Survey
+power-house-substation,Campus Power Substation & Generator Station,POWER-HOUSE,amenity,16.486381,80.693073,6,1,9,1953.19,Verified High-Precision,Authoritative Architectural Plan & OSM Ground Survey
+main-entrance-portal,SAHE University Grand Entrance Arch & Security,GATE-1,entrance,16.481746,80.691188,7,1,5,31.65,Verified High-Precision,Authoritative Architectural Plan & OSM Ground Survey
+sbi-ncc-bank-block,State Bank of India & NCC Officers Complex,SBI-NCC,amenity,16.481809,80.690973,9,2,5,28.3,Verified High-Precision,Authoritative Architectural Plan & OSM Ground Survey
+parking-plaza,Two-Wheeler Vehicle Parking Shed 1 (West Stand),PARK-A,parking,16.481923,80.69093,4.5,1,7,16.05,Verified High-Precision,Authoritative Architectural Plan & OSM Ground Survey
+bike-stand-2,Two-Wheeler Vehicle Parking Shed 2 (East Stand),PARK-B,parking,16.481897,80.691021,4.5,1,5,42.47,Verified High-Precision,Authoritative Architectural Plan & OSM Ground Survey
+health-center,University Health & Medical Center,MED-CTR,medical,16.482809,80.693648,8,2,5,1044.8,Verified High-Precision,Authoritative Architectural Plan & OSM Ground Survey

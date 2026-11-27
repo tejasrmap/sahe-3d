@@ -1,6 +1,7 @@
 import { useState, useMemo, useEffect, useCallback } from 'react';
 import { CAMPUS_BUILDINGS } from '../data/buildings';
 import { CAMPUS_POIS } from '../data/pois';
+import { OUTDOOR_FACILITIES } from '../data/outdoorFacilities';
 import { Building, POI } from '../types/campus';
 
 export interface SearchResultItem {
@@ -24,9 +25,9 @@ export function useCampusSearch() {
   const [recentSearches, setRecentSearches] = useState<string[]>(() => {
     try {
       const saved = localStorage.getItem(RECENT_SEARCHES_KEY);
-      return saved ? JSON.parse(saved) : ['CSE Complex', 'Central Library', 'Auditorium', 'Cafeteria'];
+      return saved ? JSON.parse(saved) : ['CSE Complex', 'Central Library', 'Auditorium', 'Cafeteria', 'Civil Block', 'Cricket Ground'];
     } catch {
-      return ['CSE Complex', 'Central Library', 'Auditorium', 'Cafeteria'];
+      return ['CSE Complex', 'Central Library', 'Auditorium', 'Cafeteria', 'Civil Block', 'Cricket Ground'];
     }
   });
 
@@ -110,6 +111,27 @@ export function useCampusSearch() {
       }
     }
 
+    // Search Outdoor Facilities
+    for (const ofac of OUTDOOR_FACILITIES) {
+      if (
+        ofac.name.toLowerCase().includes(q) ||
+        ofac.code.toLowerCase().includes(q) ||
+        ofac.description.toLowerCase().includes(q) ||
+        ofac.facilities.some(f => f.toLowerCase().includes(q))
+      ) {
+        items.push({
+          id: `outdoor-${ofac.id}`,
+          type: 'facility',
+          title: ofac.name,
+          subtitle: `${ofac.code} • ${ofac.category.toUpperCase()} • ${ofac.areaSqm} m²`,
+          category: ofac.category,
+          latitude: ofac.latitude,
+          longitude: ofac.longitude,
+          badge: 'OUTDOOR',
+        });
+      }
+    }
+
     // Search POIs
     for (const p of CAMPUS_POIS) {
       if (
@@ -131,7 +153,7 @@ export function useCampusSearch() {
       }
     }
 
-    return items.slice(0, 10);
+    return items.slice(0, 15);
   }, [query]);
 
   // Handle keyboard shortcut Ctrl+K / Cmd+K
@@ -140,13 +162,24 @@ export function useCampusSearch() {
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
         e.preventDefault();
         setIsOpen((prev) => !prev);
-      } else if (e.key === 'Escape') {
+      }
+      if (e.key === 'Escape' && isOpen) {
         setIsOpen(false);
       }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen]);
+
+  const openSearch = useCallback(() => {
+    setIsOpen(true);
+    setSelectedIndex(0);
+  }, []);
+
+  const closeSearch = useCallback(() => {
+    setIsOpen(false);
+    setQuery('');
   }, []);
 
   return {
@@ -154,9 +187,11 @@ export function useCampusSearch() {
     setQuery,
     isOpen,
     setIsOpen,
-    results,
+    openSearch,
+    closeSearch,
     selectedIndex,
     setSelectedIndex,
+    results,
     recentSearches,
     saveRecentSearch,
     clearRecentSearches,

@@ -3,19 +3,22 @@ import { Building } from '../types/campus';
 export const CAMPUS_BUILDINGS: Building[] = [
   {
     "id": "cse-it-complex",
-    "name": "VR Siddhartha CSE & Computing Complex",
-    "code": "CSE-BLK",
+    "name": "Dr. APJ Abdul Kalam Block (Computing Complex)",
+    "code": "APJ-CSE",
     "category": "academic",
-    "latitude": 16.485196,
-    "longitude": 80.691326,
+    "latitude": 16.4851896,
+    "longitude": 80.6913927,
     "height": 26,
     "floors": 5,
-    "description": "State-of-the-art five-story computing complex housing Computer Science & Engineering, Artificial Intelligence, Data Science labs, Nvidia AI Deep Learning Supercomputing clusters, and modern smart seminar halls.",
+    "description": "Premier five-story computing complex housing Computer Science & Engineering, Artificial Intelligence, Data Science labs, Nvidia AI Deep Learning Supercomputing clusters, and modern smart seminar halls.",
     "departments": [
       "Computer Science and Engineering (CSE)",
       "CSE - Artificial Intelligence & Machine Learning",
       "CSE - Data Science",
-      "Information Technology (IT)"
+      "Information Technology (IT)",
+      "Electronics & Instrumentation Engineering (EIE)",
+      "Computer Applications (MCA)",
+      "Business Administration (MBA)"
     ],
     "facilities": [
       "High Performance Cloud Computing Lab",
@@ -24,7 +27,7 @@ export const CAMPUS_BUILDINGS: Building[] = [
       "CSE Tiered Seminar Auditorium",
       "Dr. V L Dutt Courtyard Memorial",
       "Cybersecurity Defense Lab",
-      "Smart Interactive Classrooms (12)",
+      "Smart Interactive Classrooms (16)",
       "Faculty Research Cubicles",
       "IoT Prototyping Laboratory"
     ],
@@ -506,33 +509,169 @@ export const CAMPUS_BUILDINGS: Building[] = [
         16.4856126
       ]
     ],
-    "color": "#3B82F6",
-    "operatingHours": "08:00 AM - 06:30 PM",
-    "contact": "+91 866 2582333 | cse_dept@vrsiddhartha.ac.in",
-    "imageUrl": "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1000&q=80"
+    "color": "#3B82F6"
+  },
+  {
+    "id": "admin-block",
+    "name": "Dr. VR Central Administrative Block",
+    "code": "ADMIN-BLK",
+    "category": "administration",
+    "latitude": 16.4841125,
+    "longitude": 80.6924755,
+    "height": 14,
+    "floors": 3,
+    "description": "Executive university administration headquarters accommodating the Vice-Chancellor's Secretariat, Registrar's Office, Dean of Academic Affairs, Controller of Examinations, and Syndicate Board Room.",
+    "departments": [
+      "Office of the Vice Chancellor & Registrar",
+      "Dean of Academic Affairs & Admissions",
+      "Finance, Accounts & Audit Directorate",
+      "Controller of Examinations (CoE)",
+      "Human Resources & Faculty Development"
+    ],
+    "facilities": [
+      "Executive Boardroom & Council Chamber",
+      "Student Administrative Services Counter",
+      "VIP Conference Suite",
+      "Academic Transcript & Verification Cell",
+      "Institutional Archive Repository"
+    ],
+    "footprint": [
+      [
+        80.6922766,
+        16.4842453
+      ],
+      [
+        80.6927903,
+        16.4841695
+      ],
+      [
+        80.6927727,
+        16.4840598
+      ],
+      [
+        80.692578,
+        16.4840886
+      ],
+      [
+        80.692566,
+        16.4840138
+      ],
+      [
+        80.6924592,
+        16.4840295
+      ],
+      [
+        80.692471,
+        16.484103
+      ],
+      [
+        80.6923971,
+        16.4841139
+      ],
+      [
+        80.6923908,
+        16.4840744
+      ],
+      [
+        80.6922524,
+        16.4840948
+      ],
+      [
+        80.6922766,
+        16.4842453
+      ]
+    ],
+    "color": "#6366F1"
+  },
+  {
+    "id": "central-library",
+    "name": "Central Knowledge Resource & Library Complex",
+    "code": "LIB-BLK",
+    "category": "library",
+    "latitude": 16.4842578,
+    "longitude": 80.6932939,
+    "height": 14,
+    "floors": 3,
+    "description": "Premier 3-story digital knowledge repository featuring over 120,000 physical volumes, 10,000+ national & international e-journals, digital thesis archive, collaborative multimedia study pods, and the Training & Placement Cell (TPO).",
+    "departments": [
+      "University Central Library",
+      "Digital Knowledge & E-Learning Centre",
+      "Training and Placement Officer (TPO)",
+      "Corporate Relations & Industry Interface"
+    ],
+    "facilities": [
+      "Digital Library with 120 High-Speed Terminals",
+      "IEEE, ScienceDirect & Springer Journal Lounge",
+      "Quiet Air-Conditioned Reference Stacks",
+      "Corporate Interview & Group Discussion Chambers",
+      "Scholars Reading Terrace"
+    ],
+    "footprint": [
+      [
+        80.6932078,
+        16.4843708
+      ],
+      [
+        80.6932618,
+        16.4843541
+      ],
+      [
+        80.693292,
+        16.4843232
+      ],
+      [
+        80.6932596,
+        16.4842959
+      ],
+      [
+        80.6932562,
+        16.4842769
+      ],
+      [
+        80.6935998,
+        16.4842206
+      ],
+      [
+        80.693565,
+        16.4840253
+      ],
+      [
+        80.6931587,
+        16.4840919
+      ],
+      [
+        80.6931303,
+        16.4842486
+      ],
+      [
+        80.6932078,
+        16.4843708
+      ]
+    ],
+    "color": "#06B6D4"
   },
   {
     "id": "ece-eee-block",
-    "name": "Electronics & Electrical Sciences Block",
-    "code": "EE-BLK",
+    "name": "Electrical Sciences Block (EEE Department)",
+    "code": "EEE-BLK",
     "category": "academic",
-    "latitude": 16.485292,
-    "longitude": 80.69238,
-    "height": 24,
+    "latitude": 16.4852668,
+    "longitude": 80.6924686,
+    "height": 18,
     "floors": 4,
-    "description": "Comprehensive engineering block housing Electronics & Communication Engineering (ECE) and Electrical & Electronics Engineering (EEE), featuring state-of-the-art VLSI, Embedded Systems, and Renewable Energy Microgrid testing labs.",
+    "description": "Premier department building for Electrical & Electronics Engineering, housing high-voltage transmission simulators, electric vehicle drivetrain testing bays, power system analysis clusters, and microgrid research centers.",
     "departments": [
-      "Electronics and Communication Engineering (ECE)",
-      "Electrical and Electronics Engineering (EEE)"
+      "Electrical & Electronics Engineering (EEE)",
+      "Power Systems & High Voltage Engineering",
+      "Electric Vehicle & Battery Management Systems",
+      "Renewable Energy & Microgrid Technology"
     ],
     "facilities": [
-      "Cadence & Synopsys VLSI Design Center",
-      "Texas Instruments Embedded Systems Lab",
-      "S&H Block I (Science & Humanities)",
-      "Pranayuv Technologies Incubation Hub",
-      "High Voltage & Power Systems Testbed",
-      "Analog & Digital Signal Processing Labs",
-      "RF & Microwave Anechoic Test Setup"
+      "High Voltage Testing & Dielectric Lab",
+      "Power Electronics & Smart Drives Lab",
+      "Microgrid & Solar PV Simulation Center",
+      "Electrical Machines Research Arena",
+      "Smart Metering & Grid Protection Center"
     ],
     "footprint": [
       [
@@ -748,34 +887,314 @@ export const CAMPUS_BUILDINGS: Building[] = [
         16.4856117
       ]
     ],
-    "color": "#6366F1",
-    "operatingHours": "08:30 AM - 05:30 PM",
-    "contact": "+91 866 2582334 | ece_head@vrsiddhartha.ac.in",
-    "imageUrl": "https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=1000&q=80"
+    "color": "#F59E0B"
+  },
+  {
+    "id": "sh-block-1",
+    "name": "Science & Humanities Block 1 (S&H 1)",
+    "code": "SH-BLK1",
+    "category": "academic",
+    "latitude": 16.4847986,
+    "longitude": 80.6929142,
+    "height": 14,
+    "floors": 3,
+    "description": "Foundational engineering block housing Physics, Chemistry, and Professional English departments, dedicated first-year lecture halls, modern chemistry testing counters, and high-tech language phonetics labs.",
+    "departments": [
+      "Department of Engineering Physics",
+      "Department of Applied Chemistry",
+      "Department of Mathematics",
+      "English & Professional Communication"
+    ],
+    "facilities": [
+      "Laser Optics & Solid State Physics Lab",
+      "Spectrophotometry & Water Quality Lab",
+      "Computerized Interactive Language Lab",
+      "Smart Audio-Visual Foundation Theatres (8)",
+      "First-Year Student Mentoring Directorate"
+    ],
+    "footprint": [
+      [
+        80.6926677,
+        16.4848839
+      ],
+      [
+        80.6928129,
+        16.4848797
+      ],
+      [
+        80.6928116,
+        16.4848388
+      ],
+      [
+        80.692862,
+        16.4848374
+      ],
+      [
+        80.6928631,
+        16.4848699
+      ],
+      [
+        80.6930974,
+        16.4848631
+      ],
+      [
+        80.6930967,
+        16.4848429
+      ],
+      [
+        80.6932988,
+        16.4848371
+      ],
+      [
+        80.6932948,
+        16.4847088
+      ],
+      [
+        80.6930593,
+        16.4847156
+      ],
+      [
+        80.6930603,
+        16.4847497
+      ],
+      [
+        80.693024,
+        16.4847507
+      ],
+      [
+        80.693023,
+        16.4847167
+      ],
+      [
+        80.6929067,
+        16.4847201
+      ],
+      [
+        80.6929092,
+        16.4848009
+      ],
+      [
+        80.6928635,
+        16.4848022
+      ],
+      [
+        80.6928632,
+        16.4847921
+      ],
+      [
+        80.6928102,
+        16.4847936
+      ],
+      [
+        80.69281,
+        16.4847853
+      ],
+      [
+        80.6927809,
+        16.4847861
+      ],
+      [
+        80.6927799,
+        16.4847532
+      ],
+      [
+        80.6926636,
+        16.4847566
+      ],
+      [
+        80.6926677,
+        16.4848839
+      ]
+    ],
+    "color": "#10B981"
+  },
+  {
+    "id": "sh-block-2",
+    "name": "Science & Humanities Block 2 (S&H 2)",
+    "code": "SH-BLK2",
+    "category": "academic",
+    "latitude": 16.4847713,
+    "longitude": 80.6935979,
+    "height": 14,
+    "floors": 3,
+    "description": "Academic expansion building housing multidisciplinary environmental science laboratories, advanced materials characterization equipment, student counselling chambers, and smart tutorial rooms.",
+    "departments": [
+      "Environmental Sciences & Sustainability",
+      "Applied Mathematics & Computational Statistics",
+      "Student Welfare & Counselling Directorate"
+    ],
+    "facilities": [
+      "Environmental Monitoring Station",
+      "Nanomaterials Synthesis Bench",
+      "Student Counselling & Wellness Chambers",
+      "Collaborative Tutorial Study Suites",
+      "Faculty Academic Research Lounges"
+    ],
+    "footprint": [
+      [
+        80.6934252,
+        16.4848366
+      ],
+      [
+        80.6938628,
+        16.4848207
+      ],
+      [
+        80.6938569,
+        16.4846732
+      ],
+      [
+        80.6934194,
+        16.4846892
+      ],
+      [
+        80.6934252,
+        16.4848366
+      ]
+    ],
+    "color": "#14B8A6"
   },
   {
     "id": "mech-civil-block",
-    "name": "Mechanical & Civil Engineering Block",
-    "code": "ME-CE",
+    "name": "Mechanical Engineering Block (Main)",
+    "code": "MECH-BLK",
     "category": "academic",
-    "latitude": 16.48525,
-    "longitude": 80.693635,
-    "height": 22,
+    "latitude": 16.4857314,
+    "longitude": 80.6930383,
+    "height": 18,
     "floors": 4,
-    "description": "Houses Mechanical, Civil, and Production Engineering, heavy machinery test floors, materials characterization, CAD/CAM simulation stations, and the collaborative Siemens Centre of Excellence (CoE).",
+    "description": "Core engineering department building accommodating Mechanical Engineering, thermal sciences, aerodynamics, CAD/CAM simulation stations, internal combustion engine dynamometers, and materials fatigue testing laboratories.",
     "departments": [
-      "Mechanical Engineering",
-      "Civil Engineering",
-      "Robotics & Automation"
+      "Department of Mechanical Engineering",
+      "Thermal Engineering & Cryogenics",
+      "Computer Aided Design & Manufacturing (CAD/CAM)",
+      "Automotive Engineering & Hybrid Propulsion"
     ],
     "facilities": [
-      "Siemens Industrial Automation CoE",
-      "Solar-Roofed Heavy Mechanical Workshops",
-      "S&H Block II Annex Wings",
-      "Strength of Materials & Concrete Testing Lab",
-      "Robotics & CNC Machining Cell",
-      "Fluid Mechanics & Hydraulics Flume",
-      "Environmental Engineering Analytical Lab"
+      "Thermal Engineering & Heat Transfer Lab",
+      "IC Engines & Emissions Testing Facility",
+      "Refrigeration & Air-Conditioning Test Rig",
+      "Finite Element Analysis (FEA) Computer Center",
+      "Vibration & Noise Dynamics Chamber"
+    ],
+    "footprint": [
+      [
+        80.6927198,
+        16.4857817
+      ],
+      [
+        80.6928742,
+        16.485778
+      ],
+      [
+        80.6928749,
+        16.4858065
+      ],
+      [
+        80.6929165,
+        16.4858055
+      ],
+      [
+        80.6929157,
+        16.485777
+      ],
+      [
+        80.6930336,
+        16.4857742
+      ],
+      [
+        80.6930338,
+        16.4857818
+      ],
+      [
+        80.6931801,
+        16.4857783
+      ],
+      [
+        80.6931792,
+        16.4857423
+      ],
+      [
+        80.693234,
+        16.485741
+      ],
+      [
+        80.6932352,
+        16.4857905
+      ],
+      [
+        80.6933377,
+        16.4857881
+      ],
+      [
+        80.6933342,
+        16.4856503
+      ],
+      [
+        80.6932282,
+        16.4856528
+      ],
+      [
+        80.693229,
+        16.4856821
+      ],
+      [
+        80.6931968,
+        16.4856829
+      ],
+      [
+        80.693196,
+        16.4856536
+      ],
+      [
+        80.6930311,
+        16.4856575
+      ],
+      [
+        80.693032,
+        16.4856921
+      ],
+      [
+        80.692832,
+        16.4856969
+      ],
+      [
+        80.6928312,
+        16.4856623
+      ],
+      [
+        80.6927168,
+        16.485665
+      ],
+      [
+        80.6927198,
+        16.4857817
+      ]
+    ],
+    "color": "#EF4444"
+  },
+  {
+    "id": "civil-engineering-block",
+    "name": "Civil Engineering Department Block",
+    "code": "CIVIL-BLK",
+    "category": "academic",
+    "latitude": 16.4852708,
+    "longitude": 80.6935538,
+    "height": 14,
+    "floors": 3,
+    "description": "Comprehensive engineering facility housing Civil Engineering, geotechnical testing, structural dynamics loading frames, concrete quality analysis, environmental filtration models, and surveying instrumentation stations.",
+    "departments": [
+      "Department of Civil Engineering",
+      "Structural Engineering Directorate",
+      "Geotechnical & Highway Engineering",
+      "Water Resources & Environmental Engineering"
+    ],
+    "facilities": [
+      "100-Ton Universal Testing Machine (UTM)",
+      "Soil Mechanics & Triaxial Shear Testing Lab",
+      "Concrete Technology & Non-Destructive Testing Lab",
+      "Hydraulics & Fluid Machinery Channel",
+      "Total Station & GIS Drone Surveying Hub"
     ],
     "footprint": [
       [
@@ -951,143 +1370,242 @@ export const CAMPUS_BUILDINGS: Building[] = [
         16.4855545
       ]
     ],
-    "color": "#EC4899",
-    "operatingHours": "08:30 AM - 05:00 PM",
-    "contact": "+91 866 2582335 | me_head@vrsiddhartha.ac.in",
-    "imageUrl": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80"
+    "color": "#8B5CF6"
   },
   {
-    "id": "admin-central-library",
-    "name": "Central Administration & Dr. VR Library",
-    "code": "ADMIN-LIB",
-    "category": "administration",
-    "latitude": 16.484796,
-    "longitude": 80.692981,
-    "height": 20,
-    "floors": 4,
-    "description": "The administrative heart of SAHE University. Accommodates the Vice-Chancellor's Secretariat, Registrar's Office, Dean of Academic Affairs, Examination Cell, along with a massive 3-tier Central Library with over 120,000 volumes, e-journals, and digital knowledge repository.",
+    "id": "mechanical-workshops",
+    "name": "Mechanical Engineering Industrial Workshops",
+    "code": "MECH-WS",
+    "category": "laboratory",
+    "latitude": 16.4859848,
+    "longitude": 80.6930372,
+    "height": 9,
+    "floors": 1,
+    "description": "High-bay industrial fabrication facility with overhead cranes, automated CNC lathes, milling machines, foundry cupola furnaces, forging hammers, and precision metal welding bays.",
     "departments": [
-      "Office of the Vice Chancellor & Registrar",
-      "Controller of Examinations (CoE)",
-      "Academic & Student Affairs Directorate",
-      "Training & Placement Division (TPO)",
-      "University Central Library Services"
+      "Mechanical Engineering Workshop Directorate",
+      "Central Manufacturing & Prototyping Facility"
     ],
     "facilities": [
-      "VRSEC Central Library (3 Floors)",
-      "Central Digital Knowledge Center",
-      "Siddhartha Deemed to be University Secretariat",
-      "Main Boardroom & VIP Senate Hall",
-      "Fee Payment & Admissions Counter",
-      "24/7 Air-Conditioned Reading Halls",
-      "International Relations Office"
+      "CNC Turning & 5-Axis Milling Machine Floor",
+      "Machine Shop with 40 Precision Lathes",
+      "Foundry & Sand Casting Pit",
+      "MIG/TIG & Arc Welding Fabrication Bay",
+      "Carpentry, Pattern Making & Sheet Metal Fitting"
     ],
     "footprint": [
       [
-        80.6926677,
-        16.4848839
+        80.6927241,
+        16.4861321
       ],
       [
-        80.6928129,
-        16.4848797
+        80.6928554,
+        16.4861289
       ],
       [
-        80.6928116,
-        16.4848388
+        80.6928519,
+        16.4859951
       ],
       [
-        80.692862,
-        16.4848374
+        80.6928848,
+        16.4859944
       ],
       [
-        80.6928631,
-        16.4848699
+        80.6928891,
+        16.4861606
       ],
       [
-        80.6930974,
-        16.4848631
+        80.6931923,
+        16.4861534
       ],
       [
-        80.6930967,
-        16.4848429
+        80.693188,
+        16.4859872
       ],
       [
-        80.6932988,
-        16.4848371
+        80.6932202,
+        16.4859864
       ],
       [
-        80.6932948,
-        16.4847088
+        80.6932234,
+        16.4861138
       ],
       [
-        80.6930593,
-        16.4847156
+        80.6933551,
+        16.4861107
       ],
       [
-        80.6930603,
-        16.4847497
+        80.6933477,
+        16.485823
       ],
       [
-        80.693024,
-        16.4847507
+        80.6932145,
+        16.4858262
       ],
       [
-        80.693023,
-        16.4847167
+        80.6932164,
+        16.4859001
       ],
       [
-        80.6929067,
-        16.4847201
+        80.6931731,
+        16.4859011
       ],
       [
-        80.6929092,
-        16.4848009
+        80.6931745,
+        16.4859554
       ],
       [
-        80.6928635,
-        16.4848022
+        80.6930981,
+        16.4859572
       ],
       [
-        80.6928632,
-        16.4847921
+        80.6930965,
+        16.4858958
       ],
       [
-        80.6928102,
-        16.4847936
+        80.6930052,
+        16.485898
       ],
       [
-        80.69281,
-        16.4847853
+        80.6930068,
+        16.4859594
       ],
       [
-        80.6927809,
-        16.4847861
+        80.6928511,
+        16.4859631
       ],
       [
-        80.6927799,
-        16.4847532
+        80.6928478,
+        16.485837
       ],
       [
-        80.6926636,
-        16.4847566
+        80.6927166,
+        16.4858401
       ],
       [
-        80.6926677,
-        16.4848839
+        80.6927241,
+        16.4861321
       ]
     ],
-    "color": "#10B981",
-    "operatingHours": "08:00 AM - 08:00 PM",
-    "contact": "+91 866 2582330 | info@sahe.ac.in",
-    "imageUrl": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1000&q=80"
+    "color": "#F97316"
+  },
+  {
+    "id": "siemens-tifac-centre",
+    "name": "Siemens Centre of Excellence & TIFAC CORE",
+    "code": "SIEMENS-COE",
+    "category": "laboratory",
+    "latitude": 16.4858779,
+    "longitude": 80.6936484,
+    "height": 14,
+    "floors": 3,
+    "description": "World-class industrial center of excellence established with Siemens and TIFAC, providing state-of-the-art training in Industry 4.0, industrial robotics, PLC automation, SCADA systems, and digital twin simulation.",
+    "departments": [
+      "Siemens Industry 4.0 Centre of Excellence",
+      "TIFAC Centre of Relevance & Excellence (CORE)",
+      "Industrial Robotics & Mechatronics Directorate"
+    ],
+    "facilities": [
+      "KUKA & ABB 6-Axis Industrial Robotics Cell",
+      "Siemens S7-1500 PLC & SCADA Automation Suite",
+      "Process Instrumentation & Control Simulator",
+      "NX CAD/CAM & Teamcenter PLM Station",
+      "Smart Factory Digital Manufacturing Testbed"
+    ],
+    "footprint": [
+      [
+        80.6934924,
+        16.4861236
+      ],
+      [
+        80.6938317,
+        16.4861107
+      ],
+      [
+        80.6938268,
+        16.4859907
+      ],
+      [
+        80.6937057,
+        16.4859953
+      ],
+      [
+        80.6937016,
+        16.485896
+      ],
+      [
+        80.6937526,
+        16.485894
+      ],
+      [
+        80.6937495,
+        16.4858206
+      ],
+      [
+        80.6936986,
+        16.4858226
+      ],
+      [
+        80.6936949,
+        16.485734
+      ],
+      [
+        80.6938155,
+        16.4857294
+      ],
+      [
+        80.6938107,
+        16.4856124
+      ],
+      [
+        80.6934794,
+        16.485625
+      ],
+      [
+        80.6934844,
+        16.4857448
+      ],
+      [
+        80.6936038,
+        16.4857403
+      ],
+      [
+        80.6936075,
+        16.4858303
+      ],
+      [
+        80.6935768,
+        16.4858315
+      ],
+      [
+        80.6935799,
+        16.4859048
+      ],
+      [
+        80.6936106,
+        16.4859036
+      ],
+      [
+        80.6936145,
+        16.4859987
+      ],
+      [
+        80.6934875,
+        16.4860036
+      ],
+      [
+        80.6934924,
+        16.4861236
+      ]
+    ],
+    "color": "#EC4899"
   },
   {
     "id": "auditorium-complex",
     "name": "Dr. Zakir Husain Central Auditorium",
     "code": "AUD-CTR",
     "category": "auditorium",
-    "latitude": 16.48413,
-    "longitude": 80.692521,
+    "latitude": 16.483785,
+    "longitude": 80.69255,
     "height": 18,
     "floors": 2,
     "description": "Grand air-conditioned acoustic auditorium with 1,500 seating capacity for international symposiums, national conferences, university convocations, and cultural galas, flanked by an open-air amphitheatre.",
@@ -1096,69 +1614,43 @@ export const CAMPUS_BUILDINGS: Building[] = [
       "Events & Protocol Directorate"
     ],
     "facilities": [
-      "1,500-seat Main Hall with Dolby Surround Acoustics",
-      "Dual Green Rooms & VIP Dignitary Lounges",
-      "Audio-Visual Live Broadcast Suite",
-      "Open-air Amphitheatre Quadrangle"
+      "1,500 Seating Acoustic Main Hall",
+      "Motorized Stage Lighting & Dolby Sound",
+      "Green Rooms & Dressing Lounges",
+      "VIP Hospitality Foyer",
+      "Outdoor Stepped Amphitheatre"
     ],
     "footprint": [
       [
-        80.6922766,
-        16.4842453
+        80.69235,
+        16.48392
       ],
       [
-        80.6927903,
-        16.4841695
+        80.69275,
+        16.48392
       ],
       [
-        80.6927727,
-        16.4840598
+        80.69275,
+        16.48365
       ],
       [
-        80.692578,
-        16.4840886
+        80.69235,
+        16.48365
       ],
       [
-        80.692566,
-        16.4840138
-      ],
-      [
-        80.6924592,
-        16.4840295
-      ],
-      [
-        80.692471,
-        16.484103
-      ],
-      [
-        80.6923971,
-        16.4841139
-      ],
-      [
-        80.6923908,
-        16.4840744
-      ],
-      [
-        80.6922524,
-        16.4840948
-      ],
-      [
-        80.6922766,
-        16.4842453
+        80.69235,
+        16.48392
       ]
     ],
-    "color": "#8B5CF6",
-    "operatingHours": "09:00 AM - 07:00 PM (Event Based)",
-    "contact": "+91 866 2582345 | events@sahe.ac.in",
-    "imageUrl": "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1000&q=80"
+    "color": "#8B5CF6"
   },
   {
     "id": "cafeteria-complex",
     "name": "Central Cafeteria & Student Food Court",
     "code": "CAFE",
     "category": "cafeteria",
-    "latitude": 16.484198,
-    "longitude": 80.693365,
+    "latitude": 16.483785,
+    "longitude": 80.69335,
     "height": 12,
     "floors": 2,
     "description": "Multi-cuisine student food court offering hygienic vegetarian and non-vegetarian meals, fresh juice bars, snacks, espresso stations, and outdoor shaded pergola seating for over 800 students.",
@@ -1167,66 +1659,42 @@ export const CAMPUS_BUILDINGS: Building[] = [
     ],
     "facilities": [
       "VR Siddhartha Canteen (Main Student Canteen)",
-      "South Indian & North Indian Dining Halls",
-      "Fast Food & Fresh Juice Kiosks",
-      "Coffee & Bakery Lounge",
-      "Outdoor Tree-canopied Patio Seating",
-      "FSSAI Certified Commercial Kitchen"
+      "Faculty Dining Hall & Lounge",
+      "Juice Junction & Cold Beverage Counter",
+      "Open Lawn Dining Pergola",
+      "Automated Dishwashing & Food Safety Zone"
     ],
     "footprint": [
       [
-        80.6932078,
-        16.4843708
+        80.69315,
+        16.48392
       ],
       [
-        80.6932618,
-        16.4843541
+        80.69355,
+        16.48392
       ],
       [
-        80.693292,
-        16.4843232
+        80.69355,
+        16.48365
       ],
       [
-        80.6932596,
-        16.4842959
+        80.69315,
+        16.48365
       ],
       [
-        80.6932562,
-        16.4842769
-      ],
-      [
-        80.6935998,
-        16.4842206
-      ],
-      [
-        80.693565,
-        16.4840253
-      ],
-      [
-        80.6931587,
-        16.4840919
-      ],
-      [
-        80.6931303,
-        16.4842486
-      ],
-      [
-        80.6932078,
-        16.4843708
+        80.69315,
+        16.48392
       ]
     ],
-    "color": "#F59E0B",
-    "operatingHours": "07:30 AM - 08:30 PM",
-    "contact": "+91 866 2582360 | catering@sahe.ac.in",
-    "imageUrl": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1000&q=80"
+    "color": "#F59E0B"
   },
   {
     "id": "sports-arena",
-    "name": "Indoor Sports Complex & Gymnasium",
+    "name": "Physical Education & Indoor Sports Arena",
     "code": "SPORT-CTR",
     "category": "sports",
-    "latitude": 16.483287,
-    "longitude": 80.692101,
+    "latitude": 16.4833317,
+    "longitude": 80.6921062,
     "height": 14,
     "floors": 2,
     "description": "Modern multi-discipline indoor athletic stadium with teakwood badminton courts, table tennis tables, chess arenas, yoga studio, and a fully equipped cardio & strength training gym.",
@@ -1235,10 +1703,10 @@ export const CAMPUS_BUILDINGS: Building[] = [
     ],
     "facilities": [
       "4 Synthetic Teakwood Badminton Courts",
-      "Weight Training & Cardio Fitness Arena",
-      "Table Tennis Hall with 6 Olympic Tables",
-      "Yoga & Aerobics Studio",
-      "Locker Rooms with Showers"
+      "Full-Court Indoor Basketball Stadium",
+      "Table Tennis Championship Arena (6 Tables)",
+      "Multi-Gym Fitness & Cardio Station",
+      "Yoga, Meditation & Aerobics Studio"
     ],
     "footprint": [
       [
@@ -1262,31 +1730,87 @@ export const CAMPUS_BUILDINGS: Building[] = [
         16.4835109
       ]
     ],
-    "color": "#14B8A6",
-    "operatingHours": "06:00 AM - 08:30 AM & 04:30 PM - 08:00 PM",
-    "contact": "+91 866 2582370 | sports@sahe.ac.in",
-    "imageUrl": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=80"
+    "color": "#10B981"
   },
   {
     "id": "boys-hostel-complex",
-    "name": "Siddhartha Boys Residency & Hostel",
-    "code": "HSTL-B",
+    "name": "Siddhartha Boys Residency Hall (Main Block)",
+    "code": "B-HOSTEL-MAIN",
     "category": "hostel",
-    "latitude": 16.485343,
-    "longitude": 80.695713,
-    "height": 22,
+    "latitude": 16.4851902,
+    "longitude": 80.695283,
+    "height": 20,
     "floors": 5,
-    "description": "Comfortable on-campus residential towers for male students, complete with Wi-Fi, study halls, recreation spaces, hygienic mess facility, and round-the-clock biometric security.",
+    "description": "Spacious five-story residential hall accommodating male engineering students, complete with high-speed Wi-Fi, modern study halls, recreation spaces, hygienic dining hall, and 24/7 biometric security.",
     "departments": [
       "Chief Warden's Office",
       "Hostel Welfare Board"
     ],
     "facilities": [
-      "Air-Conditioned & Non-AC Rooms",
-      "24/7 High Speed Fiber Wi-Fi",
-      "Dedicated Dining Hall & RO Drinking Water",
-      "Indoor Games Lounge",
-      "Emergency First-Aid Post"
+      "600-Capacity Resident Rooms",
+      "Central Steam-Operated Dining Mess",
+      "Silent Study Reading Rooms",
+      "Biometric Access & 24/7 Security Desk",
+      "RO Drinking Water Purification Plant"
+    ],
+    "footprint": [
+      [
+        80.6952882,
+        16.4855037
+      ],
+      [
+        80.6953503,
+        16.4855014
+      ],
+      [
+        80.6953235,
+        16.4848468
+      ],
+      [
+        80.6952614,
+        16.4848492
+      ],
+      [
+        80.6952708,
+        16.4850793
+      ],
+      [
+        80.6952429,
+        16.4850804
+      ],
+      [
+        80.6952468,
+        16.4851743
+      ],
+      [
+        80.6952746,
+        16.4851733
+      ],
+      [
+        80.6952882,
+        16.4855037
+      ]
+    ],
+    "color": "#64748B"
+  },
+  {
+    "id": "old-boys-hostel-1",
+    "name": "Old Boys Residency Block 1",
+    "code": "B-HOSTEL-BLK1",
+    "category": "hostel",
+    "latitude": 16.4853796,
+    "longitude": 80.6956768,
+    "height": 12,
+    "floors": 3,
+    "description": "Three-story traditional hostel block offering triple-occupancy student rooms, quiet study corridors, indoor sports amenities, and resident laundry facilities.",
+    "departments": [
+      "Boys Hostel Welfare Board"
+    ],
+    "facilities": [
+      "Triple-Occupancy Student Rooms",
+      "Table Tennis & Indoor Recreation Room",
+      "Resident Caretaker Office",
+      "Solar Water Heating System"
     ],
     "footprint": [
       [
@@ -1310,29 +1834,70 @@ export const CAMPUS_BUILDINGS: Building[] = [
         16.485528
       ]
     ],
-    "color": "#06B6D4",
-    "operatingHours": "24 Hours (Gate curfew: 08:30 PM)",
-    "contact": "+91 866 2582381 | boyshostel@sahe.ac.in",
-    "imageUrl": "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=1000&q=80"
+    "color": "#94A3B8"
+  },
+  {
+    "id": "old-boys-hostel-2",
+    "name": "Old Boys Residency Block 2",
+    "code": "B-HOSTEL-BLK2",
+    "category": "hostel",
+    "latitude": 16.4846829,
+    "longitude": 80.6952902,
+    "height": 12,
+    "floors": 3,
+    "description": "Residential block for senior students and research scholars, featuring quiet study alcoves, uninterrupted power backup, and landscaped courtyard views.",
+    "departments": [
+      "Boys Hostel Welfare Board"
+    ],
+    "facilities": [
+      "Double-Occupancy Scholar Rooms",
+      "High-Speed LAN Study Terminals",
+      "Common Television & Recreation Lounge",
+      "Water Treatment Station"
+    ],
+    "footprint": [
+      [
+        80.695253,
+        16.4847309
+      ],
+      [
+        80.6953497,
+        16.484728
+      ],
+      [
+        80.695346,
+        16.484611
+      ],
+      [
+        80.6952493,
+        16.4846138
+      ],
+      [
+        80.695253,
+        16.4847309
+      ]
+    ],
+    "color": "#94A3B8"
   },
   {
     "id": "girls-hostel-complex",
-    "name": "Aditya Women's Residency & Hostel",
-    "code": "HSTL-G",
+    "name": "Aditya Girls Hostels (Ganga & Yamuna Wings)",
+    "code": "G-HOSTEL-MAIN",
     "category": "hostel",
-    "latitude": 16.484003,
-    "longitude": 80.695196,
-    "height": 22,
-    "floors": 5,
-    "description": "Safe, serene residential accommodations for female students with lush garden courtyards, study lounges, 24/7 CCTV surveillance, female security wardens, and gym.",
+    "latitude": 16.4839837,
+    "longitude": 80.6951689,
+    "height": 16,
+    "floors": 4,
+    "description": "Safe, serene residential accommodations for female students with lush garden courtyards, study lounges, 24/7 CCTV surveillance, female security wardens, and dedicated dining halls.",
     "departments": [
       "Women's Hostel Management Board"
     ],
     "facilities": [
-      "Ensuite Bathrooms & AC Options",
-      "Private Library & Reading Room",
-      "Dining Hall with Nutritionist Curated Menus",
-      "Visitor's Lounge & Counseling Cell"
+      "Ensuite Bathrooms & Air-Conditioned Options",
+      "Spacious Dining Mess & Pure RO Water Station",
+      "Reading Library & Computing Lab",
+      "Indoor Badminton Court & Gym",
+      "24/7 Female Guard & CCTV Surveillance"
     ],
     "footprint": [
       [
@@ -1364,64 +1929,246 @@ export const CAMPUS_BUILDINGS: Building[] = [
         16.4841395
       ]
     ],
-    "color": "#F43F5E",
-    "operatingHours": "24 Hours (Gate curfew: 07:30 PM)",
-    "contact": "+91 866 2582382 | girlshostel@sahe.ac.in",
-    "imageUrl": "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1000&q=80"
+    "color": "#EC4899"
   },
   {
-    "id": "health-center",
-    "name": "University Health & Medical Center",
-    "code": "MED-CTR",
-    "category": "medical",
-    "latitude": 16.482809,
-    "longitude": 80.693648,
-    "height": 8,
-    "floors": 2,
-    "description": "Fully staffed healthcare clinic offering outpatient consultations, routine wellness screenings, emergency trauma stabilization, pharmacy, and an on-call 24/7 ambulance.",
+    "id": "girls-hostel-krishna",
+    "name": "Aditya Girls Hostel (Krishna Wing)",
+    "code": "G-HOSTEL-KRISHNA",
+    "category": "hostel",
+    "latitude": 16.4834179,
+    "longitude": 80.6950283,
+    "height": 16,
+    "floors": 4,
+    "description": "Modern expansion wing of Aditya Women's Residency, offering deluxe rooms, private study balconies, automated laundry machines, and round-the-clock medical care assistance.",
     "departments": [
-      "Campus Medical Services Directorate"
+      "Women's Hostel Management Board"
     ],
     "facilities": [
-      "Physician & Nursing Consultation Chambers",
-      "6-Bed Observation & Daycare Ward",
-      "Essential Medicines Dispensary",
-      "24/7 Dedicated Campus Ambulance Service"
+      "Air-Conditioned Deluxe Rooms",
+      "Private Study Balconies",
+      "Automated Laundry Stations",
+      "On-Call Medical Attendant Room",
+      "Biometric Turnstile Entry Gate"
     ],
     "footprint": [
       [
-        80.6935596,
-        16.4828809
+        80.6949925,
+        16.4833954
       ],
       [
-        80.6937633,
-        16.4828175
+        80.695024,
+        16.4834732
       ],
       [
-        80.6937361,
-        16.4827369
+        80.695082,
+        16.4834516
       ],
       [
-        80.6935323,
-        16.4828003
+        80.6950505,
+        16.4833738
       ],
       [
-        80.6935596,
-        16.4828809
+        80.6949925,
+        16.4833954
       ]
     ],
-    "color": "#EF4444",
-    "operatingHours": "24 Hours (Emergency) | OPD: 09:00 AM - 05:00 PM",
-    "contact": "+91 866 2582390 | health@sahe.ac.in",
-    "imageUrl": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1000&q=80"
+    "color": "#F472B6"
+  },
+  {
+    "id": "staff-quarters",
+    "name": "Faculty & Staff Residential Quarters",
+    "code": "STAFF-QTRS",
+    "category": "hostel",
+    "latitude": 16.4846538,
+    "longitude": 80.6957268,
+    "height": 12,
+    "floors": 3,
+    "description": "Serene residential apartments for university faculty, department heads, and senior administrative staff with manicured gardens and parking.",
+    "departments": [
+      "University Residential Housing Directorate"
+    ],
+    "facilities": [
+      "2BHK & 3BHK Faculty Apartments",
+      "Children's Play Park & Walkways",
+      "Senior Faculty Guest Suites",
+      "Dedicated Resident Car Parking"
+    ],
+    "footprint": [
+      [
+        80.6954786,
+        16.484619
+      ],
+      [
+        80.6954861,
+        16.4847408
+      ],
+      [
+        80.696099,
+        16.4847061
+      ],
+      [
+        80.6960915,
+        16.4845843
+      ],
+      [
+        80.6954786,
+        16.484619
+      ]
+    ],
+    "color": "#64748B"
+  },
+  {
+    "id": "students-centre-guest-house",
+    "name": "Students Centre & University Guest House",
+    "code": "GUEST-HOUSE",
+    "category": "amenity",
+    "latitude": 16.4858886,
+    "longitude": 80.6920983,
+    "height": 9,
+    "floors": 2,
+    "description": "Hospitality and student activities center housing air-conditioned guest suites for visiting professors and recruiters, alumni lounge, and student club offices.",
+    "departments": [
+      "Student Affairs Directorate",
+      "University Guest Hospitality Office",
+      "Alumni Association Secretariat"
+    ],
+    "facilities": [
+      "VIP Deluxe Guest Suites (8 Rooms)",
+      "Student Club Meeting Chambers",
+      "Visiting Professor Lounge",
+      "Alumni Relations Office"
+    ],
+    "footprint": [
+      [
+        80.6918704,
+        16.4860041
+      ],
+      [
+        80.6918624,
+        16.4857496
+      ],
+      [
+        80.6921876,
+        16.4857402
+      ],
+      [
+        80.6921865,
+        16.4857071
+      ],
+      [
+        80.6923058,
+        16.4857036
+      ],
+      [
+        80.6923114,
+        16.4858759
+      ],
+      [
+        80.6921999,
+        16.4858791
+      ],
+      [
+        80.692201,
+        16.4859125
+      ],
+      [
+        80.6921621,
+        16.4859136
+      ],
+      [
+        80.6921631,
+        16.4859458
+      ],
+      [
+        80.6920896,
+        16.4859479
+      ],
+      [
+        80.6920903,
+        16.4859709
+      ],
+      [
+        80.6919863,
+        16.4859739
+      ],
+      [
+        80.6919872,
+        16.4860007
+      ],
+      [
+        80.6918704,
+        16.4860041
+      ]
+    ],
+    "color": "#38BDF8"
+  },
+  {
+    "id": "power-house-substation",
+    "name": "Campus Power Substation & Generator Station",
+    "code": "POWER-HOUSE",
+    "category": "amenity",
+    "latitude": 16.4863811,
+    "longitude": 80.6930734,
+    "height": 6,
+    "floors": 1,
+    "description": "Critical power infrastructure housing the campus 11kV electrical transformer substation, 1000 kVA silent diesel generators, and automated power synchronization switchgear.",
+    "departments": [
+      "Electrical Maintenance & Utilities Division"
+    ],
+    "facilities": [
+      "11kV Electric Substation Transformers",
+      "1000 kVA Silent Backup Diesel Generators",
+      "Automated Power Transfer Switchgear",
+      "High Voltage Safety Control Room"
+    ],
+    "footprint": [
+      [
+        80.6928735,
+        16.4865544
+      ],
+      [
+        80.6928689,
+        16.4863949
+      ],
+      [
+        80.693283,
+        16.486384
+      ],
+      [
+        80.6932812,
+        16.4863223
+      ],
+      [
+        80.6928672,
+        16.4863332
+      ],
+      [
+        80.6928628,
+        16.4861797
+      ],
+      [
+        80.6933697,
+        16.4861663
+      ],
+      [
+        80.6933805,
+        16.4865409
+      ],
+      [
+        80.6928735,
+        16.4865544
+      ]
+    ],
+    "color": "#475569"
   },
   {
     "id": "main-entrance-portal",
     "name": "SAHE University Grand Entrance Arch & Security",
     "code": "GATE-1",
     "category": "entrance",
-    "latitude": 16.481751,
-    "longitude": 80.691194,
+    "latitude": 16.4817463,
+    "longitude": 80.6911879,
     "height": 7,
     "floors": 1,
     "description": "Primary university ceremonial gateway on VR Siddhartha College Road off Bandar Road, featuring automated boom barriers, visitor registration kiosks, security command desk, and bus turnaround bays.",
@@ -1430,9 +2177,9 @@ export const CAMPUS_BUILDINGS: Building[] = [
     ],
     "facilities": [
       "Visitor Passes & Vehicle Entry Verification",
-      "Security CCTV Command Room",
-      "RFID Student & Staff Card Sensors",
-      "Covered Pedestrian Turnstiles"
+      "Automated Boom Barriers & CCTV Number Plate Capture",
+      "24/7 Security Guard Control Post",
+      "Bus Turnaround & Drop-Off Boulevard"
     ],
     "footprint": [
       [
@@ -1456,71 +2203,195 @@ export const CAMPUS_BUILDINGS: Building[] = [
         16.4817269
       ]
     ],
-    "color": "#10B981",
-    "operatingHours": "24 Hours",
-    "contact": "+91 866 2582300 | security@sahe.ac.in",
-    "imageUrl": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1000&q=80"
+    "color": "#059669"
+  },
+  {
+    "id": "sbi-ncc-bank-block",
+    "name": "State Bank of India & NCC Officers Complex",
+    "code": "SBI-NCC",
+    "category": "amenity",
+    "latitude": 16.4818094,
+    "longitude": 80.6909734,
+    "height": 9,
+    "floors": 2,
+    "description": "Campus banking and defence cadet building accommodating a full-service State Bank of India branch, 24/7 ATMs, and the 1(A) EME NCC Company Headquarters.",
+    "departments": [
+      "State Bank of India - VRSEC Kanuru Branch",
+      "NCC 1(A) EME Cadet Directorate"
+    ],
+    "facilities": [
+      "SBI Full-Service Banking Counters",
+      "Dual 24/7 Cash Deposit & Withdrawal ATMs",
+      "NCC Cadet Quartermaster Store",
+      "Parade Training Briefing Hall"
+    ],
+    "footprint": [
+      [
+        80.6909564,
+        16.481831
+      ],
+      [
+        80.6910059,
+        16.4818242
+      ],
+      [
+        80.6909989,
+        16.481777
+      ],
+      [
+        80.6909494,
+        16.4817838
+      ],
+      [
+        80.6909564,
+        16.481831
+      ]
+    ],
+    "color": "#2563EB"
   },
   {
     "id": "parking-plaza",
-    "name": "Multi-Zone Vehicle Parking Facility",
+    "name": "Two-Wheeler Vehicle Parking Shed 1 (West Stand)",
     "code": "PARK-A",
     "category": "parking",
-    "latitude": 16.482538,
-    "longitude": 80.691939,
-    "height": 4,
+    "latitude": 16.4819231,
+    "longitude": 80.6909304,
+    "height": 4.5,
     "floors": 1,
-    "description": "Designated solar-canopied parking zone for faculty four-wheelers, student two-wheelers, electric vehicle charging spots, and college bus fleet bays.",
+    "description": "Covered solar-canopied parking zone dedicated to student two-wheelers, with CCTV security, marked lanes, and helmet storage lockers.",
     "departments": [
       "Estate & Transport Management Office"
     ],
     "facilities": [
-      "400 Two-Wheeler Covered Slots",
-      "120 Four-Wheeler Solar Roof Shelters",
-      "4 Dual-Gun EV Fast Charging Stations",
-      "Designated University Bus Terminal"
+      "350 Two-Wheeler Covered Slots",
+      "Solar Photovoltaic Rooftop Array",
+      "Security Surveillance Cameras",
+      "Marked Fire Hydrant Lanes"
     ],
     "footprint": [
       [
-        80.6918384,
-        16.4827577
+        80.6909179,
+        16.4819462
       ],
       [
-        80.6921524,
-        16.4826465
+        80.6909376,
+        16.4819421
       ],
       [
-        80.6920396,
-        16.4823539
+        80.6909321,
+        16.481918
       ],
       [
-        80.6919575,
-        16.482383
+        80.6909523,
+        16.4819138
       ],
       [
-        80.6919325,
-        16.4823183
+        80.6909476,
+        16.4818933
       ],
       [
-        80.6918412,
-        16.4823507
+        80.6909077,
+        16.4819018
       ],
       [
-        80.6918661,
-        16.4824154
-      ],
-      [
-        80.6917257,
-        16.4824652
-      ],
-      [
-        80.6918384,
-        16.4827577
+        80.6909179,
+        16.4819462
       ]
     ],
-    "color": "#64748B",
-    "operatingHours": "06:30 AM - 09:30 PM",
-    "contact": "+91 866 2582302 | transport@sahe.ac.in",
-    "imageUrl": "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1000&q=80"
+    "color": "#475569"
+  },
+  {
+    "id": "bike-stand-2",
+    "name": "Two-Wheeler Vehicle Parking Shed 2 (East Stand)",
+    "code": "PARK-B",
+    "category": "parking",
+    "latitude": 16.4818968,
+    "longitude": 80.6910206,
+    "height": 4.5,
+    "floors": 1,
+    "description": "Secondary covered vehicle parking facility for staff and student motorbikes, situated conveniently near the campus entrance security gate.",
+    "departments": [
+      "Estate & Transport Management Office"
+    ],
+    "facilities": [
+      "300 Two-Wheeler Covered Slots",
+      "EV Slow Charging Outlets",
+      "All-Weather Steel Truss Canopy"
+    ],
+    "footprint": [
+      [
+        80.6909775,
+        16.48192
+      ],
+      [
+        80.6910932,
+        16.4818908
+      ],
+      [
+        80.6910853,
+        16.4818619
+      ],
+      [
+        80.6909695,
+        16.4818911
+      ],
+      [
+        80.6909775,
+        16.48192
+      ]
+    ],
+    "color": "#475569"
+  },
+  {
+    "id": "health-center",
+    "name": "University Health & Medical Center",
+    "code": "MED-CTR",
+    "category": "medical",
+    "latitude": 16.482809,
+    "longitude": 80.693648,
+    "height": 8,
+    "floors": 2,
+    "description": "Fully staffed healthcare clinic offering outpatient consultations, routine wellness screenings, emergency trauma stabilization, pharmacy, and an on-call 24/7 ambulance.",
+    "departments": [
+      "Campus Medical Services Directorate"
+    ],
+    "facilities": [
+      "Physician & Nursing Consultation Chambers",
+      "Emergency 4-Bed Observation Ward",
+      "Subsidized Campus Pharmacy",
+      "24/7 Critical Ambulance Standby Bay",
+      "Diagnostic Pathological Sample Lab"
+    ],
+    "footprint": [
+      [
+        80.69345,
+        16.48292
+      ],
+      [
+        80.69385,
+        16.48292
+      ],
+      [
+        80.69385,
+        16.4827
+      ],
+      [
+        80.69345,
+        16.4827
+      ],
+      [
+        80.69345,
+        16.48292
+      ]
+    ],
+    "color": "#EF4444"
   }
 ];
+
+// Backward compatibility helper
+export function getBuildingById(id: string): Building | undefined {
+  if (id === 'admin-central-library') {
+    return CAMPUS_BUILDINGS.find(b => b.id === 'admin-block');
+  }
+  return CAMPUS_BUILDINGS.find(b => b.id === id);
+}

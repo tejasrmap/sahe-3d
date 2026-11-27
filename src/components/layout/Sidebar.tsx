@@ -99,9 +99,11 @@ export const Sidebar: React.FC<SidebarProps> = ({
   // Filter buildings for explore section
   const filteredBuildings = CAMPUS_BUILDINGS.filter((b) => {
     if (exploreFilter === 'all') return true;
-    if (exploreFilter === 'academic') return b.category === 'academic';
+    if (exploreFilter === 'academic') {
+      return ['academic', 'laboratory', 'library', 'administration', 'auditorium'].includes(b.category);
+    }
     if (exploreFilter === 'amenities') {
-      return ['cafeteria', 'sports', 'medical', 'parking'].includes(b.category);
+      return ['cafeteria', 'sports', 'medical', 'parking', 'entrance', 'amenity'].includes(b.category);
     }
     if (exploreFilter === 'hostel') return b.category === 'hostel';
     if (exploreFilter === 'saved') return favoriteIds.includes(b.id);

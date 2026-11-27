@@ -17,6 +17,7 @@ export type POICategory =
   | 'administration'
   | 'library'
   | 'laboratory'
+  | 'auditorium'
   | 'hostel'
   | 'food'
   | 'sports'
