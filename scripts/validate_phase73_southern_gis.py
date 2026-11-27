@@ -563,23 +563,62 @@ try:
 except Exception as e:
     record_test("TEST_12_BOUNDARY_CONTAINMENT", "Application Campus Boundary Dynamic Containment", "FAIL", str(e))
 
-# TEST 13: 3D Structure Semantics
+# TEST 13: 3D Structure Semantics and Model Ground-Contact Datums
 try:
-    # Verify classifications in building dataset
     gate_b = next(b for b in buildings if b['id'] == 'main-entrance-portal')
     p1_b = next(b for b in buildings if b['id'] == 'parking-plaza')
     p2_b = next(b for b in buildings if b['id'] == 'bike-stand-2')
     sbi_b = next(b for b in buildings if b['id'] == 'sbi-ncc-bank-block')
 
+    with open('src/components/buildings/MainGatePortal.tsx', encoding='utf-8') as source_file:
+        gate_source = source_file.read()
+    with open('src/components/buildings/ParkingCanopy.tsx', encoding='utf-8') as source_file:
+        canopy_source = source_file.read()
+    with open('src/components/map/BuildingLayer.tsx', encoding='utf-8') as source_file:
+        layer_source = source_file.read()
+
     assert gate_b.get('classification') == 'covered_canopy' or gate_b.get('category') == 'entrance'
+    assert abs(float(gate_b.get('height', 0)) - 6.5) <= 0.05
     assert p1_b.get('classification') == 'covered_canopy'
     assert p2_b.get('classification') == 'covered_canopy'
+    assert abs(float(p1_b.get('height', 0)) - 3.8) <= 0.05
+    assert abs(float(p2_b.get('height', 0)) - 3.8) <= 0.05
     assert sbi_b.get('classification') == 'independent_building'
 
-    record_test("TEST_13_3D_SEMANTICS", "3D Structure Architectural Semantics", "PASS",
-                "Gate classified as entrance portal arch, parking structures classified as covered_canopy, SBI classified as independent_building.")
+    gate_requirements = [
+        'ACCESS_ROAD_BEARING_DEGREES = 20.2',
+        'GATE_SPAN_METERS = 12.0',
+        'GATE_DEPTH_METERS = 4.0',
+        'PYLON_WIDTH_METERS = 2.16',
+        'CLEAR_VEHICLE_HEIGHT_METERS = 4.8',
+        'TOTAL_GATE_HEIGHT_METERS = 6.5',
+        'westPylonPositions',
+        'eastPylonPositions',
+        'lintelPositions',
+        'signPanelPositions'
+    ]
+    missing_gate = [token for token in gate_requirements if token not in gate_source]
+    assert not missing_gate, f"Dedicated gate portal geometry missing requirements: {missing_gate}"
+
+    canopy_requirements = [
+        'CANOPY_ROOF_TOP_METERS = 3.8',
+        'CANOPY_ROOF_THICKNESS_METERS = 0.4',
+        'CANOPY_GROUND_BASE_METERS = 0',
+        'COLUMN_STATIONS = [0.08, 0.36, 0.64, 0.92]',
+        'COLUMN_LENGTH',
+        'COLUMN_CENTER_HEIGHT',
+        'extrudedHeight: ROOF_TOP'
+    ]
+    missing_canopy = [token for token in canopy_requirements if token not in canopy_source]
+    assert not missing_canopy, f"Parking canopy support/roof geometry missing requirements: {missing_canopy}"
+    assert canopy_source.count('columns.push({') == 2, "Expected front/rear column anchors per station (8 columns total)"
+    assert "building.id === 'main-entrance-portal'" in layer_source
+    assert "building.classification === 'covered_canopy'" in layer_source
+
+    record_test("TEST_13_3D_SEMANTICS", "Gate Portal, Canopy Structure and Ground-Contact Datums", "PASS",
+                "Gate model uses a 12m road-perpendicular span, 7.68m clear opening, 4.8m vehicle clearance and 6.5m top. Canopies use 3.8m roof tops, 0.4m slabs and eight 0m-to-roof support columns per canopy. These are model datums, not a terrain survey.")
 except Exception as e:
-    record_test("TEST_13_3D_SEMANTICS", "3D Structure Architectural Semantics", "FAIL", str(e))
+    record_test("TEST_13_3D_SEMANTICS", "Gate Portal, Canopy Structure and Ground-Contact Datums", "FAIL", str(e))
 
 # TEST 14: Source Confidence Validation
 try:
