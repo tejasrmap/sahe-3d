@@ -29,7 +29,19 @@ async function runPhase4Audit() {
   const browser = await puppeteer.launch({
     headless: 'new',
     executablePath: chromePath,
-    args: ['--no-sandbox', '--disable-setuid-sandbox', '--enable-webgl', '--ignore-gpu-blocklist'],
+    // CI runners may not expose a physical GPU. Use Chromium's SwiftShader
+    // software WebGL implementation so Cesium can initialize deterministically.
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--enable-webgl',
+      '--ignore-gpu-blocklist',
+      '--use-gl=angle',
+      '--use-angle=swiftshader',
+      '--enable-unsafe-swiftshader',
+      '--disable-gpu-sandbox',
+      '--disable-dev-shm-usage',
+    ],
   });
 
   try {
