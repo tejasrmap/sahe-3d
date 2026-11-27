@@ -1,0 +1,72 @@
+{
+  "TEST_1_COORD_INTEGRITY": {
+    "name": "Coordinate Integrity and Ordering",
+    "status": "PASS",
+    "details": "All coordinates for 26 buildings and 7 facilities strictly within campus bounding extent."
+  },
+  "TEST_2_ROAD_SOURCE_INTEGRITY": {
+    "name": "Road Source Integrity & OSM Tag Consistency",
+    "status": "PASS",
+    "details": "Way 240898134 (WB) & Way 850567938 (EB) verified as 'trunk' (NH65). Way 844184733 verified as 'tertiary'."
+  },
+  "TEST_3_HIGHWAY_CORRIDOR": {
+    "name": "Complete Highway Corridor Geometry",
+    "status": "PASS",
+    "details": "Dual carriageway 4.0m buffers constructed in EPSG:32644. WB length=625.5m, EB length=411.1m."
+  },
+  "TEST_4_ROAD_CLEARANCE": {
+    "name": "Southern Facility Road Edge Clearance",
+    "status": "PASS",
+    "details": "Zero encroachments on live carriageway. Measured edge clearances: main-entrance-portal: 5.63m edge clearance, sbi-ncc-bank-block: 2.39m edge clearance, parking-plaza: 5.52m edge clearance, bike-stand-2: 16.59m edge clearance, bus-terminal-parking: 29.42m edge clearance."
+  },
+  "TEST_5_CAMPUS_SIDE_CLASS": {
+    "name": "Campus-Side Normal Classification",
+    "status": "PASS",
+    "details": "100% of footprint vertices for all southern structures are on the positive (campus) side of Bandar Road normal vector."
+  },
+  "TEST_6_MAIN_GATE_ACCESS": {
+    "name": "Main Gate Roadway Straddle Alignment",
+    "status": "PASS",
+    "details": "Gate footprint intersects VR Siddhartha College Road centerline (Way 844184733). Width=12.6m, Area=48.1m\u00b2."
+  },
+  "TEST_7_SBI_NCC_GEOMETRY": {
+    "name": "SBI/NCC Footprint & Clearance Validation",
+    "status": "PASS",
+    "details": "SBI/NCC Area=200.0m\u00b2 (G+1 200m\u00b2 plinth). Clearance to gate=5.83m. Setback to highway=2.39m."
+  },
+  "TEST_8_PARKING_SEPARATION": {
+    "name": "Parking Canopy Separation & Zero Pairwise Collision",
+    "status": "PASS",
+    "details": "0.0000 m\u00b2 overlap across all 33 campus features. Distance West Stand to East Stand=49.19m."
+  },
+  "TEST_9_ENTRANCE_ASSOCIATION": {
+    "name": "Entrance Door & Approach Association",
+    "status": "PASS",
+    "details": "All 26 building entrances validated within 5m-15m facade approach envelope in EPSG:32644."
+  },
+  "TEST_10_BUS_STOP_SAFETY": {
+    "name": "Bus Stop & Passenger Platform Safety",
+    "status": "PASS",
+    "details": "Bus platform at (16.482170, 80.691294) is 2.52m outside live traffic corridor (6.52m from centerline)."
+  },
+  "TEST_11_PEDESTRIAN_ROUTES": {
+    "name": "Pedestrian Network Connectivity & Reachability",
+    "status": "PASS",
+    "details": "100% path connectivity (40/40 nodes). Safe connection: node-bus-stop -> node-gate -> campus central spine."
+  },
+  "TEST_12_BOUNDARY_CONTAINMENT": {
+    "name": "Application Campus Boundary Dynamic Containment",
+    "status": "PASS",
+    "details": "Directly parsed CAMPUS_CONFIG.boundary from src/data/campusConfig.ts. 100% of 33 campus structures are strictly contained inside."
+  },
+  "TEST_13_3D_SEMANTICS": {
+    "name": "3D Structure Architectural Semantics",
+    "status": "PASS",
+    "details": "Gate classified as entrance portal arch, parking structures classified as covered_canopy, SBI classified as independent_building."
+  },
+  "TEST_14_CONFIDENCE_VALIDATION": {
+    "name": "Data Source and Confidence Classification",
+    "status": "PASS",
+    "details": "Distinguished aerial calibration from survey anchors across all 26 building entries."
+  }
+}

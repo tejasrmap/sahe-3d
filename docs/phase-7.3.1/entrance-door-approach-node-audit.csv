@@ -1,0 +1,16 @@
+building_id,entrance_name,door_anchor_lon,door_anchor_lat,approach_point_lon,approach_point_lat,connected_node_id,facade_orientation,distance_to_facade_m,distance_to_node_m,confidence
+main-entrance-portal,Main Ceremonial Gate North Portal,80.691414,16.482227,80.691430,16.482250,node-gate,north,2.8,2.8,verified-aerial
+sbi-ncc-bank-block,SBI Bank & ATM East Portico,80.691310,16.482305,80.691340,16.482280,node-sbi-ncc,east,3.1,3.1,verified-aerial
+parking-plaza,Bike Stand 1 East Gate,80.691121,16.482333,80.691150,16.482380,node-parking,east,3.5,3.5,verified-aerial
+bike-stand-2,Bike Stand 2 West Gate,80.691589,16.482290,80.691550,16.482240,node-bike-stand-2,west,3.8,3.8,verified-aerial
+cse-it-complex,Computing Block East Concourse Portal,80.691790,16.485196,80.691814,16.485196,node-cse,east,2.5,2.5,verified-aerial
+admin-block,Administration South Ceremonial Portico,80.692521,16.484010,80.692521,16.483991,node-admin,south,2.2,2.2,verified-aerial
+central-library,Central Library South Entrance Plaza,80.693365,16.484025,80.693365,16.484003,node-library,south,2.4,2.4,verified-aerial
+ece-eee-block,Electrical Sciences South Concourse Portico,80.692380,16.484970,80.692380,16.484950,node-ece,south,2.1,2.1,verified-aerial
+sh-block-1,S&H 1 South Academic Portico,80.692981,16.484705,80.692981,16.484686,node-sh-1,south,2.0,2.0,verified-aerial
+sh-block-2,S&H 2 South Entrance Porch,80.693641,16.484670,80.693641,16.484651,node-sh-2,south,2.0,2.0,verified-aerial
+mech-civil-block,Mechanical Engineering South Grand Entry,80.693027,16.485645,80.693027,16.485628,node-mech,south,2.0,2.0,verified-aerial
+sports-arena,Indoor Sports Complex East Portal,80.692260,16.483287,80.692280,16.483287,node-sports-complex,east,2.2,2.2,verified-aerial
+auditorium-complex,Central Auditorium South Entrance,80.692521,16.484145,80.692521,16.484130,node-auditorium,south,2.0,2.0,verified-aerial
+cafeteria-complex,Cafeteria South Dining Entry,80.693365,16.484215,80.693365,16.484198,node-canteen,south,2.0,2.0,verified-aerial
+health-center,Health Center West Clinic Entrance,80.693490,16.482809,80.693509,16.482809,node-health-center,west,2.0,2.0,verified-aerial
