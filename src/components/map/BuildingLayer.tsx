@@ -73,7 +73,13 @@ export const BuildingLayer: React.FC<BuildingLayerProps> = ({
         }
         const positions = Cesium.Cartesian3.fromDegreesArray(flatFootprint);
 
-        const baseColor = Cesium.Color.fromCssColorString(building.color || '#3B82F6');
+        const isCanopy = building.classification === 'covered_canopy';
+        const isEntrance = building.category === 'entrance' || building.id === 'main-entrance-portal';
+        const baseHeight = isCanopy ? Math.max(0, building.height - 0.5) : isEntrance ? Math.max(0, building.height - 1.8) : 0;
+
+        const baseColor = isCanopy
+          ? Cesium.Color.fromCssColorString('#475569')
+          : Cesium.Color.fromCssColorString(building.color || '#3B82F6');
         let fillColor: Cesium.Color;
         let outlineColor: Cesium.Color;
 
@@ -84,7 +90,7 @@ export const BuildingLayer: React.FC<BuildingLayerProps> = ({
           fillColor = baseColor.brighten(0.3, new Cesium.Color()).withAlpha(0.8);
           outlineColor = Cesium.Color.fromCssColorString('#10B981');
         } else {
-          fillColor = baseColor.withAlpha(0.7);
+          fillColor = baseColor.withAlpha(isCanopy ? 0.8 : 0.7);
           outlineColor = Cesium.Color.WHITE.withAlpha(0.4);
         }
 
@@ -101,7 +107,7 @@ export const BuildingLayer: React.FC<BuildingLayerProps> = ({
               polygon={{
                 hierarchy: new Cesium.PolygonHierarchy(positions),
                 extrudedHeight: building.height,
-                height: 0,
+                height: baseHeight,
                 material: fillColor,
                 outline: true,
                 outlineColor: outlineColor,

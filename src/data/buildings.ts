@@ -2194,9 +2194,9 @@ export const CAMPUS_BUILDINGS: Building[] = [
     "name": "SAHE University Grand Entrance Arch & Security",
     "code": "GATE-1",
     "category": "entrance",
-    "latitude": 16.4817463,
-    "longitude": 80.6911879,
-    "height": 7,
+    "latitude": 16.48221,
+    "longitude": 80.69142,
+    "height": 7.5,
     "floors": 1,
     "description": "Primary university ceremonial gateway on VR Siddhartha College Road off Bandar Road, featuring automated boom barriers, visitor registration kiosks, security command desk, and bus turnaround bays.",
     "departments": [
@@ -2210,24 +2210,24 @@ export const CAMPUS_BUILDINGS: Building[] = [
     ],
     "footprint": [
       [
-        80.6911654,
-        16.4817269
+        80.6913738,
+        16.4821742
       ],
       [
-        80.691176,
-        16.4817834
+        80.6914792,
+        16.4822118
       ],
       [
-        80.6912217,
-        16.4817755
+        80.6914662,
+        16.4822458
       ],
       [
-        80.6912111,
-        16.481719
+        80.6913608,
+        16.4822082
       ],
       [
-        80.6911654,
-        16.4817269
+        80.6913738,
+        16.4821742
       ]
     ],
     "color": "#059669",
@@ -2238,8 +2238,8 @@ export const CAMPUS_BUILDINGS: Building[] = [
     "name": "State Bank of India & NCC Officers Complex",
     "code": "SBI-NCC",
     "category": "amenity",
-    "latitude": 16.4818094,
-    "longitude": 80.6909734,
+    "latitude": 16.48228,
+    "longitude": 80.69124,
     "height": 9,
     "floors": 2,
     "description": "Campus banking and defence cadet building accommodating a full-service State Bank of India branch, 24/7 ATMs, and the 1(A) EME NCC Company Headquarters.",
@@ -2255,24 +2255,24 @@ export const CAMPUS_BUILDINGS: Building[] = [
     ],
     "footprint": [
       [
-        80.6909564,
-        16.481831
+        80.69119,
+        16.4822019
       ],
       [
-        80.6910059,
-        16.4818242
+        80.6913306,
+        16.4822521
       ],
       [
-        80.6909989,
-        16.481777
+        80.69129,
+        16.4823581
       ],
       [
-        80.6909494,
-        16.4817838
+        80.6911494,
+        16.4823079
       ],
       [
-        80.6909564,
-        16.481831
+        80.69119,
+        16.4822019
       ]
     ],
     "color": "#2563EB",
@@ -2283,8 +2283,8 @@ export const CAMPUS_BUILDINGS: Building[] = [
     "name": "Two-Wheeler Vehicle Parking Shed 1 (West Stand)",
     "code": "PARK-A",
     "category": "parking",
-    "latitude": 16.4819231,
-    "longitude": 80.6909304,
+    "latitude": 16.48238,
+    "longitude": 80.69096,
     "height": 4.5,
     "floors": 1,
     "description": "Covered solar-canopied parking zone dedicated to student two-wheelers, with CCTV security, marked lanes, and helmet storage lockers.",
@@ -2299,32 +2299,24 @@ export const CAMPUS_BUILDINGS: Building[] = [
     ],
     "footprint": [
       [
-        80.6909179,
-        16.4819462
+        80.6907782,
+        16.4823625
       ],
       [
-        80.6909376,
-        16.4819421
+        80.6911009,
+        16.4822678
       ],
       [
-        80.6909321,
-        16.481918
+        80.6911418,
+        16.4823975
       ],
       [
-        80.6909523,
-        16.4819138
+        80.6908191,
+        16.4824922
       ],
       [
-        80.6909476,
-        16.4818933
-      ],
-      [
-        80.6909077,
-        16.4819018
-      ],
-      [
-        80.6909179,
-        16.4819462
+        80.6907782,
+        16.4823625
       ]
     ],
     "color": "#475569",
@@ -2335,8 +2327,8 @@ export const CAMPUS_BUILDINGS: Building[] = [
     "name": "Two-Wheeler Vehicle Parking Shed 2 (East Stand)",
     "code": "PARK-B",
     "category": "parking",
-    "latitude": 16.4818968,
-    "longitude": 80.6910206,
+    "latitude": 16.48224,
+    "longitude": 80.69176,
     "height": 4.5,
     "floors": 1,
     "description": "Secondary covered vehicle parking facility for staff and student motorbikes, situated conveniently near the campus entrance security gate.",
@@ -2350,24 +2342,24 @@ export const CAMPUS_BUILDINGS: Building[] = [
     ],
     "footprint": [
       [
-        80.6909775,
-        16.48192
+        80.6915665,
+        16.4822165
       ],
       [
-        80.6910932,
-        16.4818908
+        80.6919071,
+        16.4821165
       ],
       [
-        80.6910853,
-        16.4818619
+        80.6919535,
+        16.4822635
       ],
       [
-        80.6909695,
-        16.4818911
+        80.6916129,
+        16.4823635
       ],
       [
-        80.6909775,
-        16.48192
+        80.6915665,
+        16.4822165
       ]
     ],
     "color": "#475569",

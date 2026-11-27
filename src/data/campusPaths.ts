@@ -5,55 +5,62 @@ export const CAMPUS_PATH_NETWORK: CampusPathNetwork = {
   {
     "id": "node-gate",
     "name": "Main Entrance Gate Portal",
-    "latitude": 16.48182,
-    "longitude": 80.691188,
+    "latitude": 16.48225,
+    "longitude": 80.69143,
     "category": "entrance",
     "buildingId": "main-entrance-portal"
   },
   {
     "id": "node-sbi-ncc",
     "name": "SBI Bank & NCC Entrance",
-    "latitude": 16.4819,
-    "longitude": 80.690973,
+    "latitude": 16.48228,
+    "longitude": 80.69134,
     "category": "amenity",
     "buildingId": "sbi-ncc-bank-block"
   },
   {
     "id": "node-parking",
     "name": "Bike Parking Stand 1",
-    "latitude": 16.48202,
-    "longitude": 80.69093,
+    "latitude": 16.48238,
+    "longitude": 80.69115,
     "category": "amenity",
     "buildingId": "parking-plaza"
   },
   {
     "id": "node-bike-stand-2",
     "name": "Bike Parking Stand 2",
-    "latitude": 16.482,
-    "longitude": 80.691021,
+    "latitude": 16.48224,
+    "longitude": 80.69155,
     "category": "amenity",
     "buildingId": "bike-stand-2"
   },
   {
     "id": "node-bus-terminal",
     "name": "University Bus Terminal Concourse",
-    "latitude": 16.482,
-    "longitude": 80.69175,
+    "latitude": 16.48228,
+    "longitude": 80.69195,
     "category": "amenity"
   },
   {
     "id": "node-junc-south",
     "name": "South Boulevard Junction",
-    "latitude": 16.4821,
-    "longitude": 80.6914,
+    "latitude": 16.48255,
+    "longitude": 80.69155,
     "category": "junction"
   },
   {
     "id": "node-junc-south-road",
     "name": "South Perimeter Road Junction",
-    "latitude": 16.4822,
+    "latitude": 16.48255,
     "longitude": 80.6925,
     "category": "junction"
+  },
+  {
+    "id": "node-bus-stop",
+    "name": "Bandar Road Campus Bus Stop",
+    "latitude": 16.48208,
+    "longitude": 80.69138,
+    "category": "entrance"
   },
   {
     "id": "node-health-center",
@@ -304,44 +311,58 @@ export const CAMPUS_PATH_NETWORK: CampusPathNetwork = {
 ],
   edges: [
   {
+    "from": "node-bus-stop",
+    "to": "node-gate",
+    "distanceMeters": 19.5,
+    "accessible": true,
+    "name": "Bandar Road Entrance Approach"
+  },
+  {
     "from": "node-gate",
     "to": "node-junc-south",
-    "distanceMeters": 38.5,
+    "distanceMeters": 35.5,
     "accessible": true,
     "name": "Ceremonial Entrance Avenue"
   },
   {
     "from": "node-gate",
     "to": "node-sbi-ncc",
-    "distanceMeters": 24.6,
+    "distanceMeters": 10.2,
     "accessible": true,
     "name": "Banking Walkway"
   },
   {
     "from": "node-sbi-ncc",
     "to": "node-parking",
-    "distanceMeters": 14.1,
+    "distanceMeters": 23.1,
     "accessible": true,
     "name": "West Stand Walkway"
   },
   {
     "from": "node-gate",
     "to": "node-bike-stand-2",
-    "distanceMeters": 26.8,
+    "distanceMeters": 12.8,
     "accessible": true,
     "name": "East Stand Walkway"
   },
   {
     "from": "node-junc-south",
     "to": "node-bus-terminal",
-    "distanceMeters": 39.0,
+    "distanceMeters": 52.5,
     "accessible": true,
     "name": "Transit Boulevard"
   },
   {
+    "from": "node-bike-stand-2",
+    "to": "node-bus-terminal",
+    "distanceMeters": 42.9,
+    "accessible": true,
+    "name": "Transit Walkway East"
+  },
+  {
     "from": "node-junc-south",
     "to": "node-junc-south-road",
-    "distanceMeters": 118.0,
+    "distanceMeters": 101.5,
     "accessible": true,
     "name": "South Boulevard"
   },

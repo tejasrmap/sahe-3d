@@ -2,11 +2,23 @@ import { POI } from '../types/campus';
 
 export const CAMPUS_POIS: POI[] = [
   {
+    "id": "poi-bus-stop",
+    "name": "Bandar Road Campus Bus Stop & Drop-off",
+    "category": "entrance",
+    "latitude": 16.48208,
+    "longitude": 80.69138,
+    "description": "Public bus drop-off shelter on Vijayawada - Machilipatnam Highway (Bandar Road) at the main SAHE campus access portal.",
+    "icon": "Bus",
+    "buildingId": "main-entrance-portal",
+    "operatingHours": "24/7",
+    "imageUrl": "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=600&q=80"
+  },
+  {
     "id": "poi-main-gate",
     "name": "Main Campus Gate & Security Desk",
     "category": "entrance",
-    "latitude": 16.48182,
-    "longitude": 80.691188,
+    "latitude": 16.48221,
+    "longitude": 80.69142,
     "description": "Primary university ceremonial gateway with visitor passes, digital RFID checkpoints, and 24/7 security control.",
     "icon": "DoorOpen",
     "buildingId": "main-entrance-portal",
@@ -17,8 +29,8 @@ export const CAMPUS_POIS: POI[] = [
     "id": "poi-sbi-atm",
     "name": "State Bank of India & 24/7 ATM",
     "category": "atm",
-    "latitude": 16.4819,
-    "longitude": 80.690973,
+    "latitude": 16.48228,
+    "longitude": 80.69124,
     "description": "Full-service on-campus SBI branch with dual cash deposit and withdrawal ATM machines.",
     "icon": "CreditCard",
     "buildingId": "sbi-ncc-bank-block",

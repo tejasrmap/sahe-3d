@@ -1,0 +1,11 @@
+structure_id,structure_name,osm_source_ref,official_side_of_highway,pre_rectification_status,post_rectification_status,setback_distance_meters,containment_verification
+main-entrance-portal,SAHE University Grand Entrance Arch & Security,Way 844184733 (Driveway),North,Displaced South (Canal Bank),Corrected North (Campus Entrance),9.44,Pass (Inside Campus Boundary)
+sbi-ncc-bank-block,State Bank of India & NCC Officers Complex,Survey Anchor West,North,Displaced South (Canal Bank),Corrected North (Campus Grounds),6.46,Pass (Inside Campus Boundary)
+parking-plaza,Two-Wheeler Vehicle Parking Shed 1 (West Stand),Survey Anchor West,North,Displaced South (Canal Bank),Corrected North (Campus Grounds),10.87,Pass (Inside Campus Boundary)
+bike-stand-2,Two-Wheeler Vehicle Parking Shed 2 (East Stand),Survey Anchor East,North,Displaced South (Canal Bank),Corrected North (Campus Grounds),20.17,Pass (Inside Campus Boundary)
+bus-terminal-parking,University Bus Terminal & Transit Bay,Survey Aerial Transit Bay,North,Pierced Highway Carriageway,Corrected North (Transit Bay),32.41,Pass (Inside Campus Boundary)
+cricket-athletic-oval,Main University Athletic Field & Cricket Oval,Way 240898134 Setback,North,Correct North,Correct North,18.50,Pass (Inside Campus Boundary)
+sports-arena,Indoor Badminton & Gymnasium Arena,Survey Campus Grid,North,Correct North,Correct North,125.00,Pass (Inside Campus Boundary)
+admin-block,Dr. VR Central Administrative Block,Survey Campus Grid,North,Correct North,Correct North,190.00,Pass (Inside Campus Boundary)
+central-library,Central Knowledge Resource & Library Complex,Survey Campus Grid,North,Correct North,Correct North,192.00,Pass (Inside Campus Boundary)
+health-center,University Health & Medical Center,Survey Campus East Grid,North,Correct North,Correct North,85.00,Pass (Inside Campus Boundary)

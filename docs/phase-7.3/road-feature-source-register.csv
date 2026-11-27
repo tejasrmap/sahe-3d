@@ -1,0 +1,10 @@
+osm_way_id,osm_name,feature_type,cardinal_side,min_latitude,max_latitude,min_longitude,max_longitude,verification_role
+240898134,Bandar Road (NH65 Westbound),primary,Highway Carriageway,16.4819337,16.4821343,80.6912115,80.6918339,Campus Southern External Boundary
+850567938,Bandar Road (NH65 Eastbound),primary,Highway Carriageway,16.4819322,16.4820223,80.6910418,80.6913471,Opposite Highway Carriageway
+374385976,Bandar Canal Bridge North,secondary,Canal Bridge,16.4816311,16.4819322,80.6912759,80.6913471,Canal Crossing Approach
+374385977,Bandar Canal Bridge South,secondary,Canal Bridge,16.4811149,16.4816311,80.6911781,80.6912759,Canal Bridge
+844184733,VR Siddartha Engineering College Road,tertiary,Campus Access Road,16.4820800,16.4830150,80.6913815,80.6915200,Campus Ceremonial Spine Avenue
+1320824131,Residential Canal Bank Structure,building,South of Highway,16.4817500,16.4818500,80.6911200,80.6912500,Erroneous Baseline Gate Feature
+1320824137,Commercial Canal Bank Strip,building,South of Highway,16.4818000,16.4819000,80.6909000,80.6910500,Erroneous Baseline SBI Feature
+1320824558,Canal Bank Residential Shed 1,building,South of Highway,16.4819000,16.4820000,80.6908500,80.6909800,Erroneous Baseline Bike Stand 1
+1320824559,Canal Bank Residential Shed 2,building,South of Highway,16.4818800,16.4819800,80.6909600,80.6910800,Erroneous Baseline Bike Stand 2

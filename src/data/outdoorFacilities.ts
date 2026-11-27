@@ -186,36 +186,36 @@ export const OUTDOOR_FACILITIES: OutdoorFacility[] = [
     "name": "University Bus Terminal & Transit Bay",
     "code": "BUS-TERM",
     "category": "parking",
-    "latitude": 16.481975,
-    "longitude": 80.69175,
-    "areaSqm": 3150,
-    "description": "Spacious paved bus depot accommodating 35+ Siddhartha Academy college transit buses with covered pedestrian walkways and lighting.",
+    "latitude": 16.48228,
+    "longitude": 80.69218,
+    "areaSqm": 1260,
+    "description": "Spacious paved bus depot accommodating Siddhartha Academy college transit buses with covered pedestrian walkways and direct access to the campus loop road.",
     "facilities": [
-      "35 Heavy Vehicle Bus Bays",
+      "Heavy Vehicle Bus Bays",
       "Covered Passenger Boarding Concourse",
       "Transit Security Dispatch Post",
       "Vehicle Wash & Maintenance Pit"
     ],
     "coordinates": [
       [
-        80.6913,
-        16.4818
+        80.6919402,
+        16.4822181
       ],
       [
-        80.6922,
-        16.4818
+        80.6923435,
+        16.4820997
       ],
       [
-        80.6922,
-        16.48215
+        80.6924198,
+        16.4823419
       ],
       [
-        80.6913,
-        16.48215
+        80.6920165,
+        16.4824603
       ],
       [
-        80.6913,
-        16.4818
+        80.6919402,
+        16.4822181
       ]
     ],
     "color": "#0284C7",

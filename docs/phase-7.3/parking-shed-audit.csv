@@ -1,0 +1,4 @@
+parking_facility_id,parking_name,classification,width_m,length_m,footprint_area_sqm,height_m,roof_type,vehicle_capacity,highway_clearance_m,baseline_side,rectified_side
+parking-plaza,Two-Wheeler Vehicle Parking Shed 1 (West Stand),covered_canopy,15.0,36.0,540.0,3.8,Corrugated Steel Tensile,450 Motorcycles,10.87,South of Highway (Canal Bank),North of Highway (Campus Grounds)
+bike-stand-2,Two-Wheeler Vehicle Parking Shed 2 (East Stand),covered_canopy,17.0,38.0,646.0,3.8,Corrugated Steel Tensile,520 Motorcycles,20.17,South of Highway (Canal Bank),North of Highway (Campus Grounds)
+bus-terminal-parking,University Bus Terminal & Transit Bay,outdoor_facility,28.0,45.0,1260.0,0.0,Paved Surface Depot,35 College Transit Buses,32.41,Overlapping Highway Carriageway,North of Highway (Campus Grounds)

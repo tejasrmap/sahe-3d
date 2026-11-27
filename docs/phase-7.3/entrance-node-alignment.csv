@@ -1,0 +1,6 @@
+building_id,entrance_name,connected_node_id,entrance_lat,entrance_lon,distance_to_facade_m,facade_orientation,status
+main-entrance-portal,Main Ceremonial Gate North Portal,node-gate,16.482250,80.691430,1.5,north,PASS - Aligned with Access Road Centerline
+sbi-ncc-bank-block,SBI Bank & ATM East Portico,node-sbi-ncc,16.482280,80.691340,1.8,east,PASS - Aligned with Bank Walkway
+parking-plaza,Bike Stand 1 East Gate,node-parking,16.482380,80.691150,2.0,east,PASS - Aligned with West Stand Walkway
+bike-stand-2,Bike Stand 2 West Gate,node-bike-stand-2,16.482240,80.691550,2.0,west,PASS - Aligned with East Stand Walkway
+node-bus-stop,Bandar Road Campus Bus Stop,node-bus-stop,16.482080,80.691380,0.0,north,PASS - Aligned with Highway Curb Access Apron
