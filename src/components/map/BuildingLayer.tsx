@@ -32,11 +32,11 @@ export const BuildingLayer: React.FC<BuildingLayerProps> = ({
   onSelectBuilding,
   onHoverBuilding,
 }) => {
-  if (!visible) return null;
-
   const enrichedBuildings = useMemo(() => {
     return getAllEnrichedBuildings();
   }, []);
+
+  if (!visible) return null;
 
   // ARCHITECTURAL DIGITAL TWIN MODE
   if (renderMode === 'architectural') {
