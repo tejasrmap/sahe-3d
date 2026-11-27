@@ -15,9 +15,20 @@ async function runPhase4Audit() {
   const screenshotsDir = path.join(__dirname, 'docs', 'screenshots');
   if (!fs.existsSync(screenshotsDir)) fs.mkdirSync(screenshotsDir, { recursive: true });
 
+  const defaultChromeWin = fs.existsSync('C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe')
+    ? 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
+    : 'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe';
+
+  const chromePath = process.env.CHROME_PATH ||
+    (process.platform === 'win32'
+      ? defaultChromeWin
+      : process.platform === 'darwin'
+      ? '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+      : '/usr/bin/google-chrome');
+
   const browser = await puppeteer.launch({
     headless: 'new',
-    executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+    executablePath: chromePath,
     args: ['--no-sandbox', '--disable-setuid-sandbox', '--enable-webgl', '--ignore-gpu-blocklist'],
   });
 
