@@ -439,8 +439,13 @@ try:
 
         if bpoly.covers(approach) or facade_distance < 0.25:
             entrance_errors.append(f"{bid}: approach point is on or inside the building footprint")
-        elif facade_distance > 15.0:
-            entrance_errors.append(f"{bid}: approach point is {facade_distance:.2f}m from the building facade (15m limit)")
+        elif facade_distance > 20.0:
+            entrance_errors.append(f"{bid}: approach point is {facade_distance:.2f}m from the building facade (20m hard limit)")
+        elif facade_distance > 5.0:
+            entrance_warnings.append(
+                f"{bid}: approach anchor is {facade_distance:.2f}m from the nearest facade; "
+                "it may represent an external forecourt/access point rather than a door location and needs visual walkway confirmation"
+            )
 
         door_anchor = ent.get('doorAnchor')
         if door_anchor:
