@@ -5,6 +5,8 @@ import { CAMPUS_BUILDINGS } from '../../data/buildings';
 import { getAllEnrichedBuildings } from '../../data/buildingArchitecture';
 import { Building } from '../../types/campus';
 import { ProceduralBuilding } from '../buildings/ProceduralBuilding';
+import { MainGatePortal } from '../buildings/MainGatePortal';
+import { ParkingCanopy } from '../buildings/ParkingCanopy';
 import { BuildingLOD } from '../../systems/architecture/buildingGenerator';
 
 export type MapRenderMode = 'geographic' | 'architectural';
@@ -44,6 +46,32 @@ export const BuildingLayer: React.FC<BuildingLayerProps> = ({
           const isSelected = selectedBuildingId === building.id;
           const isHovered = hoveredBuildingId === building.id;
 
+          if (building.id === 'main-entrance-portal') {
+            return (
+              <MainGatePortal
+                key={building.id}
+                building={building}
+                isSelected={isSelected}
+                isHovered={isHovered}
+                showLabels={showLabels}
+                onClick={() => onSelectBuilding(building)}
+              />
+            );
+          }
+
+          if (building.classification === 'covered_canopy') {
+            return (
+              <ParkingCanopy
+                key={building.id}
+                building={building}
+                isSelected={isSelected}
+                isHovered={isHovered}
+                showLabels={showLabels}
+                onClick={() => onSelectBuilding(building)}
+              />
+            );
+          }
+
           return (
             <ProceduralBuilding
               key={building.id}
@@ -60,12 +88,38 @@ export const BuildingLayer: React.FC<BuildingLayerProps> = ({
     );
   }
 
-  // GEOGRAPHIC SATELLITE MODE (Classic extruded geometry)
+  // GEOGRAPHIC SATELLITE MODE (Classic extruded geometry with specialized gate and canopy support)
   return (
     <>
       {CAMPUS_BUILDINGS.map((building) => {
         const isSelected = selectedBuildingId === building.id;
         const isHovered = hoveredBuildingId === building.id;
+
+        if (building.id === 'main-entrance-portal') {
+          return (
+            <MainGatePortal
+              key={building.id}
+              building={building}
+              isSelected={isSelected}
+              isHovered={isHovered}
+              showLabels={showLabels}
+              onClick={() => onSelectBuilding(building)}
+            />
+          );
+        }
+
+        if (building.classification === 'covered_canopy') {
+          return (
+            <ParkingCanopy
+              key={building.id}
+              building={building}
+              isSelected={isSelected}
+              isHovered={isHovered}
+              showLabels={showLabels}
+              onClick={() => onSelectBuilding(building)}
+            />
+          );
+        }
 
         const flatFootprint: number[] = [];
         for (const [lon, lat] of building.footprint) {
@@ -73,13 +127,7 @@ export const BuildingLayer: React.FC<BuildingLayerProps> = ({
         }
         const positions = Cesium.Cartesian3.fromDegreesArray(flatFootprint);
 
-        const isCanopy = building.classification === 'covered_canopy';
-        const isEntrance = building.category === 'entrance' || building.id === 'main-entrance-portal';
-        const baseHeight = isCanopy ? Math.max(0, building.height - 0.5) : isEntrance ? Math.max(0, building.height - 1.8) : 0;
-
-        const baseColor = isCanopy
-          ? Cesium.Color.fromCssColorString('#475569')
-          : Cesium.Color.fromCssColorString(building.color || '#3B82F6');
+        const baseColor = Cesium.Color.fromCssColorString(building.color || '#3B82F6');
         let fillColor: Cesium.Color;
         let outlineColor: Cesium.Color;
 
@@ -90,7 +138,7 @@ export const BuildingLayer: React.FC<BuildingLayerProps> = ({
           fillColor = baseColor.brighten(0.3, new Cesium.Color()).withAlpha(0.8);
           outlineColor = Cesium.Color.fromCssColorString('#10B981');
         } else {
-          fillColor = baseColor.withAlpha(isCanopy ? 0.8 : 0.7);
+          fillColor = baseColor.withAlpha(0.7);
           outlineColor = Cesium.Color.WHITE.withAlpha(0.4);
         }
 
@@ -107,7 +155,7 @@ export const BuildingLayer: React.FC<BuildingLayerProps> = ({
               polygon={{
                 hierarchy: new Cesium.PolygonHierarchy(positions),
                 extrudedHeight: building.height,
-                height: baseHeight,
+                height: 0,
                 material: fillColor,
                 outline: true,
                 outlineColor: outlineColor,
