@@ -57,9 +57,9 @@ export const CAMPUS_PATH_NETWORK: CampusPathNetwork = {
   },
   {
     "id": "node-bus-stop",
-    "name": "Bandar Road Campus Bus Stop",
-    "latitude": 16.48208,
-    "longitude": 80.69138,
+    "name": "Bandar Road Campus Bus Stop & Waiting Platform",
+    "latitude": 16.482170,
+    "longitude": 80.691294,
     "category": "entrance"
   },
   {
@@ -313,9 +313,9 @@ export const CAMPUS_PATH_NETWORK: CampusPathNetwork = {
   {
     "from": "node-bus-stop",
     "to": "node-gate",
-    "distanceMeters": 19.5,
+    "distanceMeters": 17.0,
     "accessible": true,
-    "name": "Bandar Road Entrance Approach"
+    "name": "Bandar Road Safe Sidewalk Apron"
   },
   {
     "from": "node-gate",
