@@ -86,3 +86,8 @@ Keep the feature branch unmerged until the updated validator, production test su
 ### Door-anchor facade snapping tolerance
 
 Physical door-anchor checks allow up to 0.75m of inward footprint offset to accommodate small digitization/generalization differences between a mapped roof polygon and an aerially inferred doorway. Anchors deeper than 0.75m inside a building footprint fail; anchors more than 2.0m from the footprint boundary are reported as warnings. This tolerance is a data-validation allowance, not a claim of surveyed door location.
+
+
+### Approach-anchor interpretation
+
+An entrance approach anchor is not necessarily a physical door coordinate. The validator now fails an approach point that lies inside/on the building footprint or is more than 20m from the nearest facade. An approach point 5–20m from the footprint is reported as a warning because it may represent an exterior forecourt or walkway approach; it requires visual confirmation of the connecting path. Door anchors are checked separately, with a 0.75m inward snapping tolerance for mapped-footprint generalization.
