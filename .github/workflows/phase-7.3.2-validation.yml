@@ -54,6 +54,20 @@ jobs:
       - name: Run Phase 7.3.2 GIS validator
         run: python scripts/validate_phase73_southern_gis.py
 
+      - name: Start Vite preview server for browser tests
+        run: |
+          npm run preview -- --host 127.0.0.1 --port 4173 --strictPort >/tmp/sahe-vite-preview.log 2>&1 &
+          echo $! >/tmp/sahe-vite-preview.pid
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:4173/ >/dev/null; then
+              echo "Vite preview is ready on port 4173"
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/sahe-vite-preview.log
+          exit 1
+
       - name: Run production and browser regression suite
         env:
           CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
