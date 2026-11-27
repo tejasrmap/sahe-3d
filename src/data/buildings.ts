@@ -2196,9 +2196,9 @@ export const CAMPUS_BUILDINGS: Building[] = [
     "category": "entrance",
     "latitude": 16.48221,
     "longitude": 80.69142,
-    "height": 7.5,
+    "height": 6.5,
     "floors": 1,
-    "description": "Primary university ceremonial gateway on VR Siddhartha College Road off Bandar Road, featuring automated boom barriers, visitor registration kiosks, security command desk, and bus turnaround bays.",
+    "description": "Primary university ceremonial gateway on VR Siddhartha College Road off Bandar Road. The 12m portal span is oriented perpendicular to the access-road bearing, with a 7.68m clear vehicle opening.",
     "departments": [
       "Campus Security & Surveillance Command"
     ],
@@ -2210,28 +2210,28 @@ export const CAMPUS_BUILDINGS: Building[] = [
     ],
     "footprint": [
       [
-        80.6913738,
-        16.4821742
+        80.691360769,
+        16.482211674
       ],
       [
-        80.6914792,
-        16.4822118
+        80.691466344,
+        16.482174372
       ],
       [
-        80.6914662,
-        16.4822458
+        80.691479231,
+        16.482208326
       ],
       [
-        80.6913608,
-        16.4822082
+        80.691373656,
+        16.482245628
       ],
       [
-        80.6913738,
-        16.4821742
+        80.691360769,
+        16.482211674
       ]
     ],
     "color": "#059669",
-    "classification": "independent_building"
+    "classification": "covered_canopy"
   },
   {
     "id": "sbi-ncc-bank-block",
