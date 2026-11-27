@@ -221,7 +221,7 @@ test('EPSG:32644 GIS validator completes without failed checks', () => {
   const python = process.env.PYTHON || (process.platform === 'win32' ? 'python' : 'python3');
   const output = execFileSync(python, ['scripts/validate_phase73_southern_gis.py'], { encoding: 'utf8' });
   assert.ok(output.includes('GIS_VALIDATION_STATUS: NO_FAILURES'), 'GIS validator reported failures');
-  const summary = output.match(/SUMMARY: ([^\\n]+)/);
+  const summary = output.match(/SUMMARY: ([^\r\n]+)/);
   if (summary && !summary[1].includes('0 WARNING')) {
     warnings.push(`GIS validator reports: ${summary[1]}`);
   }
