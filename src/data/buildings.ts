@@ -509,7 +509,8 @@ export const CAMPUS_BUILDINGS: Building[] = [
         16.4856126
       ]
     ],
-    "color": "#3B82F6"
+    "color": "#3B82F6",
+    "classification": "independent_building"
   },
   {
     "id": "admin-block",
@@ -581,7 +582,8 @@ export const CAMPUS_BUILDINGS: Building[] = [
         16.4842453
       ]
     ],
-    "color": "#6366F1"
+    "color": "#6366F1",
+    "classification": "independent_building"
   },
   {
     "id": "central-library",
@@ -648,7 +650,8 @@ export const CAMPUS_BUILDINGS: Building[] = [
         16.4843708
       ]
     ],
-    "color": "#06B6D4"
+    "color": "#06B6D4",
+    "classification": "independent_building"
   },
   {
     "id": "ece-eee-block",
@@ -887,7 +890,8 @@ export const CAMPUS_BUILDINGS: Building[] = [
         16.4856117
       ]
     ],
-    "color": "#F59E0B"
+    "color": "#F59E0B",
+    "classification": "independent_building"
   },
   {
     "id": "sh-block-1",
@@ -1006,7 +1010,8 @@ export const CAMPUS_BUILDINGS: Building[] = [
         16.4848839
       ]
     ],
-    "color": "#10B981"
+    "color": "#10B981",
+    "classification": "independent_building"
   },
   {
     "id": "sh-block-2",
@@ -1052,7 +1057,8 @@ export const CAMPUS_BUILDINGS: Building[] = [
         16.4848366
       ]
     ],
-    "color": "#14B8A6"
+    "color": "#14B8A6",
+    "classification": "independent_building"
   },
   {
     "id": "mech-civil-block",
@@ -1171,7 +1177,8 @@ export const CAMPUS_BUILDINGS: Building[] = [
         16.4857817
       ]
     ],
-    "color": "#EF4444"
+    "color": "#EF4444",
+    "classification": "independent_building"
   },
   {
     "id": "civil-engineering-block",
@@ -1370,7 +1377,8 @@ export const CAMPUS_BUILDINGS: Building[] = [
         16.4855545
       ]
     ],
-    "color": "#8B5CF6"
+    "color": "#8B5CF6",
+    "classification": "independent_building"
   },
   {
     "id": "mechanical-workshops",
@@ -1487,7 +1495,9 @@ export const CAMPUS_BUILDINGS: Building[] = [
         16.4861321
       ]
     ],
-    "color": "#F97316"
+    "color": "#F97316",
+    "classification": "annex",
+    "parentBuildingId": "mech-civil-block"
   },
   {
     "id": "siemens-tifac-centre",
@@ -1597,7 +1607,8 @@ export const CAMPUS_BUILDINGS: Building[] = [
         16.4861236
       ]
     ],
-    "color": "#EC4899"
+    "color": "#EC4899",
+    "classification": "independent_building"
   },
   {
     "id": "auditorium-complex",
@@ -1642,7 +1653,9 @@ export const CAMPUS_BUILDINGS: Building[] = [
         16.48392
       ]
     ],
-    "color": "#8B5CF6"
+    "color": "#8B5CF6",
+    "classification": "internal_facility",
+    "parentBuildingId": "cse-it-complex"
   },
   {
     "id": "cafeteria-complex",
@@ -1686,7 +1699,9 @@ export const CAMPUS_BUILDINGS: Building[] = [
         16.48392
       ]
     ],
-    "color": "#F59E0B"
+    "color": "#F59E0B",
+    "classification": "connected_wing",
+    "parentBuildingId": "central-library"
   },
   {
     "id": "sports-arena",
@@ -1730,7 +1745,8 @@ export const CAMPUS_BUILDINGS: Building[] = [
         16.4835109
       ]
     ],
-    "color": "#10B981"
+    "color": "#10B981",
+    "classification": "independent_building"
   },
   {
     "id": "boys-hostel-complex",
@@ -1791,7 +1807,8 @@ export const CAMPUS_BUILDINGS: Building[] = [
         16.4855037
       ]
     ],
-    "color": "#64748B"
+    "color": "#64748B",
+    "classification": "independent_building"
   },
   {
     "id": "old-boys-hostel-1",
@@ -1834,7 +1851,9 @@ export const CAMPUS_BUILDINGS: Building[] = [
         16.485528
       ]
     ],
-    "color": "#94A3B8"
+    "color": "#94A3B8",
+    "classification": "connected_wing",
+    "parentBuildingId": "boys-hostel-complex"
   },
   {
     "id": "old-boys-hostel-2",
@@ -1877,7 +1896,9 @@ export const CAMPUS_BUILDINGS: Building[] = [
         16.4847309
       ]
     ],
-    "color": "#94A3B8"
+    "color": "#94A3B8",
+    "classification": "annex",
+    "parentBuildingId": "boys-hostel-complex"
   },
   {
     "id": "girls-hostel-complex",
@@ -1929,15 +1950,16 @@ export const CAMPUS_BUILDINGS: Building[] = [
         16.4841395
       ]
     ],
-    "color": "#EC4899"
+    "color": "#EC4899",
+    "classification": "independent_building"
   },
   {
     "id": "girls-hostel-krishna",
     "name": "Aditya Girls Hostel (Krishna Wing)",
     "code": "G-HOSTEL-KRISHNA",
     "category": "hostel",
-    "latitude": 16.4834179,
-    "longitude": 80.6950283,
+    "latitude": 16.4834654,
+    "longitude": 80.6954365,
     "height": 16,
     "floors": 4,
     "description": "Modern expansion wing of Aditya Women's Residency, offering deluxe rooms, private study balconies, automated laundry machines, and round-the-clock medical care assistance.",
@@ -1953,27 +1975,29 @@ export const CAMPUS_BUILDINGS: Building[] = [
     ],
     "footprint": [
       [
-        80.6949925,
-        16.4833954
+        80.695415,
+        16.4835065
       ],
       [
-        80.695024,
-        16.4834732
+        80.6954925,
+        16.4834859
       ],
       [
-        80.695082,
-        16.4834516
+        80.6954687,
+        16.4834038
       ],
       [
-        80.6950505,
-        16.4833738
+        80.6953913,
+        16.4834244
       ],
       [
-        80.6949925,
-        16.4833954
+        80.695415,
+        16.4835065
       ]
     ],
-    "color": "#F472B6"
+    "color": "#F472B6",
+    "classification": "connected_wing",
+    "parentBuildingId": "girls-hostel-complex"
   },
   {
     "id": "staff-quarters",
@@ -2016,7 +2040,8 @@ export const CAMPUS_BUILDINGS: Building[] = [
         16.484619
       ]
     ],
-    "color": "#64748B"
+    "color": "#64748B",
+    "classification": "independent_building"
   },
   {
     "id": "students-centre-guest-house",
@@ -2101,7 +2126,8 @@ export const CAMPUS_BUILDINGS: Building[] = [
         16.4860041
       ]
     ],
-    "color": "#38BDF8"
+    "color": "#38BDF8",
+    "classification": "independent_building"
   },
   {
     "id": "power-house-substation",
@@ -2160,18 +2186,19 @@ export const CAMPUS_BUILDINGS: Building[] = [
         16.4865544
       ]
     ],
-    "color": "#475569"
+    "color": "#475569",
+    "classification": "independent_building"
   },
   {
     "id": "main-entrance-portal",
     "name": "SAHE University Grand Entrance Arch & Security",
     "code": "GATE-1",
     "category": "entrance",
-    "latitude": 16.4817463,
-    "longitude": 80.6911879,
-    "height": 7,
+    "latitude": 16.48221,
+    "longitude": 80.69142,
+    "height": 6.5,
     "floors": 1,
-    "description": "Primary university ceremonial gateway on VR Siddhartha College Road off Bandar Road, featuring automated boom barriers, visitor registration kiosks, security command desk, and bus turnaround bays.",
+    "description": "Primary university ceremonial gateway on VR Siddhartha College Road off Bandar Road. The 12m portal span is oriented perpendicular to the access-road bearing, with a 7.68m clear vehicle opening.",
     "departments": [
       "Campus Security & Surveillance Command"
     ],
@@ -2183,35 +2210,36 @@ export const CAMPUS_BUILDINGS: Building[] = [
     ],
     "footprint": [
       [
-        80.6911654,
-        16.4817269
+        80.691360769,
+        16.482211674
       ],
       [
-        80.691176,
-        16.4817834
+        80.691466344,
+        16.482174372
       ],
       [
-        80.6912217,
-        16.4817755
+        80.691479231,
+        16.482208326
       ],
       [
-        80.6912111,
-        16.481719
+        80.691373656,
+        16.482245628
       ],
       [
-        80.6911654,
-        16.4817269
+        80.691360769,
+        16.482211674
       ]
     ],
-    "color": "#059669"
+    "color": "#059669",
+    "classification": "covered_canopy"
   },
   {
     "id": "sbi-ncc-bank-block",
     "name": "State Bank of India & NCC Officers Complex",
     "code": "SBI-NCC",
     "category": "amenity",
-    "latitude": 16.4818094,
-    "longitude": 80.6909734,
+    "latitude": 16.48228,
+    "longitude": 80.69124,
     "height": 9,
     "floors": 2,
     "description": "Campus banking and defence cadet building accommodating a full-service State Bank of India branch, 24/7 ATMs, and the 1(A) EME NCC Company Headquarters.",
@@ -2227,36 +2255,37 @@ export const CAMPUS_BUILDINGS: Building[] = [
     ],
     "footprint": [
       [
-        80.6909564,
-        16.481831
+        80.69119,
+        16.4822019
       ],
       [
-        80.6910059,
-        16.4818242
+        80.6913306,
+        16.4822521
       ],
       [
-        80.6909989,
-        16.481777
+        80.69129,
+        16.4823581
       ],
       [
-        80.6909494,
-        16.4817838
+        80.6911494,
+        16.4823079
       ],
       [
-        80.6909564,
-        16.481831
+        80.69119,
+        16.4822019
       ]
     ],
-    "color": "#2563EB"
+    "color": "#2563EB",
+    "classification": "independent_building"
   },
   {
     "id": "parking-plaza",
     "name": "Two-Wheeler Vehicle Parking Shed 1 (West Stand)",
     "code": "PARK-A",
     "category": "parking",
-    "latitude": 16.4819231,
-    "longitude": 80.6909304,
-    "height": 4.5,
+    "latitude": 16.48238,
+    "longitude": 80.69096,
+    "height": 3.8,
     "floors": 1,
     "description": "Covered solar-canopied parking zone dedicated to student two-wheelers, with CCTV security, marked lanes, and helmet storage lockers.",
     "departments": [
@@ -2270,44 +2299,37 @@ export const CAMPUS_BUILDINGS: Building[] = [
     ],
     "footprint": [
       [
-        80.6909179,
-        16.4819462
+        80.6907782,
+        16.4823625
       ],
       [
-        80.6909376,
-        16.4819421
+        80.6911009,
+        16.4822678
       ],
       [
-        80.6909321,
-        16.481918
+        80.6911418,
+        16.4823975
       ],
       [
-        80.6909523,
-        16.4819138
+        80.6908191,
+        16.4824922
       ],
       [
-        80.6909476,
-        16.4818933
-      ],
-      [
-        80.6909077,
-        16.4819018
-      ],
-      [
-        80.6909179,
-        16.4819462
+        80.6907782,
+        16.4823625
       ]
     ],
-    "color": "#475569"
+    "color": "#475569",
+    "classification": "covered_canopy"
   },
   {
     "id": "bike-stand-2",
     "name": "Two-Wheeler Vehicle Parking Shed 2 (East Stand)",
     "code": "PARK-B",
     "category": "parking",
-    "latitude": 16.4818968,
-    "longitude": 80.6910206,
-    "height": 4.5,
+    "latitude": 16.48224,
+    "longitude": 80.69176,
+    "height": 3.8,
     "floors": 1,
     "description": "Secondary covered vehicle parking facility for staff and student motorbikes, situated conveniently near the campus entrance security gate.",
     "departments": [
@@ -2320,35 +2342,36 @@ export const CAMPUS_BUILDINGS: Building[] = [
     ],
     "footprint": [
       [
-        80.6909775,
-        16.48192
+        80.6915665,
+        16.4822165
       ],
       [
-        80.6910932,
-        16.4818908
+        80.6919071,
+        16.4821165
       ],
       [
-        80.6910853,
-        16.4818619
+        80.6919535,
+        16.4822635
       ],
       [
-        80.6909695,
-        16.4818911
+        80.6916129,
+        16.4823635
       ],
       [
-        80.6909775,
-        16.48192
+        80.6915665,
+        16.4822165
       ]
     ],
-    "color": "#475569"
+    "color": "#475569",
+    "classification": "covered_canopy"
   },
   {
     "id": "health-center",
     "name": "University Health & Medical Center",
     "code": "MED-CTR",
     "category": "medical",
-    "latitude": 16.482809,
-    "longitude": 80.693648,
+    "latitude": 16.4828233,
+    "longitude": 80.6936302,
     "height": 8,
     "floors": 2,
     "description": "Fully staffed healthcare clinic offering outpatient consultations, routine wellness screenings, emergency trauma stabilization, pharmacy, and an on-call 24/7 ambulance.",
@@ -2364,27 +2387,28 @@ export const CAMPUS_BUILDINGS: Building[] = [
     ],
     "footprint": [
       [
-        80.69345,
-        16.48292
+        80.6935596,
+        16.4828809
       ],
       [
-        80.69385,
-        16.48292
+        80.6937633,
+        16.4828175
       ],
       [
-        80.69385,
-        16.4827
+        80.6937361,
+        16.4827369
       ],
       [
-        80.69345,
-        16.4827
+        80.6935323,
+        16.4828003
       ],
       [
-        80.69345,
-        16.48292
+        80.6935596,
+        16.4828809
       ]
     ],
-    "color": "#EF4444"
+    "color": "#EF4444",
+    "classification": "independent_building"
   }
 ];
 

@@ -1,0 +1,7 @@
+way_id,name,ref,highway_class,direction,lanes,paved_half_width_m,buffer_width_m,surface,utm_length_m,role
+240898134,Vijayawada - Machilipatnam Road (Bandar Road),NH65,trunk,westbound,2,3.5,4.0,asphalt,625.5,Campus Southern Roadway Corridor
+850567938,Vijayawada - Machilipatnam Road (Bandar Road),NH65,trunk,eastbound,2,3.5,4.0,asphalt,411.1,Opposite Southern Roadway Corridor
+851442640,Vijayawada - Machilipatnam Road (Bandar Road),NH65,trunk,eastbound,2,3.5,4.0,asphalt,380.2,Opposite Southwest Roadway Corridor
+844184733,VR Siddartha Engineering College Road,-,tertiary,bidirectional,2,3.0,3.5,asphalt,312.4,Main Campus Access Ceremonial Avenue
+374385976,Bandar Canal Bridge North,-,secondary,bidirectional,2,4.0,4.5,concrete,84.2,Canal Bridge Crossing Access
+374385977,Bandar Canal Bridge South,-,secondary,bidirectional,2,4.0,4.5,concrete,86.0,Canal Bridge Southern Approach

@@ -1,0 +1,8 @@
+route_id,origin_node,destination_node,route_type,highway_crossing_status,surface,distance_m,accessibility_verdict
+route-bus-to-gate,node-bus-stop,node-gate,paved sidewalk,None (Remains North of Live Highway Carriageway),interlocking paver,17.0,PASS - Wheelchair Accessible
+route-gate-to-sbi,node-gate,node-sbi-ncc,paved sidewalk,Internal Campus Concourse,concrete paver,10.2,PASS - Wheelchair Accessible
+route-sbi-to-parking1,node-sbi-ncc,node-parking,pedestrian walkway,Internal Campus Walkway,concrete,23.1,PASS - Accessible
+route-gate-to-parking2,node-gate,node-bike-stand-2,pedestrian walkway,Internal Campus Walkway,concrete,12.8,PASS - Accessible
+route-gate-to-spine,node-gate,node-junc-south,avenue sidewalk,Ceremonial Boulevard,asphalt / paver,35.5,PASS - Wheelchair Accessible
+route-junc-to-terminal,node-junc-south,node-bus-terminal,transit walkway,Campus Loop Connector,asphalt,52.5,PASS - Accessible
+route-crossing-canal,node-canal-bridge,node-bus-stop,external bridge approach,Signalized Footway at Kanuru Junction,concrete sidewalk,85.0,PASS - External Pedestrian Bridge

@@ -25,6 +25,11 @@ export const ProceduralBuilding: React.FC<ProceduralBuildingProps> = ({
     return getOrGenerateProceduralBuilding(building, lod);
   }, [building, lod]);
 
+  const isCanopy = building.classification === 'covered_canopy';
+  const isEntrance = building.category === 'entrance' || building.id === 'main-entrance-portal';
+
+  const baseHeight = isCanopy ? Math.max(0, building.height - 0.5) : isEntrance ? Math.max(0, building.height - 1.8) : 0;
+
   // Highlight styling
   const activeWallColor = useMemo(() => {
     if (isSelected) {
@@ -33,8 +38,11 @@ export const ProceduralBuilding: React.FC<ProceduralBuildingProps> = ({
     if (isHovered) {
       return model.baseColor.brighten(0.3, new Cesium.Color()).withAlpha(0.95);
     }
+    if (isCanopy) {
+      return Cesium.Color.fromCssColorString('#475569').withAlpha(0.85);
+    }
     return model.baseColor.withAlpha(0.9);
-  }, [isSelected, isHovered, model.baseColor]);
+  }, [isSelected, isHovered, isCanopy, model.baseColor]);
 
   const activeOutlineColor = useMemo(() => {
     if (isSelected) return Cesium.Color.WHITE;
@@ -44,13 +52,13 @@ export const ProceduralBuilding: React.FC<ProceduralBuildingProps> = ({
 
   return (
     <>
-      {/* 1. Base Extruded Building Shell */}
+      {/* 1. Base Extruded Building Shell / Elevated Canopy / Entrance Arch */}
       <Entity
         name={building.name}
         polygon={{
           hierarchy: new Cesium.PolygonHierarchy(model.basePositions),
           extrudedHeight: building.height,
-          height: 0,
+          height: baseHeight,
           material: activeWallColor,
           outline: true,
           outlineColor: activeOutlineColor,
@@ -62,6 +70,8 @@ export const ProceduralBuilding: React.FC<ProceduralBuildingProps> = ({
 
       {/* 2. LOD 2 & LOD 3: Multi-tier Floor Bands (Windows & Spandrels) */}
       {lod !== 'LOD1' &&
+        !isCanopy &&
+        !isEntrance &&
         model.floorBands.map((band, idx) => (
           <Entity
             key={`${building.id}-band-${idx}`}
@@ -82,6 +92,7 @@ export const ProceduralBuilding: React.FC<ProceduralBuildingProps> = ({
 
       {/* 3. LOD 2 & LOD 3: Roof Structures (Parapet, Penthouse, HVAC, Solar Panels) */}
       {lod !== 'LOD1' &&
+        !isCanopy &&
         model.roofElements.map((roofEl) => (
           <Entity
             key={roofEl.id}
@@ -103,7 +114,7 @@ export const ProceduralBuilding: React.FC<ProceduralBuildingProps> = ({
         ))}
 
       {/* 4. LOD 3: Entrance Portico & Canopies */}
-      {lod === 'LOD3' && model.entrancePortico && (
+      {lod === 'LOD3' && !isCanopy && !isEntrance && model.entrancePortico && (
         <Entity
           key={model.entrancePortico.id}
           name={`${building.name} - Entrance Portico`}

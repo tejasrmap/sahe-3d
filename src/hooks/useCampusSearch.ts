@@ -153,6 +153,21 @@ export function useCampusSearch() {
       }
     }
 
+    // Sort by relevance: title prefix match > type === 'building' > substring match
+    items.sort((a, b) => {
+      const aTitle = a.title.toLowerCase();
+      const bTitle = b.title.toLowerCase();
+      const aStarts = aTitle.startsWith(q) || (a.badge && a.badge.toLowerCase().startsWith(q));
+      const bStarts = bTitle.startsWith(q) || (b.badge && b.badge.toLowerCase().startsWith(q));
+      if (aStarts && !bStarts) return -1;
+      if (!aStarts && bStarts) return 1;
+
+      if (a.type === 'building' && b.type !== 'building') return -1;
+      if (a.type !== 'building' && b.type === 'building') return 1;
+
+      return 0;
+    });
+
     return items.slice(0, 15);
   }, [query]);
 

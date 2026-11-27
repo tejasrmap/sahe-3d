@@ -5,6 +5,8 @@ import { CAMPUS_BUILDINGS } from '../../data/buildings';
 import { getAllEnrichedBuildings } from '../../data/buildingArchitecture';
 import { Building } from '../../types/campus';
 import { ProceduralBuilding } from '../buildings/ProceduralBuilding';
+import { MainGatePortal } from '../buildings/MainGatePortal';
+import { ParkingCanopy } from '../buildings/ParkingCanopy';
 import { BuildingLOD } from '../../systems/architecture/buildingGenerator';
 
 export type MapRenderMode = 'geographic' | 'architectural';
@@ -30,11 +32,11 @@ export const BuildingLayer: React.FC<BuildingLayerProps> = ({
   onSelectBuilding,
   onHoverBuilding,
 }) => {
-  if (!visible) return null;
-
   const enrichedBuildings = useMemo(() => {
     return getAllEnrichedBuildings();
   }, []);
+
+  if (!visible) return null;
 
   // ARCHITECTURAL DIGITAL TWIN MODE
   if (renderMode === 'architectural') {
@@ -43,6 +45,32 @@ export const BuildingLayer: React.FC<BuildingLayerProps> = ({
         {enrichedBuildings.map((building) => {
           const isSelected = selectedBuildingId === building.id;
           const isHovered = hoveredBuildingId === building.id;
+
+          if (building.id === 'main-entrance-portal') {
+            return (
+              <MainGatePortal
+                key={building.id}
+                building={building}
+                isSelected={isSelected}
+                isHovered={isHovered}
+                showLabels={showLabels}
+                onClick={() => onSelectBuilding(building)}
+              />
+            );
+          }
+
+          if (building.classification === 'covered_canopy') {
+            return (
+              <ParkingCanopy
+                key={building.id}
+                building={building}
+                isSelected={isSelected}
+                isHovered={isHovered}
+                showLabels={showLabels}
+                onClick={() => onSelectBuilding(building)}
+              />
+            );
+          }
 
           return (
             <ProceduralBuilding
@@ -60,12 +88,38 @@ export const BuildingLayer: React.FC<BuildingLayerProps> = ({
     );
   }
 
-  // GEOGRAPHIC SATELLITE MODE (Classic extruded geometry)
+  // GEOGRAPHIC SATELLITE MODE (Classic extruded geometry with specialized gate and canopy support)
   return (
     <>
       {CAMPUS_BUILDINGS.map((building) => {
         const isSelected = selectedBuildingId === building.id;
         const isHovered = hoveredBuildingId === building.id;
+
+        if (building.id === 'main-entrance-portal') {
+          return (
+            <MainGatePortal
+              key={building.id}
+              building={building}
+              isSelected={isSelected}
+              isHovered={isHovered}
+              showLabels={showLabels}
+              onClick={() => onSelectBuilding(building)}
+            />
+          );
+        }
+
+        if (building.classification === 'covered_canopy') {
+          return (
+            <ParkingCanopy
+              key={building.id}
+              building={building}
+              isSelected={isSelected}
+              isHovered={isHovered}
+              showLabels={showLabels}
+              onClick={() => onSelectBuilding(building)}
+            />
+          );
+        }
 
         const flatFootprint: number[] = [];
         for (const [lon, lat] of building.footprint) {

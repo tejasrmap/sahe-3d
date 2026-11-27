@@ -1,0 +1,8 @@
+facility_id,facility_name,category,verification_status,optional_overlay,area_sqm,source_type,alignment_notes
+cricket-athletic-oval,Main University Athletic Field & Cricket Oval,athletic,verified-survey,False,23170.0,OSM Survey Way 1418702314,Zero collisions with any campus building
+basketball-court-complex,University Floodlit Basketball Courts,court,verified-aerial,False,1033.09,High-Res Orthophoto Calibration,Zero collisions with any campus building
+volleyball-courts,Campus Volleyball & Throwball Arena,court,verified-aerial,False,1033.09,High-Res Orthophoto Calibration,Zero collisions with any campus building
+open-air-auditorium,Open-Air Amphitheatre & Cultural Stage,amenity,verified-aerial,False,760.35,High-Res Orthophoto Calibration,Zero collisions with any campus building
+bus-terminal-parking,University Bus Terminal & Transit Bay,parking,verified-aerial,False,3719.17,High-Res Orthophoto Calibration,Zero collisions with any campus building
+greenhouse-polyhouse,Agricultural Greenhouse & Botanical Polyhouse,research,approximate-inferred,True,944.53,High-Res Orthophoto Calibration,Zero collisions with any campus building
+vermicompost-plant,Solid Waste Management & Vermicompost Plant,utility,approximate-inferred,True,944.53,High-Res Orthophoto Calibration,Zero collisions with any campus building

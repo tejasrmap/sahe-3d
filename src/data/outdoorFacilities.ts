@@ -1,3 +1,5 @@
+export type OutdoorVerificationStatus = 'verified-survey' | 'verified-aerial' | 'approximate-inferred';
+
 export interface OutdoorFacility {
   id: string;
   name: string;
@@ -10,6 +12,8 @@ export interface OutdoorFacility {
   facilities: string[];
   coordinates: [number, number][]; // [lon, lat]
   color: string;
+  verificationStatus: OutdoorVerificationStatus;
+  optionalOverlay: boolean;
 }
 
 export const OUTDOOR_FACILITIES: OutdoorFacility[] = [
@@ -51,17 +55,19 @@ export const OUTDOOR_FACILITIES: OutdoorFacility[] = [
         16.4842784
       ]
     ],
-    "color": "#16A34A"
+    "color": "#16A34A",
+    "verificationStatus": "verified-survey",
+    "optionalOverlay": false
   },
   {
     "id": "basketball-court-complex",
     "name": "University Floodlit Basketball Courts",
     "code": "COURT-BB",
     "category": "court",
-    "latitude": 16.483725,
-    "longitude": 80.69255,
-    "areaSqm": 1050,
-    "description": "Dual regulation outdoor synthetic acrylic basketball courts with LED floodlighting, chainlink fencing, and team bench shelters.",
+    "latitude": 16.483275,
+    "longitude": 80.692525,
+    "areaSqm": 980,
+    "description": "Dual regulation outdoor synthetic acrylic basketball courts with LED floodlighting, chainlink fencing, and team bench shelters, located adjacent to the Indoor Sports Arena.",
     "facilities": [
       "2 Synthetic Acrylic Competition Courts",
       "Shatterproof Glass Backboards",
@@ -71,35 +77,37 @@ export const OUTDOOR_FACILITIES: OutdoorFacility[] = [
     "coordinates": [
       [
         80.69235,
-        16.4836
+        16.48315
       ],
       [
-        80.69275,
-        16.4836
+        80.6927,
+        16.48315
       ],
       [
-        80.69275,
-        16.48385
-      ],
-      [
-        80.69235,
-        16.48385
+        80.6927,
+        16.4834
       ],
       [
         80.69235,
-        16.4836
+        16.4834
+      ],
+      [
+        80.69235,
+        16.48315
       ]
     ],
-    "color": "#2563EB"
+    "color": "#2563EB",
+    "verificationStatus": "verified-aerial",
+    "optionalOverlay": false
   },
   {
     "id": "volleyball-courts",
     "name": "Campus Volleyball & Throwball Arena",
     "code": "COURT-VB",
     "category": "court",
-    "latitude": 16.483725,
-    "longitude": 80.692975,
-    "areaSqm": 875,
+    "latitude": 16.483275,
+    "longitude": 80.692925,
+    "areaSqm": 980,
     "description": "Dual sand and red clay volleyball courts designed for inter-collegiate tournaments and sports training.",
     "facilities": [
       "2 Tournament Clay Courts",
@@ -108,37 +116,39 @@ export const OUTDOOR_FACILITIES: OutdoorFacility[] = [
     ],
     "coordinates": [
       [
-        80.6928,
-        16.4836
+        80.69275,
+        16.48315
       ],
       [
-        80.69315,
-        16.4836
+        80.6931,
+        16.48315
       ],
       [
-        80.69315,
-        16.48385
+        80.6931,
+        16.4834
       ],
       [
-        80.6928,
-        16.48385
+        80.69275,
+        16.4834
       ],
       [
-        80.6928,
-        16.4836
+        80.69275,
+        16.48315
       ]
     ],
-    "color": "#D97706"
+    "color": "#D97706",
+    "verificationStatus": "verified-aerial",
+    "optionalOverlay": false
   },
   {
     "id": "open-air-auditorium",
     "name": "Open-Air Amphitheatre & Cultural Stage",
     "code": "OPEN-AUD",
     "category": "amenity",
-    "latitude": 16.484035,
-    "longitude": 80.6925,
-    "areaSqm": 1020,
-    "description": "Stepped amphitheatre with covered acoustic proscenium stage, capable of seating 2,000 spectators for outdoor student festivals and convocations.",
+    "latitude": 16.484135,
+    "longitude": 80.69296,
+    "areaSqm": 700,
+    "description": "Stepped open amphitheatre with covered acoustic proscenium stage in the central quadrangle between Administrative block and Central Library.",
     "facilities": [
       "Raised Performance Stage",
       "Tiered Stone Spectator Steps",
@@ -147,27 +157,70 @@ export const OUTDOOR_FACILITIES: OutdoorFacility[] = [
     ],
     "coordinates": [
       [
-        80.6922,
-        16.48395
+        80.69282,
+        16.48402
       ],
       [
-        80.6928,
-        16.48395
+        80.6931,
+        16.48402
       ],
       [
-        80.6928,
-        16.48412
+        80.6931,
+        16.48425
       ],
       [
-        80.6922,
-        16.48412
+        80.69282,
+        16.48425
       ],
       [
-        80.6922,
-        16.48395
+        80.69282,
+        16.48402
       ]
     ],
-    "color": "#9333EA"
+    "color": "#9333EA",
+    "verificationStatus": "verified-aerial",
+    "optionalOverlay": false
+  },
+  {
+    "id": "bus-terminal-parking",
+    "name": "University Bus Terminal & Transit Bay",
+    "code": "BUS-TERM",
+    "category": "parking",
+    "latitude": 16.48228,
+    "longitude": 80.69218,
+    "areaSqm": 1260,
+    "description": "Spacious paved bus depot accommodating Siddhartha Academy college transit buses with covered pedestrian walkways and direct access to the campus loop road.",
+    "facilities": [
+      "Heavy Vehicle Bus Bays",
+      "Covered Passenger Boarding Concourse",
+      "Transit Security Dispatch Post",
+      "Vehicle Wash & Maintenance Pit"
+    ],
+    "coordinates": [
+      [
+        80.6919402,
+        16.4822181
+      ],
+      [
+        80.6923435,
+        16.4820997
+      ],
+      [
+        80.6924198,
+        16.4823419
+      ],
+      [
+        80.6920165,
+        16.4824603
+      ],
+      [
+        80.6919402,
+        16.4822181
+      ]
+    ],
+    "color": "#0284C7",
+    "verificationStatus": "verified-aerial",
+    "optionalOverlay": false
   },
   {
     "id": "greenhouse-polyhouse",
@@ -206,7 +259,9 @@ export const OUTDOOR_FACILITIES: OutdoorFacility[] = [
         16.4861
       ]
     ],
-    "color": "#15803D"
+    "color": "#15803D",
+    "verificationStatus": "approximate-inferred",
+    "optionalOverlay": true
   },
   {
     "id": "vermicompost-plant",
@@ -245,45 +300,8 @@ export const OUTDOOR_FACILITIES: OutdoorFacility[] = [
         16.4861
       ]
     ],
-    "color": "#78350F"
-  },
-  {
-    "id": "bus-terminal-parking",
-    "name": "University Bus Terminal & Transit Bay",
-    "code": "BUS-TERM",
-    "category": "parking",
-    "latitude": 16.481975,
-    "longitude": 80.69175,
-    "areaSqm": 3150,
-    "description": "Spacious paved bus depot accommodating 35+ Siddhartha Academy college transit buses with covered pedestrian walkways and lighting.",
-    "facilities": [
-      "35 Heavy Vehicle Bus Bays",
-      "Covered Passenger Boarding Concourse",
-      "Transit Security Dispatch Post",
-      "Vehicle Wash & Maintenance Pit"
-    ],
-    "coordinates": [
-      [
-        80.6913,
-        16.4818
-      ],
-      [
-        80.6922,
-        16.4818
-      ],
-      [
-        80.6922,
-        16.48215
-      ],
-      [
-        80.6913,
-        16.48215
-      ],
-      [
-        80.6913,
-        16.4818
-      ]
-    ],
-    "color": "#0284C7"
+    "color": "#78350F",
+    "verificationStatus": "approximate-inferred",
+    "optionalOverlay": true
   }
 ];

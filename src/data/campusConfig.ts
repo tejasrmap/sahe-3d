@@ -36,18 +36,20 @@ export const CAMPUS_CONFIG: CampusConfig = {
   verified: true,
   center: [80.692800, 16.484200],
   boundary: [
-    [80.690850, 16.481650], // South-West entrance corner past SBI Bank
     [80.690000, 16.482600], // South-West Wall corner (Cricket Ground West)
     [80.690150, 16.484400], // West boundary along sports ground
     [80.690550, 16.485650], // West boundary along CSE block
     [80.691200, 16.486250], // North-West corner
-    [80.692500, 16.486650], // North boundary road (Power substation north)
+    [80.692550, 16.486650], // North boundary road (Power substation north)
     [80.693950, 16.486650], // North boundary road (TIFAC / Civil north)
+    [80.695300, 16.486650], // North boundary road (Vermicompost & Greenhouse north)
     [80.696050, 16.485850], // North-East corner (Boys Hostel East)
     [80.696150, 16.484200], // East boundary (Girls Hostel East)
     [80.694850, 16.481750], // South-East compound corner
-    [80.692300, 16.481650], // South boundary approach road
-    [80.691260, 16.481650], // South Gate approach east
-    [80.690850, 16.481650]  // Closing back
+    [80.692350, 16.481900], // South compound boundary (Bus Terminal South)
+    [80.691450, 16.482100], // Main Entrance Gate East curb
+    [80.691350, 16.482100], // Main Entrance Gate West curb
+    [80.690700, 16.482300], // South-West setback along Bandar Road curb
+    [80.690000, 16.482600]  // Closing back
   ]
 };

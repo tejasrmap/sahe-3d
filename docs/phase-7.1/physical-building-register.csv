@@ -1,0 +1,27 @@
+building_id,building_name,building_code,category,classification,parent_building_id,floors,height_meters,projected_footprint_sqm,center_latitude,center_longitude
+cse-it-complex,Dr. APJ Abdul Kalam Block (Computing Complex),APJ-CSE,academic,independent_building,,5,26,6130.0,16.4851896,80.6913927
+admin-block,Dr. VR Central Administrative Block,ADMIN-BLK,administration,independent_building,,3,14,846.91,16.4841125,80.6924755
+central-library,Central Knowledge Resource & Library Complex,LIB-BLK,library,independent_building,,3,14,1125.72,16.4842578,80.6932939
+ece-eee-block,Electrical Sciences Block (EEE Department),EEE-BLK,academic,independent_building,,4,18,2059.08,16.4852668,80.6924686
+sh-block-1,Science & Humanities Block 1 (S&H 1),SH-BLK1,academic,independent_building,,3,14,891.13,16.4847986,80.6929142
+sh-block-2,Science & Humanities Block 2 (S&H 2),SH-BLK2,academic,independent_building,,3,14,762.83,16.4847713,80.6935979
+mech-civil-block,Mechanical Engineering Block (Main),MECH-BLK,academic,independent_building,,4,18,792.39,16.4857314,80.6930383
+civil-engineering-block,Civil Engineering Department Block,CIVIL-BLK,academic,independent_building,,3,14,2296.47,16.4852708,80.6935538
+mechanical-workshops,Mechanical Engineering Industrial Workshops,MECH-WS,laboratory,annex,mech-civil-block,1,9,1731.39,16.4859848,80.6930372
+siemens-tifac-centre,Siemens Centre of Excellence & TIFAC CORE,SIEMENS-COE,laboratory,independent_building,,3,14,1296.53,16.4858779,80.6936484
+auditorium-complex,Dr. Zakir Husain Central Auditorium,AUD-CTR,auditorium,internal_facility,cse-it-complex,2,18,1275.13,16.483785,80.69255
+cafeteria-complex,Central Cafeteria & Student Food Court,CAFE,cafeteria,connected_wing,central-library,2,12,1275.13,16.483785,80.69335
+sports-arena,Physical Education & Indoor Sports Arena,SPORT-CTR,sports,independent_building,,2,14,554.89,16.4833317,80.6921062
+boys-hostel-complex,Siddhartha Boys Residency Hall (Main Block),B-HOSTEL-MAIN,hostel,independent_building,,5,20,511.82,16.4851902,80.695283
+old-boys-hostel-1,Old Boys Residency Block 1,B-HOSTEL-BLK1,hostel,connected_wing,boys-hostel-complex,3,12,1590.27,16.4853796,80.6956768
+old-boys-hostel-2,Old Boys Residency Block 2,B-HOSTEL-BLK2,hostel,annex,boys-hostel-complex,3,12,133.76,16.4846829,80.6952902
+girls-hostel-complex,Aditya Girls Hostels (Ganga & Yamuna Wings),G-HOSTEL-MAIN,hostel,independent_building,,4,16,698.68,16.4839837,80.6951689
+girls-hostel-krishna,Aditya Girls Hostel (Krishna Wing),G-HOSTEL-KRISHNA,hostel,connected_wing,girls-hostel-complex,4,16,80.85,16.4834654,80.6954365
+staff-quarters,Faculty & Staff Residential Quarters,STAFF-QTRS,hostel,independent_building,,3,12,884.46,16.4846538,80.6957268
+students-centre-guest-house,Students Centre & University Guest House,GUEST-HOUSE,amenity,independent_building,,2,9,1117.92,16.4858886,80.6920983
+power-house-substation,Campus Power Substation & Generator Station,POWER-HOUSE,amenity,independent_building,,1,6,1942.31,16.4863811,80.6930734
+main-entrance-portal,SAHE University Grand Entrance Arch & Security,GATE-1,entrance,independent_building,,1,7,31.47,16.4817463,80.6911879
+sbi-ncc-bank-block,State Bank of India & NCC Officers Complex,SBI-NCC,amenity,independent_building,,2,9,28.15,16.4818094,80.6909734
+parking-plaza,Two-Wheeler Vehicle Parking Shed 1 (West Stand),PARK-A,parking,covered_canopy,,1,4.5,15.96,16.4819231,80.6909304
+bike-stand-2,Two-Wheeler Vehicle Parking Shed 2 (East Stand),PARK-B,parking,covered_canopy,,1,4.5,42.24,16.4818968,80.6910206
+health-center,University Health & Medical Center,MED-CTR,medical,independent_building,,2,8,214.29,16.4828233,80.6936302

@@ -1,0 +1,12 @@
+feature_id,feature_name,min_signed_normal_offset_m,classification,validation_verdict
+main-entrance-portal,Main Grand Entrance Arch Portal,+9.63,Campus side,PASS - Straddles campus avenue opening
+sbi-ncc-bank-block,State Bank of India & NCC Officers Complex,+6.39,Campus side,PASS - Within campus compound west of gate
+parking-plaza,Two-Wheeler Vehicle Parking Shed 1 (West Stand),+9.52,Campus side,PASS - Campus vehicle parking zone
+bike-stand-2,Two-Wheeler Vehicle Parking Shed 2 (East Stand),+20.59,Campus side,PASS - Campus vehicle parking zone
+bus-terminal-parking,University Bus Terminal & Transit Depot,+33.42,Campus side,PASS - Campus transit concourse
+node-bus-stop,Bandar Road Campus Bus Stop & Waiting Platform,+6.52,Campus side,PASS - North roadside pedestrian waiting apron
+cricket-athletic-oval,Main University Athletic Field & Cricket Oval,+22.50,Campus side,PASS - Campus athletic perimeter
+health-center,University Health & Medical Center,+88.40,Campus side,PASS - Campus medical facility
+sports-arena,Indoor Badminton & Gymnasium Arena,+128.50,Campus side,PASS - Campus sports complex
+admin-block,Dr. VR Central Administrative Block,+192.30,Campus side,PASS - Campus central administrative core
+central-library,Central Knowledge Resource & Library Complex,+194.80,Campus side,PASS - Campus academic quadrangle

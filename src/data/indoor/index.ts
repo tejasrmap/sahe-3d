@@ -15,8 +15,12 @@ export { generateProceduralIndoorBuilding } from './proceduralIndoorGenerator';
 
 export const INDOOR_BLUEPRINTS_MAP: Record<string, IndoorBuildingData> = {
   'cse-it-complex': CSE_BLOCK_INDOOR,
+  'ece-eee-block': ECE_BLOCK_INDOOR,
   'ece-electronics-block': ECE_BLOCK_INDOOR,
   'mech-civil-block': MECH_CIVIL_BLOCK_INDOOR,
+  'civil-engineering-block': MECH_CIVIL_BLOCK_INDOOR,
+  'admin-block': ADMIN_LIBRARY_INDOOR,
+  'central-library': ADMIN_LIBRARY_INDOOR,
   'admin-central-library': ADMIN_LIBRARY_INDOOR,
 };
 

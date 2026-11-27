@@ -4,8 +4,9 @@ const path = require('path');
 
 async function runPhase4Audit() {
   console.log('=== Starting SAHE Campus Explorer Phase 4 Indoor Exploration Audit ===');
+  const testUrl = process.env.TEST_URL || 'http://localhost:4173/';
   const results = {
-    url: 'http://localhost:3000/',
+    url: testUrl,
     consoleErrors: [],
     passedChecks: [],
     failedChecks: [],
@@ -14,10 +15,33 @@ async function runPhase4Audit() {
   const screenshotsDir = path.join(__dirname, 'docs', 'screenshots');
   if (!fs.existsSync(screenshotsDir)) fs.mkdirSync(screenshotsDir, { recursive: true });
 
+  const defaultChromeWin = fs.existsSync('C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe')
+    ? 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
+    : 'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe';
+
+  const chromePath = process.env.CHROME_PATH ||
+    (process.platform === 'win32'
+      ? defaultChromeWin
+      : process.platform === 'darwin'
+      ? '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+      : '/usr/bin/google-chrome');
+
   const browser = await puppeteer.launch({
     headless: 'new',
-    executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
-    args: ['--no-sandbox', '--disable-setuid-sandbox', '--enable-webgl', '--ignore-gpu-blocklist'],
+    executablePath: chromePath,
+    // CI runners may not expose a physical GPU. Use Chromium's SwiftShader
+    // software WebGL implementation so Cesium can initialize deterministically.
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--enable-webgl',
+      '--ignore-gpu-blocklist',
+      '--use-gl=angle',
+      '--use-angle=swiftshader',
+      '--enable-unsafe-swiftshader',
+      '--disable-gpu-sandbox',
+      '--disable-dev-shm-usage',
+    ],
   });
 
   try {
@@ -32,8 +56,8 @@ async function runPhase4Audit() {
       }
     });
 
-    console.log('Step 1: Navigating to SAHE Campus Explorer...');
-    const response = await page.goto('http://localhost:3000/', { waitUntil: 'networkidle2', timeout: 30000 });
+    console.log(`Step 1: Navigating to SAHE Campus Explorer at ${testUrl}...`);
+    const response = await page.goto(testUrl, { waitUntil: 'networkidle2', timeout: 30000 });
     results.passedChecks.push(`HTTP status: ${response.status()}`);
 
     // Wait for initial load
@@ -281,9 +305,14 @@ async function runPhase4Audit() {
   console.log('\n=== Phase 4 Indoor Exploration Audit Results ===');
   console.log('Passed Checks (' + results.passedChecks.length + '):');
   results.passedChecks.forEach((c) => console.log('  [PASS]', c));
-  if (results.failedChecks.length > 0) {
+  if (results.failedChecks.length > 0 || results.consoleErrors.length > 0) {
     console.log('Failed Checks (' + results.failedChecks.length + '):');
     results.failedChecks.forEach((c) => console.log('  [FAIL]', c));
+    if (results.consoleErrors.length > 0) {
+      console.log('Console Errors (' + results.consoleErrors.length + '):');
+      results.consoleErrors.forEach((c) => console.log('  [CONSOLE ERROR]', c));
+    }
+    process.exitCode = 1;
   } else {
     console.log('ALL PHASE 4 CHECKS PASSED PERFECTLY (0 Failures)');
   }
@@ -291,4 +320,7 @@ async function runPhase4Audit() {
   fs.writeFileSync(path.join(__dirname, 'docs', 'phase-4-audit-results.json'), JSON.stringify(results, null, 2));
 }
 
-runPhase4Audit();
+runPhase4Audit().catch((err) => {
+  console.error('Phase 4 browser audit failed to start or complete:', err);
+  process.exitCode = 1;
+});

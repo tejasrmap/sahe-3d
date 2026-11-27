@@ -1,0 +1,6 @@
+building_id,building_name,model_type,verified_floors,verified_rooms,staircases,elevators,corridors,total_cad_features,blueprint_source_document
+cse-it-complex,Dr. APJ Abdul Kalam Block (Computing Complex),Handcrafted Architectural Blueprint,5,25,10,10,6,51,Building_Plans_with_Architecture.pdf
+ece-eee-block,Electrical Sciences Block (EEE Department),Handcrafted Architectural Blueprint,4,18,8,4,4,34,Building_Plans_with_Architecture.pdf
+mech-civil-block,Mechanical Engineering Block (Main),Handcrafted Architectural Blueprint,4,17,8,4,4,33,Building_Plans_with_Architecture.pdf
+admin-block,Dr. VR Central Administrative Block,Handcrafted Architectural Blueprint,4,19,8,8,5,40,Building_Plans_with_Architecture.pdf
+remaining-22-buildings,Remaining 22 Campus Structures,Procedural Runtime Generation,Dynamic (1-5 per bldg),Procedurally Synthesized,Dynamic,Dynamic,Dynamic,Dynamic,proceduralIndoorGenerator.ts (Runtime fallback)

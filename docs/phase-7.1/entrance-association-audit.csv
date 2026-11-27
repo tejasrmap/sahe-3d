@@ -1,0 +1,27 @@
+building_id,building_name,entrance_name,door_type,latitude,longitude,distance_to_facade_meters,is_exterior,connected_node_id,connected_node_name,node_reachable
+cse-it-complex,Dr. APJ Abdul Kalam Block (Computing Complex),Computing Block East Concourse Portal,main,16.485196,80.691814,16.24,True,node-cse,Kalam Computing Complex East Portal,True
+admin-block,Dr. VR Central Administrative Block,Administration South Ceremonial Portico,main,16.483991,80.692521,3.22,True,node-admin,Dr. VR Administration South Ceremonial Portico,True
+central-library,Central Knowledge Resource & Library Complex,Central Library South Entrance Plaza,main,16.484003,80.693365,6.01,True,node-library,Central Knowledge Library South Entrance,True
+ece-eee-block,Electrical Sciences Block (EEE Department),Electrical Sciences South Concourse Portico,main,16.48495,80.69238,3.13,True,node-ece,Electrical Sciences South Portico,True
+sh-block-1,Science & Humanities Block 1 (S&H 1),S&H 1 South Academic Portico,main,16.484686,80.692981,3.53,True,node-sh-1,S&H 1 South Concourse,True
+sh-block-2,Science & Humanities Block 2 (S&H 2),S&H 2 South Entrance Porch,main,16.484651,80.693641,3.33,True,node-sh-2,S&H 2 South Concourse,True
+mech-civil-block,Mechanical Engineering Block (Main),Mechanical Engineering South Grand Entry,main,16.485628,80.693027,3.29,True,node-mech,Mechanical Engineering South Grand Entry,True
+civil-engineering-block,Civil Engineering Department Block,Civil Engineering South Entrance Porch,main,16.484905,80.693635,3.25,True,node-civil,Civil Engineering South Entrance,True
+mechanical-workshops,Mechanical Engineering Industrial Workshops,Mechanical Workshops Industrial Bay Portal,main,16.485992,80.693379,2.88,True,node-workshops,Mechanical Workshops Industrial Bay,True
+siemens-tifac-centre,Siemens Centre of Excellence & TIFAC CORE,Siemens CoE South High-Tech Portico,main,16.48559,80.693656,3.13,True,node-siemens,Siemens CoE South Entrance,True
+auditorium-complex,Dr. Zakir Husain Central Auditorium,Auditorium North Grand Entrance,main,16.483942,80.69255,2.43,True,node-auditorium,Central Auditorium North Grand Portico,True
+cafeteria-complex,Central Cafeteria & Student Food Court,Cafeteria West Entrance Court,main,16.483785,80.693127,2.45,True,node-canteen,Central Cafeteria & Food Court West Plaza,True
+sports-arena,Physical Education & Indoor Sports Arena,Sports Arena East Grand Foyer,main,16.483287,80.692253,9.57,True,node-sports-complex,Sports Arena East Entrance,True
+boys-hostel-complex,Siddhartha Boys Residency Hall (Main Block),Boys Residency South Biometric Gate,main,16.484824,80.695297,2.63,True,node-boys-hostel,Boys Residency Main South Portal,True
+old-boys-hostel-1,Old Boys Residency Block 1,Old Boys Block 1 South Portal,main,16.485135,80.695713,4.03,True,node-boys-hostel-1,Old Boys Hostel 1 South Portal,True
+old-boys-hostel-2,Old Boys Residency Block 2,Old Boys Block 2 South Portal,main,16.484589,80.6953,2.58,True,node-boys-hostel-2,Old Boys Hostel 2 South Portal,True
+girls-hostel-complex,Aditya Girls Hostels (Ganga & Yamuna Wings),Girls Residency South Security Portal,main,16.483844,80.695196,6.04,True,node-girls-hostel,Girls Residency Main South Portal,True
+girls-hostel-krishna,Aditya Girls Hostel (Krishna Wing),Krishna Wing South Entry Gate,main,16.483381,80.695442,3.19,True,node-girls-krishna,Krishna Girls Hostel South Entry,True
+staff-quarters,Faculty & Staff Residential Quarters,Staff Quarters South Gate,main,16.484562,80.695789,4.35,True,node-staff-qtrs,Staff Quarters South Portal,True
+students-centre-guest-house,Students Centre & University Guest House,Guest House South Portico,main,16.485681,80.692087,6.87,True,node-guest-house,Students Centre & Guest House South Entry,True
+power-house-substation,Campus Power Substation & Generator Station,Power Substation South Safety Gate,service,16.48636,80.693404,3.06,True,node-power-substation,Power Substation Safety Portal,True
+main-entrance-portal,SAHE University Grand Entrance Arch & Security,Main Ceremonial Gate North Portal,main,16.481806,80.691194,2.8,True,node-gate,Main Entrance Gate Portal,True
+sbi-ncc-bank-block,State Bank of India & NCC Officers Complex,SBI Bank & ATM North Portico,main,16.481853,80.690978,2.73,True,node-sbi-ncc,SBI Bank & NCC Entrance,True
+parking-plaza,Two-Wheeler Vehicle Parking Shed 1 (West Stand),Bike Stand 1 North Gate,main,16.481969,80.69093,2.74,True,node-parking,Bike Parking Stand 1,True
+bike-stand-2,Two-Wheeler Vehicle Parking Shed 2 (East Stand),Bike Stand 2 North Gate,main,16.481942,80.691031,3.8,True,node-bike-stand-2,Bike Parking Stand 2,True
+health-center,University Health & Medical Center,Health Center West Clinic Entrance,accessible,16.482809,80.693509,2.66,True,node-health-center,Health Center Clinic Entrance,True

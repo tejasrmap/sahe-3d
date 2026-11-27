@@ -1,0 +1,7 @@
+facility_id,facility_name,modelled_corridor_half_width_m,distance_to_modelled_corridor_edge_m,distance_to_westbound_centerline_m,intersects_modelled_corridor,verdict
+main-entrance-portal,Main Grand Entrance Arch Portal,4.0,5.63,9.63,False,PASS - Positive Setback from Westbound Carriageway
+sbi-ncc-bank-block,State Bank of India & NCC Officers Complex,4.0,2.39,6.39,False,PASS - Safe Compound Setback North of Live Corridor
+parking-plaza,Two-Wheeler Vehicle Parking Shed 1 (West Stand),4.0,5.52,9.52,False,PASS - Safe Parking Setback
+bike-stand-2,Two-Wheeler Vehicle Parking Shed 2 (East Stand),4.0,16.59,20.59,False,PASS - Safe Parking Setback
+bus-terminal-parking,University Bus Terminal & Transit Depot,4.0,29.42,33.42,False,PASS - Transit Bay Setback
+node-bus-stop,Bandar Road Campus Bus Stop & Waiting Platform,4.0,2.52,6.52,False,PASS - Paved Sidewalk Platform Outside Travel Lanes

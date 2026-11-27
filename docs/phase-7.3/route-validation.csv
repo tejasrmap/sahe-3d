@@ -1,0 +1,11 @@
+origin_node_id,origin_name,destination_node_id,destination_name,route_distance_meters,accessible_status,validation_verdict
+node-bus-stop,Bandar Road Campus Bus Stop,node-gate,Main Entrance Gate Portal,19.5,true,PASS - Direct Access Apron
+node-gate,Main Entrance Gate Portal,node-sbi-ncc,SBI Bank & NCC Entrance,10.2,true,PASS - Banking Walkway
+node-sbi-ncc,SBI Bank & NCC Entrance,node-parking,Bike Parking Stand 1,23.1,true,PASS - West Stand Walkway
+node-gate,Main Entrance Gate Portal,node-bike-stand-2,Bike Parking Stand 2,12.8,true,PASS - East Stand Walkway
+node-gate,Main Entrance Gate Portal,node-junc-south,South Boulevard Junction,35.5,true,PASS - Ceremonial Entrance Avenue
+node-junc-south,South Boulevard Junction,node-bus-terminal,University Bus Terminal Concourse,52.5,true,PASS - Transit Boulevard
+node-bike-stand-2,Bike Parking Stand 2,node-bus-terminal,University Bus Terminal Concourse,42.9,true,PASS - Transit Walkway East
+node-junc-south,South Boulevard Junction,node-admin,Dr. VR Admin Block South Portico,182.5,true,PASS - Campus Central Spine
+node-junc-south,South Boulevard Junction,node-sports-complex,Indoor Sports Complex Entry,148.2,true,PASS - Athletic Boulevard
+node-bus-stop,Bandar Road Campus Bus Stop,node-cse,Computing Block East Concourse,424.8,true,PASS - Full Campus Reachability
