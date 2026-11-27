@@ -81,3 +81,8 @@ The updated validator must regenerate `docs/phase-7.3.1/gis-validation-results.j
 ## Merge recommendation
 
 Keep the feature branch unmerged until the updated validator, production test suite, build and browser inspection have been run against the new head. Review the warnings for long entrance-to-node links and verify the bus-stop waiting location against current imagery or on-site evidence.
+
+
+### Door-anchor facade snapping tolerance
+
+Physical door-anchor checks allow up to 0.75m of inward footprint offset to accommodate small digitization/generalization differences between a mapped roof polygon and an aerially inferred doorway. Anchors deeper than 0.75m inside a building footprint fail; anchors more than 2.0m from the footprint boundary are reported as warnings. This tolerance is a data-validation allowance, not a claim of surveyed door location.
