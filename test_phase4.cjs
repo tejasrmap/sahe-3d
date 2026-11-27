@@ -4,8 +4,9 @@ const path = require('path');
 
 async function runPhase4Audit() {
   console.log('=== Starting SAHE Campus Explorer Phase 4 Indoor Exploration Audit ===');
+  const testUrl = process.env.TEST_URL || 'http://localhost:4173/';
   const results = {
-    url: 'http://localhost:3000/',
+    url: testUrl,
     consoleErrors: [],
     passedChecks: [],
     failedChecks: [],
@@ -32,8 +33,8 @@ async function runPhase4Audit() {
       }
     });
 
-    console.log('Step 1: Navigating to SAHE Campus Explorer...');
-    const response = await page.goto('http://localhost:3000/', { waitUntil: 'networkidle2', timeout: 30000 });
+    console.log(`Step 1: Navigating to SAHE Campus Explorer at ${testUrl}...`);
+    const response = await page.goto(testUrl, { waitUntil: 'networkidle2', timeout: 30000 });
     results.passedChecks.push(`HTTP status: ${response.status()}`);
 
     // Wait for initial load

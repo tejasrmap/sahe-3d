@@ -1,17 +1,24 @@
 {
-  "validation_timestamp": "2026-11-27T10:15:00Z",
-  "verification_phase": "Phase 7.1 Truthfulness Audit",
+  "validation_timestamp": "2026-11-27T10:50:00Z",
+  "verification_phase": "Phase 7.2 Merge Readiness Audit",
+  "projection_reference": "UTM Zone 44N (EPSG:32644) / WGS84 Ellipsoid",
   "datasets_audited": {
-    "buildings_count": 26,
+    "total_building_records": 26,
+    "independent_roof_structures": 18,
+    "connected_wings": 3,
+    "annexes": 2,
+    "covered_canopies": 2,
+    "internal_facilities": 1,
     "outdoor_facilities_count": 7,
     "entrances_count": 26,
     "navigation_nodes_count": 39,
     "navigation_edges_count": 40,
     "pois_count": 16,
     "handcrafted_indoor_floors": 17,
-    "handcrafted_indoor_rooms": 158
+    "handcrafted_indoor_rooms": 79,
+    "handcrafted_indoor_total_cad_features": 158
   },
-  "checks": {
+  "topology_checks": {
     "polygon_closure": {
       "passed": true,
       "failed_count": 0,
@@ -22,17 +29,32 @@
       "failed_count": 0,
       "failures": []
     },
-    "pairwise_overlap": {
+    "pairwise_building_overlap": {
       "passed": true,
       "overlapping_pairs_count": 0,
       "overlaps": []
+    },
+    "outdoor_facility_collisions": {
+      "passed": true,
+      "collisions_count": 0,
+      "collisions": []
     },
     "campus_boundary_containment": {
       "passed": true,
       "failed_count": 0,
       "failures": []
     },
-    "entrance_exteriority": {
+    "duplicate_structures": {
+      "passed": true,
+      "duplicate_ids": [],
+      "duplicate_coords": []
+    },
+    "parent_child_hierarchy": {
+      "passed": true,
+      "issues_count": 0,
+      "issues": []
+    },
+    "entrance_exteriority_and_offset": {
       "passed": true,
       "failed_count": 0,
       "failures": []
@@ -43,5 +65,21 @@
       "unreachable_nodes": []
     }
   },
-  "audit_verdict": "CERTIFIED_DATA_TRUTHFULNESS_ALL_CHECKS_PASSED"
+  "audit_verdict": "AUTOMATED_TOPOLOGY_CHECKS_PASSED",
+  "validation_scope": {
+    "what_is_proven": [
+      "Projected UTM Zone 44N metric polygon area and geometry validity",
+      "Zero pairwise overlaps among all 26 campus building footprints",
+      "Zero collisions between outdoor facilities and building footprints",
+      "100% containment of all footprints within legal campus boundary polygon",
+      "Zero self-parenting and 100% valid parent IDs across all entities",
+      "100% exterior placement of all building entrances with valid facade offset",
+      "100% single-component reachability from Main Gate across the entire pedestrian network"
+    ],
+    "what_cannot_be_proven_by_validator": [
+      "Sub-centimeter geodetic ground truth of community-contributed OSM traces",
+      "Internal room boundary accuracy for the 22 procedurally generated buildings",
+      "Unregistered campus interior remodeling not reflected in 2022 architectural plans"
+    ]
+  }
 }

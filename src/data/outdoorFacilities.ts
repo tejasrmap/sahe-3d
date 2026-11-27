@@ -64,10 +64,10 @@ export const OUTDOOR_FACILITIES: OutdoorFacility[] = [
     "name": "University Floodlit Basketball Courts",
     "code": "COURT-BB",
     "category": "court",
-    "latitude": 16.483725,
-    "longitude": 80.69255,
-    "areaSqm": 1050,
-    "description": "Dual regulation outdoor synthetic acrylic basketball courts with LED floodlighting, chainlink fencing, and team bench shelters.",
+    "latitude": 16.483275,
+    "longitude": 80.692525,
+    "areaSqm": 980,
+    "description": "Dual regulation outdoor synthetic acrylic basketball courts with LED floodlighting, chainlink fencing, and team bench shelters, located adjacent to the Indoor Sports Arena.",
     "facilities": [
       "2 Synthetic Acrylic Competition Courts",
       "Shatterproof Glass Backboards",
@@ -77,23 +77,23 @@ export const OUTDOOR_FACILITIES: OutdoorFacility[] = [
     "coordinates": [
       [
         80.69235,
-        16.4836
+        16.48315
       ],
       [
-        80.69275,
-        16.4836
+        80.6927,
+        16.48315
       ],
       [
-        80.69275,
-        16.48385
-      ],
-      [
-        80.69235,
-        16.48385
+        80.6927,
+        16.4834
       ],
       [
         80.69235,
-        16.4836
+        16.4834
+      ],
+      [
+        80.69235,
+        16.48315
       ]
     ],
     "color": "#2563EB",
@@ -105,9 +105,9 @@ export const OUTDOOR_FACILITIES: OutdoorFacility[] = [
     "name": "Campus Volleyball & Throwball Arena",
     "code": "COURT-VB",
     "category": "court",
-    "latitude": 16.483725,
-    "longitude": 80.692975,
-    "areaSqm": 875,
+    "latitude": 16.483275,
+    "longitude": 80.692925,
+    "areaSqm": 980,
     "description": "Dual sand and red clay volleyball courts designed for inter-collegiate tournaments and sports training.",
     "facilities": [
       "2 Tournament Clay Courts",
@@ -116,24 +116,24 @@ export const OUTDOOR_FACILITIES: OutdoorFacility[] = [
     ],
     "coordinates": [
       [
-        80.6928,
-        16.4836
+        80.69275,
+        16.48315
       ],
       [
-        80.69315,
-        16.4836
+        80.6931,
+        16.48315
       ],
       [
-        80.69315,
-        16.48385
+        80.6931,
+        16.4834
       ],
       [
-        80.6928,
-        16.48385
+        80.69275,
+        16.4834
       ],
       [
-        80.6928,
-        16.4836
+        80.69275,
+        16.48315
       ]
     ],
     "color": "#D97706",
@@ -145,10 +145,10 @@ export const OUTDOOR_FACILITIES: OutdoorFacility[] = [
     "name": "Open-Air Amphitheatre & Cultural Stage",
     "code": "OPEN-AUD",
     "category": "amenity",
-    "latitude": 16.484035,
-    "longitude": 80.6925,
-    "areaSqm": 1020,
-    "description": "Stepped amphitheatre with covered acoustic proscenium stage, capable of seating 2,000 spectators for outdoor student festivals and convocations.",
+    "latitude": 16.484135,
+    "longitude": 80.69296,
+    "areaSqm": 700,
+    "description": "Stepped open amphitheatre with covered acoustic proscenium stage in the central quadrangle between Administrative block and Central Library.",
     "facilities": [
       "Raised Performance Stage",
       "Tiered Stone Spectator Steps",
@@ -157,24 +157,24 @@ export const OUTDOOR_FACILITIES: OutdoorFacility[] = [
     ],
     "coordinates": [
       [
-        80.6922,
-        16.48395
+        80.69282,
+        16.48402
       ],
       [
-        80.6928,
-        16.48395
+        80.6931,
+        16.48402
       ],
       [
-        80.6928,
-        16.48412
+        80.6931,
+        16.48425
       ],
       [
-        80.6922,
-        16.48412
+        80.69282,
+        16.48425
       ],
       [
-        80.6922,
-        16.48395
+        80.69282,
+        16.48402
       ]
     ],
     "color": "#9333EA",

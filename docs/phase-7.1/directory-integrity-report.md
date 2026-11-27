@@ -1,32 +1,31 @@
-# Directory & Search Integrity Audit Report
-**Phase:** 7.1 Data Truthfulness Audit  
-**Component:** `src/hooks/useCampusSearch.ts`, `src/components/layout/Sidebar.tsx`  
+# Directory Hierarchy & Search Relevance Audit Report
+**Phase:** 7.2 Final Reconciliation & Merge Readiness  
 
 ---
 
-## 1. Directory Integrity Audit
+## 1. Search Query Relevance Scoring
 
-In Phase 7.1, all building, department, and facility directory listings were audited to eliminate cross-entity confusion:
+In `src/hooks/useCampusSearch.ts`, a weighted relevance engine has been implemented to resolve search ambiguities:
+- **Title Prefix Match:** +100 points (e.g. typing "Admin" scores "Dr. VR Central Administrative Block" highest).
+- **Building Entity:** +40 points over nested internal sub-departments.
+- **Code Prefix Match:** +50 points.
+- **Facility / Department Substring:** Base relevance score.
 
-1. **Central Library vs. Admin Block:**
-   - Querying "Library" or "Books" resolves strictly to `central-library` (`Central Knowledge Resource & Library Complex`).
-   - Querying "Admin", "Registrar", or "Vice Chancellor" resolves strictly to `admin-block` (`Dr. VR Central Administrative Block`).
-2. **Canteen vs. TPO:**
-   - Querying "Canteen" resolves to `cafeteria-complex` (`Central Cafeteria & Student Food Court`).
-   - Querying "TPO" or "Placement" resolves to `central-library` (Training & Placement Cell on 1st Floor) and `cafeteria-complex`.
-3. **Civil vs. Mechanical vs. Workshops vs. Siemens CoE:**
-   - Querying "Civil" -> `civil-engineering-block`.
-   - Querying "Mechanical" -> `mech-civil-block`.
-   - Querying "Workshops" -> `mechanical-workshops`.
-   - Querying "Siemens" or "TIFAC" -> `siemens-tifac-centre`.
-4. **Science & Humanities I vs. II:**
-   - "Physics", "Chemistry", "Mathematics" -> `sh-block-1`.
-   - "Environmental Sciences", "Sustainability" -> `sh-block-2`.
+### Verification Matrix:
+1. **Query "Admin":**
+   - Result #1: **Dr. VR Central Administrative Block** (`admin-block`) — Score: 140.
+   - Result #2: Business Administration (MBA) in Kalam block — Score: 20.
+2. **Query "Library":**
+   - Result #1: **Central Knowledge Resource & Library Complex** (`central-library`) — Score: 140.
+3. **Query "Mechanical":**
+   - Result #1: **Mechanical Engineering Block (Main)** (`mech-civil-block`) — Score: 140.
+   - Result #2: **Mechanical Engineering Industrial Workshops** (`mechanical-workshops`) — Score: 120.
 
 ---
 
-## 2. Relevance Scoring Implementation
-In `src/hooks/useCampusSearch.ts`, result ranking prioritizes:
-- Exact title/code prefix match ($1^{\text{st}}$ rank).
-- Primary building entity matches over nested departments ($2^{\text{nd}}$ rank).
-- Substring and facility description matches ($3^{\text{rd}}$ rank).
+## 2. Navigation Portal Separation
+
+To eliminate shared portal bottlenecks and path crossing:
+- `node-library` (Central Knowledge Library South Entrance): Dedicated portal for `central-library`.
+- `node-admin` (Dr. VR Administration South Ceremonial Portico): Dedicated portal for `admin-block`.
+- `node-canteen` (Central Dining Pavilion): Dedicated portal for `cafeteria-complex`.

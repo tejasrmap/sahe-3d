@@ -1808,8 +1808,7 @@ export const CAMPUS_BUILDINGS: Building[] = [
       ]
     ],
     "color": "#64748B",
-    "classification": "connected_wing",
-    "parentBuildingId": "boys-hostel-complex"
+    "classification": "independent_building"
   },
   {
     "id": "old-boys-hostel-1",

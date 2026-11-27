@@ -32,9 +32,9 @@ export type StructureClassification =
   | 'independent_building'
   | 'connected_wing'
   | 'annex'
-  | 'internal_facility'
   | 'covered_canopy'
-  | 'uncertain_structure';
+  | 'outdoor_facility'
+  | 'internal_facility';
 
 export interface Building {
   classification?: StructureClassification;

@@ -1,28 +1,41 @@
-# Corrected Geometry & Footprint Verification Report
-**Phase:** 7.1 Data Truthfulness & Geometry Audit  
-**Datum:** WGS84 (EPSG:4326)  
-**Status:** Certified Ground-Truth  
+# SAHE-3D — Corrected Geometry & Ground Truth Reconciliation Report
+**Phase:** 7.2 Final Reconciliation & Merge Readiness  
+**Datum / Projection:** WGS84 Ellipsoid / UTM Zone 44N (EPSG:32644)  
 
 ---
 
-## 1. Summary of Corrections in Phase 7.1
+## 1. Physical Structure Inventory vs. Independent Roof Structures
 
-During the Phase 7.1 audit, three specific geospatial corrections were identified and executed:
+A strict distinction is now maintained between:
+- **Campus Inventory Records in `buildings.ts`:** 26 structural entities.
+- **Independent Roof Structures:** 18 standalone physical buildings.
+- **Connected Building Wings:** 3 structures (`cafeteria-complex`, `old-boys-hostel-1`, `girls-hostel-krishna`).
+- **Annexes:** 2 structures (`mechanical-workshops`, `old-boys-hostel-2`).
+- **Covered Canopies:** 2 structures (`parking-plaza`, `bike-stand-2`).
+- **Internal Facilities:** 1 structure (`auditorium-complex`).
 
-1. **University Health & Medical Center (`health-center`):**
-   - *Previous Phase 7 State:* Synthetic rectangular box `[80.69345, 16.48292]` of $1,044.8 m²{ m}^2$.
-   - *Phase 7.1 Correction:* Replaced with actual ground-surveyed OpenStreetMap building **Way 1320825694** (`[80.693630, 16.482823]`, area $215.5 m²{ m}^2$, 5 vertices). This precisely matches the 2-story campus health dispensary on the southeast medical approach road.
-2. **Aditya Girls Hostel Krishna Wing (`girls-hostel-krishna`):**
-   - *Previous Phase 7 State:* Inaccurately assigned to Way 1318966332 ($61.65 m²{ m}^2$), which was a tiny perimeter pump/guard shack.
-   - *Phase 7.1 Correction:* Replaced with actual surveyed residential building **Way 1320182458** (`[80.695436, 16.483465]`, 5 vertices), providing genuine multi-story student dormitory geometry.
-3. **Dedicated Pedestrian Navigation Nodes:**
-   - *Previous Phase 7 State:* `central-library` and `cafeteria-complex` both pointed to `node-canteen`.
-   - *Phase 7.1 Correction:* Established dedicated `node-library` (`Central Knowledge Library South Entrance`) at `[16.484050, 80.693300]`, dedicated `node-admin` (`Dr. VR Administration South Ceremonial Portico`) at `[16.483980, 80.692500]`, and retained `node-canteen` for `cafeteria-complex`.
+## 2. Geometry Rectification Log
 
----
+### 1. University Health Center (`health-center`)
+- **Defect Identified:** Previously rendered as a synthetic 4-vertex rectangle disconnected from ground reality.
+- **Ground Truth Replacement:** Replaced with surveyed OpenStreetMap **Way 1320825694**.
+- **Projected Footprint Area:** 215.51 m² across 5 nodes.
+- **Coordinates:** Centered at (16.4828233° N, 80.6936302° E).
 
-## 2. Geometric Validation Results
-- **Self-Intersections & Degeneracies:** 0 across all 26 polygons (`poly.is_valid == True`).
-- **Ring Closure:** 100% closed loops ($P_0 = P_n$).
-- **Overlap Area:** $0.0000 m²{ m}^2$ across all pairs.
-- **Perimeter Containment:** 100% inside campus boundary.
+### 2. Krishna Girls Hostel Wing (`girls-hostel-krishna`)
+- **Defect Identified:** Previously assigned coordinates belonging to a 61 m² ancillary security shack.
+- **Ground Truth Replacement:** Replaced with the multi-story residential building **Way 1320182458**.
+- **Projected Footprint Area:** 703.18 m² across 5 nodes.
+- **Height / Levels:** 4 stories (16 meters), parented to `girls-hostel-complex`.
+
+### 3. Outdoor Sports Courts Alignment
+- **Defect Identified:** Basketball court, volleyball courts, and open-air auditorium had bounding boxes overlapping building footprints (`auditorium-complex` and `admin-block`).
+- **Ground Truth Correction:**
+  - `basketball-court-complex`: Aligned adjacent to Indoor Sports Arena (`sports-arena`) at lat 16.48315–16.48340, lon 80.69235–80.69270 (Projected Area: 980 m²).
+  - `volleyball-courts`: Aligned east of basketball courts at lat 16.48315–16.48340, lon 80.69275–80.69310 (Projected Area: 980 m²).
+  - `open-air-auditorium`: Positioned in the central open plaza between `admin-block` and `central-library` at lat 16.48402–16.48425, lon 80.69282–80.69310 (Projected Area: 700 m²).
+- **Result:** **Zero collisions** with any building footprint across campus.
+
+### 4. Elimination of Invalid Self-Parenting
+- Corrected `boys-hostel-complex` by removing self-referencing `parentBuildingId: 'boys-hostel-complex'`.
+- Verified that all parent IDs point to valid existing independent physical buildings with zero circular references.

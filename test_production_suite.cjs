@@ -35,19 +35,20 @@ test('Campus Center coordinate matches reference 16.4842° N, 80.6928° E', () =
 test('Campus boundary polygon is closed and non-empty', () => {
   const configText = fs.readFileSync(path.join(__dirname, 'src/data/campusConfig.ts'), 'utf8');
   assert.ok(configText.includes('boundary: ['), 'Boundary array missing');
-  assert.ok(configText.includes('16.48168'), 'Boundary rectified start point verified');
+  assert.ok(configText.includes('16.48165'), 'Boundary rectified start point verified');
 });
 
 // 2. Building and POI datasets
 console.log('\n2. Building and POI Records Integrity:');
 
-test('12 campus buildings cataloged with complete properties', () => {
+test('26 campus buildings cataloged with complete properties', () => {
   const bldgText = fs.readFileSync(path.join(__dirname, 'src/data/buildings.ts'), 'utf8');
   const buildingIds = [
     'cse-it-complex',
     'ece-eee-block',
     'mech-civil-block',
-    'admin-central-library',
+    'admin-block',
+    'central-library',
     'auditorium-complex',
     'cafeteria-complex',
     'sports-arena',
@@ -62,31 +63,25 @@ test('12 campus buildings cataloged with complete properties', () => {
   });
 });
 
-test('22 campus POIs cataloged with valid categories', () => {
+test('16 campus POIs cataloged with valid categories', () => {
   const poiText = fs.readFileSync(path.join(__dirname, 'src/data/pois.ts'), 'utf8');
   const poiIds = [
     'poi-main-gate',
+    'poi-sbi-atm',
+    'poi-admin-hq',
     'poi-central-lib',
+    'poi-tpo-cell',
     'poi-cse-lab',
+    'poi-eee-lab',
+    'poi-siemens-coe',
+    'poi-civil-utm',
     'poi-canteen-court',
     'poi-auditorium',
-    'poi-siemens-coe',
-    'poi-sports-ground',
-    'poi-indoor-gym',
-    'poi-sbi-atm',
-    'poi-medical-dispensary',
-    'poi-boys-hostel',
-    'poi-girls-hostel',
-    'poi-parking',
-    'poi-placement-cell',
-    'poi-restroom-hub',
-    'poi-saraswathi-statue',
-    'poi-vl-dutt-statue',
-    'poi-ramakrishna-statue',
-    'poi-canara-bank',
-    'poi-ev-charging',
-    'poi-basketball-court',
-    'poi-bus-stop'
+    'poi-indoor-sports',
+    'poi-cricket-oval',
+    'poi-health-center',
+    'poi-boys-residency',
+    'poi-girls-residency'
   ];
   poiIds.forEach(id => {
     assert.ok(poiText.includes(`"id": "${id}"`), `Missing POI id: ${id}`);

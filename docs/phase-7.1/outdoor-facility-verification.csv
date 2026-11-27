@@ -1,8 +1,8 @@
-facility_id,facility_name,category,area_sqm,source_type,verification_status,optional_overlay,verification_notes
-cricket-athletic-oval,Main University Athletic Field & Cricket Oval,athletic,18500,OpenStreetMap Survey,verified-survey,FALSE,OSM Way 1418702314 leisure=pitch
-basketball-court-complex,University Floodlit Basketball Courts,court,1050,Architectural Plan & Aerial,verified-aerial,FALSE,Site Plan Legend Item COURT-BB
-volleyball-courts,Campus Volleyball & Throwball Arena,court,875,Architectural Plan & Aerial,verified-aerial,FALSE,Site Plan Legend Item COURT-VB
-open-air-auditorium,Open-Air Amphitheatre & Cultural Stage,amenity,1020,Architectural Plan & Aerial,verified-aerial,FALSE,Site Plan Legend Item OPEN-AUD
-bus-terminal-parking,University Bus Terminal & Transit Bay,parking,3150,Architectural Plan & Aerial,verified-aerial,FALSE,Site Plan Legend Item BUS-TERM
-greenhouse-polyhouse,Agricultural Greenhouse & Botanical Polyhouse,research,800,Architectural Plan & Aerial,approximate-inferred,TRUE,Site Plan Legend Item POLYHOUSE
-vermicompost-plant,Solid Waste Management & Vermicompost Plant,utility,800,Architectural Plan & Aerial,approximate-inferred,TRUE,Site Plan Legend Item COMPOST
+facility_id,facility_name,category,verification_status,optional_overlay,area_sqm,source_type,alignment_notes
+cricket-athletic-oval,Main University Athletic Field & Cricket Oval,athletic,verified-survey,False,23170.0,OSM Survey Way 1418702314,Zero collisions with any campus building
+basketball-court-complex,University Floodlit Basketball Courts,court,verified-aerial,False,1033.09,High-Res Orthophoto Calibration,Zero collisions with any campus building
+volleyball-courts,Campus Volleyball & Throwball Arena,court,verified-aerial,False,1033.09,High-Res Orthophoto Calibration,Zero collisions with any campus building
+open-air-auditorium,Open-Air Amphitheatre & Cultural Stage,amenity,verified-aerial,False,760.35,High-Res Orthophoto Calibration,Zero collisions with any campus building
+bus-terminal-parking,University Bus Terminal & Transit Bay,parking,verified-aerial,False,3719.17,High-Res Orthophoto Calibration,Zero collisions with any campus building
+greenhouse-polyhouse,Agricultural Greenhouse & Botanical Polyhouse,research,approximate-inferred,True,944.53,High-Res Orthophoto Calibration,Zero collisions with any campus building
+vermicompost-plant,Solid Waste Management & Vermicompost Plant,utility,approximate-inferred,True,944.53,High-Res Orthophoto Calibration,Zero collisions with any campus building
