@@ -179,17 +179,42 @@ osm_ways = {el['id']: el for el in osm_data.get('elements', []) if el['type'] ==
 # TEST 1: Coordinate Integrity
 try:
     invalid_coords = []
-    for b in buildings:
-        for lon, lat in b['footprint']:
-            if not (80.68 < lon < 80.71 and 16.47 < lat < 16.50):
-                invalid_coords.append((b['id'], lon, lat))
+
+    def check_coordinate(entity_id, lon, lat, source):
+        if not (math.isfinite(float(lon)) and math.isfinite(float(lat))):
+            invalid_coords.append((entity_id, source, lon, lat, "non-finite"))
+        elif not (-180.0 <= float(lon) <= 180.0 and -90.0 <= float(lat) <= 90.0):
+            invalid_coords.append((entity_id, source, lon, lat, "outside WGS84 range"))
+        elif not (80.68 < float(lon) < 80.71 and 16.47 < float(lat) < 16.50):
+            invalid_coords.append((entity_id, source, lon, lat, "outside configured campus review envelope"))
+
+    for building in buildings:
+        check_coordinate(building['id'], building['longitude'], building['latitude'], 'center')
+        for lon, lat in building['footprint']:
+            check_coordinate(building['id'], lon, lat, 'footprint')
+
+    for facility in outdoor_facilities:
+        for lon, lat in facility['coordinates']:
+            check_coordinate(facility['id'], lon, lat, 'facility-polygon')
+
+    for entrance in entrances:
+        check_coordinate(entrance['buildingId'], entrance['longitude'], entrance['latitude'], 'entrance-approach')
+        if entrance.get('doorAnchor'):
+            check_coordinate(entrance['buildingId'], entrance['doorAnchor'][0], entrance['doorAnchor'][1], 'door-anchor')
+        if entrance.get('approachPoint'):
+            check_coordinate(entrance['buildingId'], entrance['approachPoint'][0], entrance['approachPoint'][1], 'approach-point')
+
+    for poi in pois:
+        check_coordinate(poi['id'], poi['longitude'], poi['latitude'], 'poi')
+
     if not invalid_coords:
-        record_test("TEST_1_COORD_INTEGRITY", "Coordinate Integrity and Ordering", "PASS",
-                    f"All coordinates for {len(buildings)} buildings and {len(outdoor_facilities)} facilities strictly within campus bounding extent.")
+        record_test("TEST_1_COORD_INTEGRITY", "Complete GIS Coordinate Integrity and Ordering", "PASS",
+                    f"Validated WGS84 centers, footprints, outdoor facilities, entrances, door/approach anchors and {len(pois)} POIs.")
     else:
-        record_test("TEST_1_COORD_INTEGRITY", "Coordinate Integrity and Ordering", "FAIL", f"Invalid coordinates found: {invalid_coords}")
+        record_test("TEST_1_COORD_INTEGRITY", "Complete GIS Coordinate Integrity and Ordering", "FAIL",
+                    f"Invalid or out-of-envelope coordinates: {invalid_coords}")
 except Exception as e:
-    record_test("TEST_1_COORD_INTEGRITY", "Coordinate Integrity and Ordering", "FAIL", str(e))
+    record_test("TEST_1_COORD_INTEGRITY", "Complete GIS Coordinate Integrity and Ordering", "FAIL", str(e))
 
 # TEST 2: Road Source Integrity
 try:
@@ -420,6 +445,8 @@ try:
         door_anchor = ent.get('doorAnchor')
         if door_anchor:
             door = Point(transformer.transform(door_anchor[0], door_anchor[1]))
+            if bpoly.contains(door):
+                entrance_errors.append(f"{bid}: physical door anchor is inside the building footprint")
             door_to_facade = bpoly.boundary.distance(door)
             if door_to_facade > 2.0:
                 entrance_warnings.append(f"{bid}: door anchor is {door_to_facade:.2f}m from footprint boundary; physical doorway evidence should be rechecked")
