@@ -11,6 +11,11 @@ interface ParkingCanopyProps {
   onClick: () => void;
 }
 
+const CANOPY_ROOF_TOP_METERS = 3.8;
+const CANOPY_ROOF_THICKNESS_METERS = 0.4;
+const CANOPY_GROUND_BASE_METERS = 0;
+const COLUMN_STATIONS = [0.08, 0.36, 0.64, 0.92] as const;
+
 export const ParkingCanopy: React.FC<ParkingCanopyProps> = ({
   building,
   isSelected = false,
@@ -18,8 +23,13 @@ export const ParkingCanopy: React.FC<ParkingCanopyProps> = ({
   showLabels = true,
   onClick,
 }) => {
-  const ROOF_TOP = building.height || 3.8;
-  const ROOF_BOTTOM = Math.max(0, ROOF_TOP - 0.4);
+  // The campus inventory records the canopy roof top as a 3.8m visual model.
+  // The slab is 0.4m thick; support columns run from ellipsoid ground (0m)
+  // to the underside of the roof. This is a model datum, not a surveyed level.
+  const ROOF_TOP = Math.min(building.height || CANOPY_ROOF_TOP_METERS, CANOPY_ROOF_TOP_METERS);
+  const ROOF_BOTTOM = Math.max(CANOPY_GROUND_BASE_METERS, ROOF_TOP - CANOPY_ROOF_THICKNESS_METERS);
+  const COLUMN_LENGTH = ROOF_BOTTOM - CANOPY_GROUND_BASE_METERS;
+  const COLUMN_CENTER_HEIGHT = CANOPY_GROUND_BASE_METERS + COLUMN_LENGTH / 2;
 
   // Compute roof slab positions and structural column anchor positions
   const { roofPositions, columnEntities, centerPos } = useMemo(() => {
@@ -37,9 +47,7 @@ export const ParkingCanopy: React.FC<ParkingCanopyProps> = ({
     const p3 = fp[3] || [building.longitude, building.latitude];
 
     const columns: { id: string; position: Cesium.Cartesian3 }[] = [];
-    const ratios = [0.08, 0.36, 0.64, 0.92];
-
-    ratios.forEach((t, idx) => {
+    COLUMN_STATIONS.forEach((t, idx) => {
       // Front edge column
       const cf_lon = p0[0] + (p1[0] - p0[0]) * t;
       const cf_lat = p0[1] + (p1[1] - p0[1]) * t;
@@ -54,11 +62,11 @@ export const ParkingCanopy: React.FC<ParkingCanopyProps> = ({
 
       columns.push({
         id: `${building.id}-col-f-${idx}`,
-        position: Cesium.Cartesian3.fromDegrees(f_lon, f_lat, ROOF_BOTTOM / 2),
+        position: Cesium.Cartesian3.fromDegrees(f_lon, f_lat, COLUMN_CENTER_HEIGHT),
       });
       columns.push({
         id: `${building.id}-col-r-${idx}`,
-        position: Cesium.Cartesian3.fromDegrees(r_lon, r_lat, ROOF_BOTTOM / 2),
+        position: Cesium.Cartesian3.fromDegrees(r_lon, r_lat, COLUMN_CENTER_HEIGHT),
       });
     });
 
@@ -73,7 +81,7 @@ export const ParkingCanopy: React.FC<ParkingCanopyProps> = ({
       columnEntities: columns,
       centerPos: cPos,
     };
-  }, [building, ROOF_BOTTOM, ROOF_TOP]);
+  }, [building, ROOF_BOTTOM, ROOF_TOP, COLUMN_CENTER_HEIGHT]);
 
   // Styling
   const roofColor = useMemo(() => {
@@ -119,7 +127,7 @@ export const ParkingCanopy: React.FC<ParkingCanopyProps> = ({
           name={`${building.name} - Support Column`}
           position={col.position}
           cylinder={{
-            length: ROOF_BOTTOM,
+            length: COLUMN_LENGTH,
             topRadius: 0.22,
             bottomRadius: 0.22,
             material: columnColor,
