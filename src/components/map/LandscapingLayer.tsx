@@ -24,7 +24,7 @@ export const LandscapingLayer: React.FC<LandscapingLayerProps> = ({ visible = tr
             name={plaza.name}
             polygon={{
               hierarchy: new Cesium.PolygonHierarchy(Cesium.Cartesian3.fromDegreesArray(flat)),
-              material: Cesium.Color.fromCssColorString(plaza.color).withAlpha(0.85),
+              material: Cesium.Color.fromCssColorString(plaza.color).withAlpha(0.25),
               classificationType: Cesium.ClassificationType.TERRAIN,
             }}
           />
@@ -37,13 +37,16 @@ export const LandscapingLayer: React.FC<LandscapingLayerProps> = ({ visible = tr
         for (const [lon, lat] of lawn.coordinates) {
           flat.push(lon, lat);
         }
+        // Use gentle transparent overlay so real satellite texture and running track markings remain sharp
+        const isTurf = lawn.category === 'athletic-turf';
+        const alpha = isTurf ? 0.15 : 0.22;
         return (
           <Entity
             key={lawn.id}
             name={lawn.name}
             polygon={{
               hierarchy: new Cesium.PolygonHierarchy(Cesium.Cartesian3.fromDegreesArray(flat)),
-              material: Cesium.Color.fromCssColorString(lawn.color).withAlpha(0.9),
+              material: Cesium.Color.fromCssColorString(lawn.color).withAlpha(alpha),
               classificationType: Cesium.ClassificationType.TERRAIN,
             }}
           />

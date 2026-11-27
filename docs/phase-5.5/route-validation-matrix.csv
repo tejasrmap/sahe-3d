@@ -1,0 +1,16 @@
+Route ID,Origin Node,Destination Node,Path Description,Total Distance (m),Estimated Walking Time (min),Wall Intersections,Reachability Status
+R01,node-gate,node-cse,Main Gate -> South Blvd -> Sports Track -> West Concourse -> Central Circle -> North Concourse -> CSE Portal,419,5.2,0,PASS
+R02,node-gate,node-admin-lib,Main Gate -> South Blvd -> Sports Track -> West Concourse -> Central Circle -> Admin Library Portico,371,4.6,0,PASS
+R03,node-gate,node-boys-hostel,Main Gate -> South Blvd -> South Road -> ATM -> Health Center -> Central Spine -> East Avenue -> Boys Hostel,649,8.1,0,PASS
+R04,node-gate,node-girls-hostel,Main Gate -> South Blvd -> South Road -> ATM -> Health Center -> Central Spine -> East Avenue -> Girls Hostel,603,7.5,0,PASS
+R05,node-gate,node-canteen,Main Gate -> South Blvd -> South Road -> Sports Arena -> Central Avenue -> Cafeteria Court,418,5.2,0,PASS
+R06,node-cse,node-mech,CSE Portal -> North Concourse -> ECE Entrance -> Mech Civil Entry Porch,175,2.2,0,PASS
+R07,node-cse,node-auditorium,CSE Portal -> North Concourse -> Central Circle -> Auditorium Portico,129,1.6,0,PASS
+R08,node-admin-lib,node-canteen,Admin Library -> Central Circle -> Cafeteria Concourse,143,1.8,0,PASS
+R09,node-admin-lib,node-sports-complex,Admin Library -> Central Circle -> Cafeteria -> Central Avenue -> Sports Arena,282,3.5,0,PASS
+R10,node-athletic-ground,node-canteen,Athletic Pavilion -> West Concourse -> Central Circle -> Cafeteria Concourse,265,3.3,0,PASS
+R11,node-parking,node-admin-lib,Parking Plaza -> South Blvd -> Athletic Track -> West Concourse -> Central Circle -> Admin Library,397,5.0,0,PASS
+R12,node-health-center,node-boys-hostel,Health Center -> ATM -> South Road -> East Avenue -> Boys Hostel,593,7.4,0,PASS
+R13,node-atm,node-canteen,ATM -> South Road -> Sports Arena -> Central Avenue -> Cafeteria Court,280,3.5,0,PASS
+R14,node-ece,node-sports-complex,ECE Block -> North Concourse -> Central Circle -> Cafeteria -> Central Avenue -> Sports Arena,319,4.0,0,PASS
+R15,node-boys-hostel,node-girls-hostel,Boys Residency Main Gate -> Hostel Perimeter Walkway -> Aditya Women's Hall Gate,148,1.9,0,PASS

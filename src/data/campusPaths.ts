@@ -2,287 +2,349 @@ import { CampusPathNetwork } from '../types/campus';
 
 export const CAMPUS_PATH_NETWORK: CampusPathNetwork = {
   nodes: [
-  {
-    "id": "node-gate",
-    "name": "Main Entrance Gate",
-    "latitude": 16.481751,
-    "longitude": 80.691194,
-    "category": "entrance",
-    "buildingId": "main-entrance-portal"
-  },
-  {
-    "id": "node-junc-south",
-    "name": "South Avenue Junction",
-    "latitude": 16.4821,
-    "longitude": 80.6914,
-    "category": "junction"
-  },
-  {
-    "id": "node-parking",
-    "name": "Parking Plaza Entry",
-    "latitude": 16.482538,
-    "longitude": 80.691939,
-    "category": "amenity",
-    "buildingId": "parking-plaza"
-  },
-  {
-    "id": "node-atm",
-    "name": "SBI ATM & Banking Kiosk",
-    "latitude": 16.482809,
-    "longitude": 80.693648,
-    "category": "amenity"
-  },
-  {
-    "id": "node-sports-complex",
-    "name": "Sports Complex Entrance",
-    "latitude": 16.483287,
-    "longitude": 80.692101,
-    "category": "building",
-    "buildingId": "sports-arena"
-  },
-  {
-    "id": "node-athletic-ground",
-    "name": "Athletic Field Entry",
-    "latitude": 16.48337,
-    "longitude": 80.691073,
-    "category": "amenity"
-  },
-  {
-    "id": "node-health-center",
-    "name": "Health Center",
-    "latitude": 16.482809,
-    "longitude": 80.693648,
-    "category": "building",
-    "buildingId": "health-center"
-  },
-  {
-    "id": "node-junc-central",
-    "name": "Central Campus Circle",
-    "latitude": 16.4844,
-    "longitude": 80.6923,
-    "category": "junction"
-  },
-  {
-    "id": "node-auditorium",
-    "name": "Auditorium Portico",
-    "latitude": 16.48413,
-    "longitude": 80.692521,
-    "category": "building",
-    "buildingId": "auditorium-complex"
-  },
-  {
-    "id": "node-canteen",
-    "name": "Cafeteria Court",
-    "latitude": 16.484198,
-    "longitude": 80.693365,
-    "category": "building",
-    "buildingId": "cafeteria-complex"
-  },
-  {
-    "id": "node-admin-lib",
-    "name": "Administration & Library Portico",
-    "latitude": 16.484796,
-    "longitude": 80.692981,
-    "category": "building",
-    "buildingId": "admin-central-library"
-  },
-  {
-    "id": "node-junc-north",
-    "name": "North Academic Quadrangle",
-    "latitude": 16.4849,
-    "longitude": 80.6921,
-    "category": "junction"
-  },
-  {
-    "id": "node-cse",
-    "name": "CSE Computing Block Entrance",
-    "latitude": 16.48519,
-    "longitude": 80.691393,
-    "category": "building",
-    "buildingId": "cse-it-complex"
-  },
-  {
-    "id": "node-ece",
-    "name": "ECE Block Entrance",
-    "latitude": 16.485267,
-    "longitude": 80.692469,
-    "category": "building",
-    "buildingId": "ece-eee-block"
-  },
-  {
-    "id": "node-mech",
-    "name": "Mechanical & Civil Block Entry",
-    "latitude": 16.485271,
-    "longitude": 80.693554,
-    "category": "building",
-    "buildingId": "mech-civil-block"
-  },
-  {
-    "id": "node-boys-hostel",
-    "name": "Boys Hostel Gate",
-    "latitude": 16.485343,
-    "longitude": 80.695713,
-    "category": "building",
-    "buildingId": "boys-hostel-complex"
-  },
-  {
-    "id": "node-girls-hostel",
-    "name": "Girls Hostel Gate",
-    "latitude": 16.484003,
-    "longitude": 80.695196,
-    "category": "building",
-    "buildingId": "girls-hostel-complex"
-  }
-],
+    // 1. South Sector & Entrance
+    {
+      id: "node-gate",
+      name: "Main Entrance Gate Portal",
+      latitude: 16.481820,
+      longitude: 80.691194,
+      category: "entrance",
+      buildingId: "main-entrance-portal"
+    },
+    {
+      id: "node-junc-south",
+      name: "South Boulevard Junction",
+      latitude: 16.482100,
+      longitude: 80.691400,
+      category: "junction"
+    },
+    {
+      id: "node-parking",
+      name: "Parking Plaza Entry Gate",
+      latitude: 16.482600,
+      longitude: 80.691700,
+      category: "amenity",
+      buildingId: "parking-plaza"
+    },
+    {
+      id: "node-junc-south-road",
+      name: "South Perimeter Road Junction",
+      latitude: 16.482200,
+      longitude: 80.692500,
+      category: "junction"
+    },
+    {
+      id: "node-atm",
+      name: "SBI ATM Kiosk & Banking Hub",
+      latitude: 16.482700,
+      longitude: 80.693480,
+      category: "amenity"
+    },
+    {
+      id: "node-health-center",
+      name: "Health Center Clinic Entrance",
+      latitude: 16.482809,
+      longitude: 80.693480,
+      category: "building",
+      buildingId: "health-center"
+    },
+
+    // 2. West & Sports Sector
+    {
+      id: "node-athletic-ground",
+      name: "Athletic Field Pavilion Entry",
+      latitude: 16.483370,
+      longitude: 80.691073,
+      category: "amenity"
+    },
+    {
+      id: "node-junc-west-track",
+      name: "West Athletic Concourse Junction",
+      latitude: 16.483700,
+      longitude: 80.691500,
+      category: "junction"
+    },
+    {
+      id: "node-sports-complex",
+      name: "Sports Arena East Entrance",
+      latitude: 16.483287,
+      longitude: 80.692280,
+      category: "building",
+      buildingId: "sports-arena"
+    },
+    {
+      id: "node-junc-central-avenue",
+      name: "Auditorium-Cafeteria Central Avenue",
+      latitude: 16.483800,
+      longitude: 80.692950,
+      category: "junction"
+    },
+
+    // 3. Central Academic Circle Sector
+    {
+      id: "node-junc-central",
+      name: "Central Campus Circle",
+      latitude: 16.484400,
+      longitude: 80.692300,
+      category: "junction"
+    },
+    {
+      id: "node-auditorium",
+      name: "Auditorium North Portico",
+      latitude: 16.484280,
+      longitude: 80.692520,
+      category: "building",
+      buildingId: "auditorium-complex"
+    },
+    {
+      id: "node-canteen",
+      name: "Cafeteria West Entrance Court",
+      latitude: 16.484198,
+      longitude: 80.693120,
+      category: "building",
+      buildingId: "cafeteria-complex"
+    },
+    {
+      id: "node-admin-lib",
+      name: "Administration & Library West Portico",
+      latitude: 16.484796,
+      longitude: 80.692580,
+      category: "building",
+      buildingId: "admin-central-library"
+    },
+
+    // 4. North Academic Concourse
+    {
+      id: "node-junc-north",
+      name: "North Academic Concourse",
+      latitude: 16.484900,
+      longitude: 80.692100,
+      category: "junction"
+    },
+    {
+      id: "node-cse",
+      name: "CSE Computing Block East Entrance",
+      latitude: 16.485190,
+      longitude: 80.691850,
+      category: "building",
+      buildingId: "cse-it-complex"
+    },
+    {
+      id: "node-ece",
+      name: "ECE Block South Concourse Entrance",
+      latitude: 16.484920,
+      longitude: 80.692380,
+      category: "building",
+      buildingId: "ece-eee-block"
+    },
+    {
+      id: "node-mech",
+      name: "Mechanical & Civil Block Entry Porch",
+      latitude: 16.484900,
+      longitude: 80.693350,
+      category: "building",
+      buildingId: "mech-civil-block"
+    },
+
+    // 5. East Sector & Hostels
+    {
+      id: "node-junc-east-spine",
+      name: "East Academic-Residential Avenue",
+      latitude: 16.484800,
+      longitude: 80.694200,
+      category: "junction"
+    },
+    {
+      id: "node-boys-hostel",
+      name: "Boys Hostel Main Access Gate",
+      latitude: 16.485100,
+      longitude: 80.695713,
+      category: "building",
+      buildingId: "boys-hostel-complex"
+    },
+    {
+      id: "node-girls-hostel",
+      name: "Girls Hostel Security Gate",
+      latitude: 16.484003,
+      longitude: 80.694950,
+      category: "building",
+      buildingId: "girls-hostel-complex"
+    }
+  ],
   edges: [
-  {
-    "from": "node-gate",
-    "to": "node-junc-south",
-    "distanceMeters": 74,
-    "name": "Main Boulevard",
-    "accessible": true
-  },
-  {
-    "from": "node-junc-south",
-    "to": "node-parking",
-    "distanceMeters": 34,
-    "name": "Parking Access Way",
-    "accessible": true
-  },
-  {
-    "from": "node-junc-south",
-    "to": "node-athletic-ground",
-    "distanceMeters": 146,
-    "name": "West Sports Track",
-    "accessible": true
-  },
-  {
-    "from": "node-parking",
-    "to": "node-atm",
-    "distanceMeters": 39,
-    "name": "Bank Avenue",
-    "accessible": true
-  },
-  {
-    "from": "node-atm",
-    "to": "node-sports-complex",
-    "distanceMeters": 70,
-    "name": "Gymnasium Promenade",
-    "accessible": true
-  },
-  {
-    "from": "node-sports-complex",
-    "to": "node-health-center",
-    "distanceMeters": 83,
-    "name": "East Wellness Path",
-    "accessible": true
-  },
-  {
-    "from": "node-sports-complex",
-    "to": "node-junc-central",
-    "distanceMeters": 64,
-    "name": "Central Boulevard",
-    "accessible": true
-  },
-  {
-    "from": "node-athletic-ground",
-    "to": "node-junc-central",
-    "distanceMeters": 132,
-    "name": "Pavilion Way",
-    "accessible": true
-  },
-  {
-    "from": "node-junc-central",
-    "to": "node-auditorium",
-    "distanceMeters": 38,
-    "name": "Auditorium Walkway",
-    "accessible": true
-  },
-  {
-    "from": "node-junc-central",
-    "to": "node-canteen",
-    "distanceMeters": 123,
-    "name": "Cafeteria Walkway",
-    "accessible": true
-  },
-  {
-    "from": "node-auditorium",
-    "to": "node-admin-lib",
-    "distanceMeters": 89,
-    "name": "Scholar's Concourse",
-    "accessible": true
-  },
-  {
-    "from": "node-canteen",
-    "to": "node-admin-lib",
-    "distanceMeters": 73,
-    "name": "Library East Way",
-    "accessible": true
-  },
-  {
-    "from": "node-canteen",
-    "to": "node-girls-hostel",
-    "distanceMeters": 197,
-    "name": "South Residential Path",
-    "accessible": true
-  },
-  {
-    "from": "node-junc-central",
-    "to": "node-junc-north",
-    "distanceMeters": 112,
-    "name": "Academic Spine",
-    "accessible": true
-  },
-  {
-    "from": "node-junc-north",
-    "to": "node-cse",
-    "distanceMeters": 82,
-    "name": "Computing Avenue",
-    "accessible": true
-  },
-  {
-    "from": "node-junc-north",
-    "to": "node-ece",
-    "distanceMeters": 57,
-    "name": "Electronics Concourse",
-    "accessible": true
-  },
-  {
-    "from": "node-junc-north",
-    "to": "node-admin-lib",
-    "distanceMeters": 88,
-    "name": "Central Plaza Walk",
-    "accessible": true
-  },
-  {
-    "from": "node-admin-lib",
-    "to": "node-mech",
-    "distanceMeters": 86,
-    "name": "Engineering Way",
-    "accessible": true
-  },
-  {
-    "from": "node-ece",
-    "to": "node-mech",
-    "distanceMeters": 116,
-    "name": "Inter-Department Link",
-    "accessible": true
-  },
-  {
-    "from": "node-mech",
-    "to": "node-boys-hostel",
-    "distanceMeters": 116,
-    "name": "North Residential Link",
-    "accessible": true
-  },
-  {
-    "from": "node-girls-hostel",
-    "to": "node-boys-hostel",
-    "distanceMeters": 191,
-    "name": "Hostel Perimeter Path",
-    "accessible": true
-  }
-]
+    // Gateway & South Parking
+    {
+      from: "node-gate",
+      to: "node-junc-south",
+      distanceMeters: 38,
+      name: "Main Boulevard",
+      accessible: true
+    },
+    {
+      from: "node-junc-south",
+      to: "node-parking",
+      distanceMeters: 64,
+      name: "Parking Access Way",
+      accessible: true
+    },
+    {
+      from: "node-junc-south",
+      to: "node-junc-south-road",
+      distanceMeters: 118,
+      name: "South Campus Perimeter Road",
+      accessible: true
+    },
+    {
+      from: "node-junc-south-road",
+      to: "node-atm",
+      distanceMeters: 119,
+      name: "ATM & Banking Walk",
+      accessible: true
+    },
+    {
+      from: "node-atm",
+      to: "node-health-center",
+      distanceMeters: 12,
+      name: "Health Center Clinic Link",
+      accessible: true
+    },
+    {
+      from: "node-junc-south-road",
+      to: "node-sports-complex",
+      distanceMeters: 123,
+      name: "Sports Arena South Approach",
+      accessible: true
+    },
+
+    // Athletic Track & West Concourse
+    {
+      from: "node-junc-south",
+      to: "node-athletic-ground",
+      distanceMeters: 146,
+      name: "West Sports Track",
+      accessible: true
+    },
+    {
+      from: "node-athletic-ground",
+      to: "node-junc-west-track",
+      distanceMeters: 59,
+      name: "Athletic Field Pavilion Path",
+      accessible: true
+    },
+    {
+      from: "node-junc-west-track",
+      to: "node-junc-central",
+      distanceMeters: 116,
+      name: "Auditorium West Garden Walk",
+      accessible: true
+    },
+
+    // Sports Arena to Central Circle via Central Avenue
+    {
+      from: "node-sports-complex",
+      to: "node-junc-central-avenue",
+      distanceMeters: 91,
+      name: "Gymnasium East Link",
+      accessible: true
+    },
+    {
+      from: "node-junc-central-avenue",
+      to: "node-canteen",
+      distanceMeters: 48,
+      name: "Cafeteria South Concourse",
+      accessible: true
+    },
+
+    // Central Circle Hub
+    {
+      from: "node-junc-central",
+      to: "node-auditorium",
+      distanceMeters: 27,
+      name: "Auditorium Portico Concourse",
+      accessible: true
+    },
+    {
+      from: "node-junc-central",
+      to: "node-canteen",
+      distanceMeters: 90,
+      name: "Cafeteria Concourse",
+      accessible: true
+    },
+    {
+      from: "node-junc-central",
+      to: "node-admin-lib",
+      distanceMeters: 53,
+      name: "Administration Avenue",
+      accessible: true
+    },
+    {
+      from: "node-junc-central",
+      to: "node-junc-north",
+      distanceMeters: 60,
+      name: "Central Academic Spine",
+      accessible: true
+    },
+
+    // North Academic Concourse
+    {
+      from: "node-junc-north",
+      to: "node-cse",
+      distanceMeters: 42,
+      name: "Computing Block Avenue",
+      accessible: true
+    },
+    {
+      from: "node-junc-north",
+      to: "node-ece",
+      distanceMeters: 30,
+      name: "Electronics Concourse",
+      accessible: true
+    },
+    {
+      from: "node-junc-north",
+      to: "node-admin-lib",
+      distanceMeters: 53,
+      name: "Central Plaza Walk",
+      accessible: true
+    },
+    {
+      from: "node-ece",
+      to: "node-mech",
+      distanceMeters: 103,
+      name: "Inter-Department Engineering Link",
+      accessible: true
+    },
+
+    // East Sector & Hostels
+    {
+      from: "node-mech",
+      to: "node-junc-east-spine",
+      distanceMeters: 91,
+      name: "Mechanical East Walk",
+      accessible: true
+    },
+    {
+      from: "node-junc-east-spine",
+      to: "node-boys-hostel",
+      distanceMeters: 165,
+      name: "Boys Residency North Avenue",
+      accessible: true
+    },
+    {
+      from: "node-junc-east-spine",
+      to: "node-girls-hostel",
+      distanceMeters: 119,
+      name: "Aditya Women's Hostel Avenue",
+      accessible: true
+    },
+    {
+      from: "node-girls-hostel",
+      to: "node-boys-hostel",
+      distanceMeters: 148,
+      name: "Hostel Perimeter Walkway",
+      accessible: true
+    }
+  ]
 };
 
 export const CAMPUS_PATH_GRAPH = CAMPUS_PATH_NETWORK;
