@@ -20,3 +20,8 @@ The bus stop passenger waiting platform has been moved onto the northern paved s
 - **Distance to Highway Centerline**: **6.52 meters North**.
 - **Pedestrian Connection**: Connected directly to `node-gate` (`16.482250, 80.691430`) via a dedicated pedestrian walkway edge across the entrance apron ($17.0\text{ meters}$ distance).
 - **Pedestrian Safety**: Completely eliminates any traffic lane conflict or live highway walking hazard.
+
+
+## 4. Phase 7.3.2 limitation — platform not independently mapped
+
+The current GIS dataset contains a bus-stop POI and a pedestrian graph node, but no separately georeferenced polygon for a passenger waiting platform, shelter or boarding bay. The validator confirms that the waiting anchor is outside the **modelled** 4.0m carriageway corridor and that the POI and graph node agree. This does not certify the existence, dimensions, accessibility or physical safety of a constructed bus-stop platform. On-site or authoritative transit-facility evidence is still required for that stronger claim.
