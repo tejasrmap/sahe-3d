@@ -10,6 +10,8 @@ interface TopBarProps {
   onToggleSidebar: () => void;
   isSidebarOpen: boolean;
   onLocateMe: () => void;
+  onResetCamera?: () => void;
+  onOpenHelp?: () => void;
   isFullscreen: boolean;
   onToggleFullscreen: () => void;
   onToggleLayersMenu: () => void;
@@ -22,6 +24,8 @@ export const TopBar: React.FC<TopBarProps> = ({
   onToggleSidebar,
   isSidebarOpen,
   onLocateMe,
+  onResetCamera,
+  onOpenHelp,
   isFullscreen,
   onToggleFullscreen,
   onToggleLayersMenu,
@@ -69,6 +73,13 @@ export const TopBar: React.FC<TopBarProps> = ({
       {/* Right: Quick Action Controls */}
       <div className="pointer-events-auto">
         <GlassPanel className="h-12 px-2 flex items-center gap-1.5 border border-white/10">
+          {onResetCamera && (
+            <IconButton
+              icon={<Compass className="w-4 h-4 text-emerald-400" />}
+              label="Reset Campus View"
+              onClick={onResetCamera}
+            />
+          )}
           <IconButton
             icon={<Map className="w-4 h-4" />}
             label="Campus Directory"
@@ -88,6 +99,13 @@ export const TopBar: React.FC<TopBarProps> = ({
             label="My Location"
             onClick={onLocateMe}
           />
+          {onOpenHelp && (
+            <IconButton
+              icon={<Sparkles className="w-4 h-4 text-teal-300" />}
+              label="Campus Guide & Onboarding"
+              onClick={onOpenHelp}
+            />
+          )}
           <IconButton
             icon={isFullscreen ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
             label="Toggle Fullscreen"
