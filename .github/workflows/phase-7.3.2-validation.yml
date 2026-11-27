@@ -1,0 +1,62 @@
+name: SAHE-3D Phase 7.3.2 Validation
+
+on:
+  push:
+    branches:
+      - fix/phase71-campus-data-verification
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sahe3d-phase73-validation-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: GIS, Build and Browser Regression
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install Python geospatial dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pyproj shapely
+
+      - name: Install Node dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Install Chrome
+        id: chrome
+        uses: browser-actions/setup-chrome@v1
+
+      - name: Build production bundle
+        run: npm run build
+
+      - name: Run Phase 7.3.2 GIS validator
+        run: python scripts/validate_phase73_southern_gis.py
+
+      - name: Run production and browser regression suite
+        env:
+          CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
+          TEST_URL: http://localhost:4173/
+        run: node test_production_suite.cjs
