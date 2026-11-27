@@ -25,6 +25,7 @@ import { TimeOfDayPreset, applyTimeOfDay } from './systems/lighting/timeOfDaySys
 import { getNearbyDiscoveries, ProximityTarget } from './systems/discovery/proximityEngine';
 import { IndoorExplorationModal } from './components/indoor/IndoorExplorationModal';
 import { LoadingScreen } from './components/ui/LoadingScreen';
+import { WelcomeModal, ONBOARDING_STORAGE_KEY } from './components/onboarding/WelcomeModal';
 import { GlassPanel } from './components/ui/GlassPanel';
 import { AlertCircle, CheckCircle, X } from 'lucide-react';
 
@@ -57,6 +58,15 @@ export function App() {
     boundary: true,
     labels: true,
     terrain3D: true,
+  });
+
+  // First-Time User Onboarding Welcome Overlay
+  const [isWelcomeOpen, setIsWelcomeOpen] = useState<boolean>(() => {
+    try {
+      return !localStorage.getItem(ONBOARDING_STORAGE_KEY);
+    } catch {
+      return true;
+    }
   });
 
   // UI Panels State
@@ -341,6 +351,49 @@ export function App() {
     setSelectedPoi(null);
   }, [flyToCampusOverview]);
 
+  const handleFlyToPresetLocation = useCallback(
+    (presetId: string) => {
+      if (!viewer) return;
+      stopOrbit();
+      switch (presetId) {
+        case 'overview':
+          flyToCampusOverview();
+          break;
+        case 'quad':
+          viewer.camera.flyTo({
+            destination: Cesium.Cartesian3.fromDegrees(80.6924, 16.4848 - 0.0018, 220),
+            orientation: { heading: Cesium.Math.toRadians(0), pitch: Cesium.Math.toRadians(-35), roll: 0 },
+            duration: 1.8,
+          });
+          break;
+        case 'sports':
+          viewer.camera.flyTo({
+            destination: Cesium.Cartesian3.fromDegrees(80.6914, 16.4834 - 0.0018, 250),
+            orientation: { heading: Cesium.Math.toRadians(80), pitch: Cesium.Math.toRadians(-35), roll: 0 },
+            duration: 1.8,
+          });
+          break;
+        case 'hostels':
+          viewer.camera.flyTo({
+            destination: Cesium.Cartesian3.fromDegrees(80.6953, 16.4846 - 0.0020, 280),
+            orientation: { heading: Cesium.Math.toRadians(270), pitch: Cesium.Math.toRadians(-35), roll: 0 },
+            duration: 1.8,
+          });
+          break;
+        case 'gate':
+          viewer.camera.flyTo({
+            destination: Cesium.Cartesian3.fromDegrees(80.6914, 16.4820 - 0.0012, 180),
+            orientation: { heading: Cesium.Math.toRadians(345), pitch: Cesium.Math.toRadians(-30), roll: 0 },
+            duration: 1.8,
+          });
+          break;
+        default:
+          flyToCampusOverview();
+      }
+    },
+    [viewer, stopOrbit, flyToCampusOverview]
+  );
+
   // Fullscreen toggle
   const handleToggleFullscreen = useCallback(() => {
     if (!document.fullscreenElement) {
@@ -441,6 +494,8 @@ export function App() {
           onToggleSidebar={() => setIsSidebarOpen((prev) => !prev)}
           isSidebarOpen={isSidebarOpen}
           onLocateMe={requestLocation}
+          onResetCamera={handleResetCamera}
+          onOpenHelp={() => setIsWelcomeOpen(true)}
           isFullscreen={isFullscreen}
           onToggleFullscreen={handleToggleFullscreen}
           onToggleLayersMenu={() => setIsLayersMenuOpen((prev) => !prev)}
@@ -463,6 +518,18 @@ export function App() {
           }}
           favoriteIds={favoriteIds}
           onToggleFavorite={toggleFavorite}
+          renderMode={renderMode}
+          onToggleRenderMode={handleToggleRenderMode}
+          timeOfDay={timeOfDay}
+          onSelectTimeOfDay={setTimeOfDay}
+          onStartImmersive={handleStartImmersive}
+          onOpenIndoor={handleOpenIndoor}
+          onSelectPreset={handleSelectPreset}
+          onFlyToPresetLocation={handleFlyToPresetLocation}
+          onOpenTour={handleStartTour}
+          onResetWelcome={() => setIsWelcomeOpen(true)}
+          layers={layers}
+          onToggleLayer={handleToggleLayer}
         />
       )}
 
@@ -604,6 +671,31 @@ export function App() {
           isLayersOpen={isLayersMenuOpen}
         />
       )}
+
+      {/* First-Time User Experience Welcome Modal */}
+      <WelcomeModal
+        isOpen={isWelcomeOpen && !isLoading}
+        onClose={() => setIsWelcomeOpen(false)}
+        onExploreCampus={() => {
+          handleResetCamera();
+          setNotification({
+            type: 'info',
+            message: 'Welcome to SAHE 3D! Click any building or use the directory to explore.',
+          });
+        }}
+        onFindBuilding={() => {
+          setIsSidebarOpen(true);
+        }}
+        onStartTour={() => {
+          handleStartTour();
+        }}
+        onExploreDepartments={() => {
+          setIsSidebarOpen(true);
+        }}
+        onExploreFacilities={() => {
+          setIsSidebarOpen(true);
+        }}
+      />
 
       {/* User Toast Notification */}
       {notification && (

@@ -17,6 +17,17 @@ if (ionToken) {
   Cesium.Ion.defaultAccessToken = ionToken;
 }
 
+// CRITICAL FIX: Globally configure Cesium's default view rectangle strictly to SAHE campus
+// This guarantees that any Cesium Viewer constructor initializes immediately at Kanuru, Vijayawada
+// completely eliminating the default North America / Western Hemisphere globe position
+Cesium.Camera.DEFAULT_VIEW_RECTANGLE = Cesium.Rectangle.fromDegrees(
+  80.6880, // West
+  16.4800, // South
+  80.6980, // East
+  16.4870  // North
+);
+Cesium.Camera.DEFAULT_VIEW_FACTOR = 0.0;
+
 interface CampusMapProps {
   layers: MapLayerState;
   renderMode?: MapRenderMode;
@@ -83,19 +94,19 @@ export const CampusMap: React.FC<CampusMapProps> = ({
       updateLODRef.current = updateLOD;
       viewer.camera.moveEnd.addEventListener(updateLOD);
 
-      // Fly to initial SAHE campus view
-      viewer.camera.flyTo({
+      // CRITICAL FIX: Synchronously anchor camera directly at SAHE campus with 0 delay
+      // This guarantees the camera is already sitting directly over the campus before any tiles render
+      viewer.camera.setView({
         destination: Cesium.Cartesian3.fromDegrees(
           CAMPUS_CONFIG.longitude,
-          CAMPUS_CONFIG.latitude - 0.003, // slight southern offset for pitch view
-          CAMPUS_CONFIG.initialHeight
+          CAMPUS_CONFIG.latitude - 0.0035, // southern perspective for 3D pitch view
+          CAMPUS_CONFIG.initialHeight // 450m overview altitude
         ),
         orientation: {
           heading: Cesium.Math.toRadians(CAMPUS_CONFIG.defaultHeading),
           pitch: Cesium.Math.toRadians(CAMPUS_CONFIG.defaultPitch),
-          roll: CAMPUS_CONFIG.defaultRoll,
+          roll: 0.0,
         },
-        duration: 2.8,
       });
 
       // Configure high-resolution Esri World Imagery for satellite
