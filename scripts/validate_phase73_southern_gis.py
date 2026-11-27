@@ -445,10 +445,16 @@ try:
         door_anchor = ent.get('doorAnchor')
         if door_anchor:
             door = Point(transformer.transform(door_anchor[0], door_anchor[1]))
-            if bpoly.contains(door):
-                entrance_errors.append(f"{bid}: physical door anchor is inside the building footprint")
             door_to_facade = bpoly.boundary.distance(door)
-            if door_to_facade > 2.0:
+            # Door anchors are digitized from aerial/map evidence. Allow a small
+            # 0.75m inward tolerance for footprint generalization, but reject
+            # anchors materially inside the building mass.
+            if bpoly.contains(door) and door_to_facade > 0.75:
+                entrance_errors.append(
+                    f"{bid}: physical door anchor is {door_to_facade:.2f}m inside the footprint "
+                    "(maximum facade snapping tolerance 0.75m)"
+                )
+            elif door_to_facade > 2.0:
                 entrance_warnings.append(f"{bid}: door anchor is {door_to_facade:.2f}m from footprint boundary; physical doorway evidence should be rechecked")
 
         node_id = ent.get('connectedPathNodeId')
