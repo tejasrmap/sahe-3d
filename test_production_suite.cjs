@@ -141,7 +141,7 @@ test('Every entrance references an existing building and graph node', () => {
     assert.ok(buildingIds.has(entrance.buildingId), `Unknown building: ${entrance.buildingId}`);
     assert.ok(entrance.entranceName, `Missing entrance name for ${entrance.buildingId}`);
     assert.ok(entrance.facadeOrientation, `Missing facade orientation for ${entrance.buildingId}`);
-    assert.ok(Number.isFinite(entrance.latitude) && Number.isFinite(entrance.longitude), `Invalid entrance coordinate for ${entrance.buildingId`);
+    assert.ok(Number.isFinite(entrance.latitude) && Number.isFinite(entrance.longitude), `Invalid entrance coordinate for ${entrance.buildingId}`);
     const node = nodesById.get(entrance.connectedPathNodeId);
     assert.ok(node, `Missing graph node ${entrance.connectedPathNodeId} for ${entrance.buildingId}`);
 
