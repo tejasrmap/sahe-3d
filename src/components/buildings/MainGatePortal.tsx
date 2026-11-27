@@ -11,6 +11,15 @@ interface MainGatePortalProps {
   onClick: () => void;
 }
 
+// Bearing is derived from the local tangent of OSM Way 844184733 at the
+// entrance junction. The gate span is perpendicular to this road axis.
+const ACCESS_ROAD_BEARING_DEGREES = 20.2;
+const GATE_SPAN_METERS = 12.0;
+const GATE_DEPTH_METERS = 4.0;
+const PYLON_WIDTH_METERS = 2.16;
+const CLEAR_VEHICLE_HEIGHT_METERS = 4.8;
+const TOTAL_GATE_HEIGHT_METERS = 6.5;
+
 export const MainGatePortal: React.FC<MainGatePortalProps> = ({
   building,
   isSelected = false,
@@ -18,103 +27,103 @@ export const MainGatePortal: React.FC<MainGatePortalProps> = ({
   showLabels = true,
   onClick,
 }) => {
-  // Derive portal geometry parts from footprint:
-  // p0: SW, p1: SE, p2: NE, p3: NW
-  const { westPylonPositions, eastPylonPositions, lintelPositions, centerPos, signagePos } = useMemo(() => {
+  const {
+    westPylonPositions,
+    eastPylonPositions,
+    lintelPositions,
+    signPanelPositions,
+    signLabelPosition,
+    buildingLabelPosition,
+  } = useMemo(() => {
     const fp = building.footprint;
-    const p0 = fp[0] || [80.6913738, 16.4821742];
-    const p1 = fp[1] || [80.6914792, 16.4822118];
-    const p2 = fp[2] || [80.6914662, 16.4822458];
-    const p3 = fp[3] || [80.6913608, 16.4822082];
+    const p0 = (fp[0] || [building.longitude, building.latitude]) as [number, number];
+    const p1 = (fp[1] || [building.longitude, building.latitude]) as [number, number];
+    const p2 = (fp[2] || [building.longitude, building.latitude]) as [number, number];
+    const p3 = (fp[3] || [building.longitude, building.latitude]) as [number, number];
 
     const lerp = (a: [number, number], b: [number, number], t: number): [number, number] => [
       a[0] + (b[0] - a[0]) * t,
       a[1] + (b[1] - a[1]) * t,
     ];
 
-    // West Pylon (span 0.00 to 0.18 across driveway)
-    const wpFp: number[] = [
+    const westRatio = PYLON_WIDTH_METERS / GATE_SPAN_METERS;
+    const eastStart = 1 - westRatio;
+
+    const westFp: number[] = [
       ...p0,
-      ...lerp(p0, p1, 0.18),
-      ...lerp(p3, p2, 0.18),
+      ...lerp(p0, p1, westRatio),
+      ...lerp(p3, p2, westRatio),
       ...p3,
       ...p0,
     ];
-
-    // East Pylon (span 0.82 to 1.00 across driveway)
-    const epFp: number[] = [
-      ...lerp(p0, p1, 0.82),
+    const eastFp: number[] = [
+      ...lerp(p0, p1, eastStart),
       ...p1,
       ...p2,
-      ...lerp(p3, p2, 0.82),
-      ...lerp(p0, p1, 0.82),
+      ...lerp(p3, p2, eastStart),
+      ...lerp(p0, p1, eastStart),
     ];
+    const lintelFp: number[] = [...p0, ...p1, ...p2, ...p3, ...p0];
 
-    // Overhead Lintel (spans full 100% width across both pylons)
-    const lintelFp: number[] = [
-      ...p0,
-      ...p1,
-      ...p2,
-      ...p3,
-      ...p0,
+    // A local ENU frame keeps the signage plane aligned with the same
+    // road-relative orientation as the portal and avoids lat/lon offsets.
+    const center = Cesium.Cartesian3.fromDegrees(building.longitude, building.latitude, 0);
+    const enu = Cesium.Transforms.eastNorthUpToFixedFrame(center);
+    const bearing = Cesium.Math.toRadians(ACCESS_ROAD_BEARING_DEGREES);
+    const roadEast = Math.sin(bearing);
+    const roadNorth = Math.cos(bearing);
+    const crossEast = Math.cos(bearing);
+    const crossNorth = -Math.sin(bearing);
+
+    const localPoint = (across: number, along: number, height: number): Cesium.Cartesian3 => {
+      const east = crossEast * across + roadEast * along;
+      const north = crossNorth * across + roadNorth * along;
+      const local = new Cesium.Cartesian3(east, north, height);
+      return Cesium.Matrix4.multiplyByPoint(enu, local, new Cesium.Cartesian3());
+    };
+
+    // Sign panel is mounted on the highway-facing (south) side of the lintel.
+    const signPanel = [
+      localPoint(-3.2, -GATE_DEPTH_METERS / 2 - 0.02, 0),
+      localPoint(3.2, -GATE_DEPTH_METERS / 2 - 0.02, 0),
     ];
-
-    const wPos = Cesium.Cartesian3.fromDegreesArray(wpFp);
-    const ePos = Cesium.Cartesian3.fromDegreesArray(epFp);
-    const lPos = Cesium.Cartesian3.fromDegreesArray(lintelFp);
-
-    const cPos = Cesium.Cartesian3.fromDegrees(
-      building.longitude,
-      building.latitude,
-      building.height + 3.5
-    );
-
-    const sPos = Cesium.Cartesian3.fromDegrees(
-      building.longitude,
-      building.latitude - 0.000015,
-      5.6
-    );
 
     return {
-      westPylonPositions: wPos,
-      eastPylonPositions: ePos,
-      lintelPositions: lPos,
-      centerPos: cPos,
-      signagePos: sPos,
+      westPylonPositions: Cesium.Cartesian3.fromDegreesArray(westFp),
+      eastPylonPositions: Cesium.Cartesian3.fromDegreesArray(eastFp),
+      lintelPositions: Cesium.Cartesian3.fromDegreesArray(lintelFp),
+      signPanelPositions: signPanel,
+      signLabelPosition: localPoint(0, -GATE_DEPTH_METERS / 2 - 0.05, 5.6),
+      buildingLabelPosition: localPoint(0, 0, TOTAL_GATE_HEIGHT_METERS + 0.9),
     };
-  }, [building]);
+  }, [building.latitude, building.longitude, building.footprint]);
 
-  // Color styling
   const pylonColor = useMemo(() => {
-    if (isSelected) return Cesium.Color.fromCssColorString('#22C55E').withAlpha(0.95);
-    if (isHovered) return Cesium.Color.fromCssColorString('#10B981').withAlpha(0.95);
-    return Cesium.Color.fromCssColorString('#E2E8F0'); // Architectural limestone white
+    if (isSelected) return Cesium.Color.fromCssColorString('#22C55E').withAlpha(0.98);
+    if (isHovered) return Cesium.Color.fromCssColorString('#10B981').withAlpha(0.98);
+    return Cesium.Color.fromCssColorString('#E2E8F0');
   }, [isSelected, isHovered]);
 
   const lintelColor = useMemo(() => {
-    if (isSelected) return Cesium.Color.fromCssColorString('#16A34A').withAlpha(0.95);
-    if (isHovered) return Cesium.Color.fromCssColorString('#059669').withAlpha(0.95);
-    return Cesium.Color.fromCssColorString('#065F46'); // University ceremonial emerald green
+    if (isSelected) return Cesium.Color.fromCssColorString('#16A34A').withAlpha(0.98);
+    if (isHovered) return Cesium.Color.fromCssColorString('#059669').withAlpha(0.98);
+    return Cesium.Color.fromCssColorString('#065F46');
   }, [isSelected, isHovered]);
 
   const outlineColor = useMemo(() => {
     if (isSelected) return Cesium.Color.WHITE;
     if (isHovered) return Cesium.Color.fromCssColorString('#10B981');
-    return Cesium.Color.fromCssColorString('#0F172A').withAlpha(0.6);
+    return Cesium.Color.fromCssColorString('#0F172A').withAlpha(0.65);
   }, [isSelected, isHovered]);
-
-  const CLEAR_HEIGHT = 4.8; // Open vehicle passage clearance
-  const TOTAL_HEIGHT = building.height || 6.5;
 
   return (
     <>
-      {/* 1. West Support Pylon (Ground 0 to 4.8m) */}
       <Entity
-        name={`${building.name} - West Pylon`}
+        name={`${building.name} - West Support Pylon`}
         polygon={{
           hierarchy: new Cesium.PolygonHierarchy(westPylonPositions),
           height: 0,
-          extrudedHeight: CLEAR_HEIGHT,
+          extrudedHeight: CLEAR_VEHICLE_HEIGHT_METERS,
           material: pylonColor,
           outline: true,
           outlineColor,
@@ -124,13 +133,12 @@ export const MainGatePortal: React.FC<MainGatePortalProps> = ({
         onClick={onClick}
       />
 
-      {/* 2. East Support Pylon (Ground 0 to 4.8m) */}
       <Entity
-        name={`${building.name} - East Pylon`}
+        name={`${building.name} - East Support Pylon`}
         polygon={{
           hierarchy: new Cesium.PolygonHierarchy(eastPylonPositions),
           height: 0,
-          extrudedHeight: CLEAR_HEIGHT,
+          extrudedHeight: CLEAR_VEHICLE_HEIGHT_METERS,
           material: pylonColor,
           outline: true,
           outlineColor,
@@ -140,13 +148,12 @@ export const MainGatePortal: React.FC<MainGatePortalProps> = ({
         onClick={onClick}
       />
 
-      {/* 3. Overhead Architectural Lintel / Arch (4.8m to 6.5m) */}
       <Entity
-        name={`${building.name} - Arch Lintel`}
+        name={`${building.name} - Overhead Lintel`}
         polygon={{
           hierarchy: new Cesium.PolygonHierarchy(lintelPositions),
-          height: CLEAR_HEIGHT,
-          extrudedHeight: TOTAL_HEIGHT,
+          height: CLEAR_VEHICLE_HEIGHT_METERS,
+          extrudedHeight: TOTAL_GATE_HEIGHT_METERS,
           material: lintelColor,
           outline: true,
           outlineColor,
@@ -156,9 +163,22 @@ export const MainGatePortal: React.FC<MainGatePortalProps> = ({
         onClick={onClick}
       />
 
-      {/* 4. University Signage Banner on Front Facade */}
       <Entity
-        position={signagePos}
+        name={`${building.name} - Physical Sign Backing`}
+        wall={{
+          positions: signPanelPositions,
+          minimumHeights: [5.05, 5.05],
+          maximumHeights: [6.15, 6.15],
+          material: Cesium.Color.fromCssColorString('#064E3B'),
+          outline: true,
+          outlineColor: Cesium.Color.fromCssColorString('#A7F3D0'),
+        }}
+        onClick={onClick}
+      />
+
+      <Entity
+        name={`${building.name} - University Signage`}
+        position={signLabelPosition}
         label={{
           text: 'SIDDHARTHA ACADEMY OF HIGHER EDUCATION\nVR SIDDHARTHA CAMPUS',
           font: 'bold 10px Inter, sans-serif',
@@ -175,10 +195,10 @@ export const MainGatePortal: React.FC<MainGatePortalProps> = ({
         onClick={onClick}
       />
 
-      {/* 5. 3D Floating Building Tag */}
       {showLabels && (
         <Entity
-          position={centerPos}
+          name={`${building.name} - Building Label`}
+          position={buildingLabelPosition}
           label={{
             text: `${building.code}\n${building.name}`,
             font: 'bold 12px Inter, sans-serif',
