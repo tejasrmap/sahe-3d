@@ -1,3 +1,5 @@
+export type OutdoorVerificationStatus = 'verified-survey' | 'verified-aerial' | 'approximate-inferred';
+
 export interface OutdoorFacility {
   id: string;
   name: string;
@@ -10,6 +12,8 @@ export interface OutdoorFacility {
   facilities: string[];
   coordinates: [number, number][]; // [lon, lat]
   color: string;
+  verificationStatus: OutdoorVerificationStatus;
+  optionalOverlay: boolean;
 }
 
 export const OUTDOOR_FACILITIES: OutdoorFacility[] = [
@@ -51,7 +55,9 @@ export const OUTDOOR_FACILITIES: OutdoorFacility[] = [
         16.4842784
       ]
     ],
-    "color": "#16A34A"
+    "color": "#16A34A",
+    "verificationStatus": "verified-survey",
+    "optionalOverlay": false
   },
   {
     "id": "basketball-court-complex",
@@ -90,7 +96,9 @@ export const OUTDOOR_FACILITIES: OutdoorFacility[] = [
         16.4836
       ]
     ],
-    "color": "#2563EB"
+    "color": "#2563EB",
+    "verificationStatus": "verified-aerial",
+    "optionalOverlay": false
   },
   {
     "id": "volleyball-courts",
@@ -128,7 +136,9 @@ export const OUTDOOR_FACILITIES: OutdoorFacility[] = [
         16.4836
       ]
     ],
-    "color": "#D97706"
+    "color": "#D97706",
+    "verificationStatus": "verified-aerial",
+    "optionalOverlay": false
   },
   {
     "id": "open-air-auditorium",
@@ -167,85 +177,9 @@ export const OUTDOOR_FACILITIES: OutdoorFacility[] = [
         16.48395
       ]
     ],
-    "color": "#9333EA"
-  },
-  {
-    "id": "greenhouse-polyhouse",
-    "name": "Agricultural Greenhouse & Botanical Polyhouse",
-    "code": "POLYHOUSE",
-    "category": "research",
-    "latitude": 16.4862,
-    "longitude": 80.6945,
-    "areaSqm": 800,
-    "description": "Climate-controlled research greenhouse and polyhouse structure for botany, plant tissue culture, and university environmental initiatives.",
-    "facilities": [
-      "Misting & Drip Irrigation Control",
-      "Polycarbonate Thermal Envelope",
-      "Hydroponic Growing Tables",
-      "Medicinal Flora Nursery"
-    ],
-    "coordinates": [
-      [
-        80.6943,
-        16.4861
-      ],
-      [
-        80.6947,
-        16.4861
-      ],
-      [
-        80.6947,
-        16.4863
-      ],
-      [
-        80.6943,
-        16.4863
-      ],
-      [
-        80.6943,
-        16.4861
-      ]
-    ],
-    "color": "#15803D"
-  },
-  {
-    "id": "vermicompost-plant",
-    "name": "Solid Waste Management & Vermicompost Plant",
-    "code": "COMPOST",
-    "category": "utility",
-    "latitude": 16.4862,
-    "longitude": 80.69495,
-    "areaSqm": 800,
-    "description": "Campus sustainability unit processing biodegradable dining waste and landscaping cuttings into certified organic compost.",
-    "facilities": [
-      "Aerobic Composting Bays (8)",
-      "Earthworm Vermicompost Beds",
-      "Organic Sifting & Bagging Unit",
-      "Campus Zero-Waste Processing"
-    ],
-    "coordinates": [
-      [
-        80.69475,
-        16.4861
-      ],
-      [
-        80.69515,
-        16.4861
-      ],
-      [
-        80.69515,
-        16.4863
-      ],
-      [
-        80.69475,
-        16.4863
-      ],
-      [
-        80.69475,
-        16.4861
-      ]
-    ],
-    "color": "#78350F"
+    "color": "#9333EA",
+    "verificationStatus": "verified-aerial",
+    "optionalOverlay": false
   },
   {
     "id": "bus-terminal-parking",
@@ -284,6 +218,90 @@ export const OUTDOOR_FACILITIES: OutdoorFacility[] = [
         16.4818
       ]
     ],
-    "color": "#0284C7"
+    "color": "#0284C7",
+    "verificationStatus": "verified-aerial",
+    "optionalOverlay": false
+  },
+  {
+    "id": "greenhouse-polyhouse",
+    "name": "Agricultural Greenhouse & Botanical Polyhouse",
+    "code": "POLYHOUSE",
+    "category": "research",
+    "latitude": 16.4862,
+    "longitude": 80.6945,
+    "areaSqm": 800,
+    "description": "Climate-controlled research greenhouse and polyhouse structure for botany, plant tissue culture, and university environmental initiatives.",
+    "facilities": [
+      "Misting & Drip Irrigation Control",
+      "Polycarbonate Thermal Envelope",
+      "Hydroponic Growing Tables",
+      "Medicinal Flora Nursery"
+    ],
+    "coordinates": [
+      [
+        80.6943,
+        16.4861
+      ],
+      [
+        80.6947,
+        16.4861
+      ],
+      [
+        80.6947,
+        16.4863
+      ],
+      [
+        80.6943,
+        16.4863
+      ],
+      [
+        80.6943,
+        16.4861
+      ]
+    ],
+    "color": "#15803D",
+    "verificationStatus": "approximate-inferred",
+    "optionalOverlay": true
+  },
+  {
+    "id": "vermicompost-plant",
+    "name": "Solid Waste Management & Vermicompost Plant",
+    "code": "COMPOST",
+    "category": "utility",
+    "latitude": 16.4862,
+    "longitude": 80.69495,
+    "areaSqm": 800,
+    "description": "Campus sustainability unit processing biodegradable dining waste and landscaping cuttings into certified organic compost.",
+    "facilities": [
+      "Aerobic Composting Bays (8)",
+      "Earthworm Vermicompost Beds",
+      "Organic Sifting & Bagging Unit",
+      "Campus Zero-Waste Processing"
+    ],
+    "coordinates": [
+      [
+        80.69475,
+        16.4861
+      ],
+      [
+        80.69515,
+        16.4861
+      ],
+      [
+        80.69515,
+        16.4863
+      ],
+      [
+        80.69475,
+        16.4863
+      ],
+      [
+        80.69475,
+        16.4861
+      ]
+    ],
+    "color": "#78350F",
+    "verificationStatus": "approximate-inferred",
+    "optionalOverlay": true
   }
 ];

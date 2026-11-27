@@ -60,7 +60,7 @@ export const OutdoorFacilitiesLayer: React.FC<OutdoorFacilitiesLayerProps> = ({
                 distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 1600),
               }}
               label={{
-                text: facility.name,
+                text: facility.optionalOverlay ? `${facility.name} (Approx.)` : facility.name,
                 font: '11px sans-serif',
                 fillColor: Cesium.Color.WHITE,
                 outlineColor: Cesium.Color.BLACK,

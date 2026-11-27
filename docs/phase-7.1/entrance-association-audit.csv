@@ -1,0 +1,27 @@
+building_id,building_name,entrance_name,door_type,facade_distance_m,is_exterior,connected_node_id,connected_node_name,route_reachable
+cse-it-complex,Dr. APJ Abdul Kalam Block (Computing Complex),Computing Block East Concourse Portal,main,16.34,TRUE,node-cse,Kalam Computing Complex East Portal,TRUE
+admin-block,Dr. VR Central Administrative Block,Administration South Ceremonial Portico,main,3.23,TRUE,node-admin,Dr. VR Administration South Ceremonial Portico,TRUE
+central-library,Central Knowledge Resource & Library Complex,Central Library South Entrance Plaza,main,6.04,TRUE,node-library,Central Knowledge Library South Entrance,TRUE
+ece-eee-block,Electrical Sciences Block (EEE Department),Electrical Sciences South Concourse Portico,main,3.15,TRUE,node-ece,Electrical Sciences South Portico,TRUE
+sh-block-1,Science & Humanities Block 1 (S&H 1),S&H 1 South Academic Portico,main,3.55,TRUE,node-sh-1,S&H 1 South Concourse,TRUE
+sh-block-2,Science & Humanities Block 2 (S&H 2),S&H 2 South Entrance Porch,main,3.34,TRUE,node-sh-2,S&H 2 South Concourse,TRUE
+mech-civil-block,Mechanical Engineering Block (Main),Mechanical Engineering South Grand Entry,main,3.31,TRUE,node-mech,Mechanical Engineering South Grand Entry,TRUE
+civil-engineering-block,Civil Engineering Department Block,Civil Engineering South Entrance Porch,main,3.27,TRUE,node-civil,Civil Engineering South Entrance,TRUE
+mechanical-workshops,Mechanical Engineering Industrial Workshops,Mechanical Workshops Industrial Bay Portal,main,2.99,TRUE,node-workshops,Mechanical Workshops Industrial Bay,TRUE
+siemens-tifac-centre,Siemens Centre of Excellence & TIFAC CORE,Siemens CoE South High-Tech Portico,main,3.14,TRUE,node-siemens,Siemens CoE South Entrance,TRUE
+auditorium-complex,Dr. Zakir Husain Central Auditorium,Auditorium North Grand Entrance,main,2.44,TRUE,node-auditorium,Central Auditorium North Grand Portico,TRUE
+cafeteria-complex,Central Cafeteria & Student Food Court,Cafeteria West Entrance Court,main,2.56,TRUE,node-canteen,Central Cafeteria & Food Court West Plaza,TRUE
+sports-arena,Physical Education & Indoor Sports Arena,Sports Arena East Grand Foyer,main,9.92,TRUE,node-sports-complex,Sports Arena East Entrance,TRUE
+boys-hostel-complex,Siddhartha Boys Residency Hall (Main Block),Boys Residency South Biometric Gate,main,2.65,TRUE,node-boys-hostel,Boys Residency Main South Portal,TRUE
+old-boys-hostel-1,Old Boys Residency Block 1,Old Boys Block 1 South Portal,main,4.05,TRUE,node-boys-hostel-1,Old Boys Hostel 1 South Portal,TRUE
+old-boys-hostel-2,Old Boys Residency Block 2,Old Boys Block 2 South Portal,main,2.59,TRUE,node-boys-hostel-2,Old Boys Hostel 2 South Portal,TRUE
+girls-hostel-complex,Aditya Girls Hostels (Ganga & Yamuna Wings),Girls Residency South Security Portal,main,6.09,TRUE,node-girls-hostel,Girls Residency Main South Portal,TRUE
+girls-hostel-krishna,Aditya Girls Hostel (Krishna Wing),Krishna Wing South Entry Gate,main,3.21,TRUE,node-girls-krishna,Krishna Girls Hostel South Entry,TRUE
+staff-quarters,Faculty & Staff Residential Quarters,Staff Quarters South Gate,main,4.37,TRUE,node-staff-qtrs,Staff Quarters South Portal,TRUE
+students-centre-guest-house,Students Centre & University Guest House,Guest House South Portico,main,6.9,TRUE,node-guest-house,Students Centre & Guest House South Entry,TRUE
+power-house-substation,Campus Power Substation & Generator Station,Power Substation South Safety Gate,service,3.19,TRUE,node-power-substation,Power Substation Safety Portal,TRUE
+main-entrance-portal,SAHE University Grand Entrance Arch & Security,Main Ceremonial Gate North Portal,main,2.82,TRUE,node-gate,Main Entrance Gate Portal,TRUE
+sbi-ncc-bank-block,State Bank of India & NCC Officers Complex,SBI Bank & ATM North Portico,main,2.75,TRUE,node-sbi-ncc,SBI Bank & NCC Entrance,TRUE
+parking-plaza,Two-Wheeler Vehicle Parking Shed 1 (West Stand),Bike Stand 1 North Gate,main,2.75,TRUE,node-parking,Bike Parking Stand 1,TRUE
+bike-stand-2,Two-Wheeler Vehicle Parking Shed 2 (East Stand),Bike Stand 2 North Gate,main,3.83,TRUE,node-bike-stand-2,Bike Parking Stand 2,TRUE
+health-center,University Health & Medical Center,Health Center West Clinic Entrance,accessible,2.76,TRUE,node-health-center,Health Center Clinic Entrance,TRUE

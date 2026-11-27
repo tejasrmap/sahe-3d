@@ -115,20 +115,12 @@ export const CAMPUS_PATH_NETWORK: CampusPathNetwork = {
     "buildingId": "auditorium-complex"
   },
   {
-    "id": "node-admin-lib",
-    "name": "Dr. VR Administration South Portico",
-    "latitude": 16.48398,
-    "longitude": 80.6925,
-    "category": "building",
-    "buildingId": "admin-block"
-  },
-  {
     "id": "node-canteen",
-    "name": "Central Library & Canteen Plaza",
-    "latitude": 16.484198,
-    "longitude": 80.69312,
+    "name": "Central Cafeteria & Food Court West Plaza",
+    "latitude": 16.48398,
+    "longitude": 80.69315,
     "category": "building",
-    "buildingId": "central-library"
+    "buildingId": "cafeteria-complex"
   },
   {
     "id": "node-junc-central-plaza",
@@ -292,6 +284,22 @@ export const CAMPUS_PATH_NETWORK: CampusPathNetwork = {
     "longitude": 80.695727,
     "category": "building",
     "buildingId": "staff-quarters"
+  },
+  {
+    "id": "node-admin",
+    "name": "Dr. VR Administration South Ceremonial Portico",
+    "latitude": 16.48398,
+    "longitude": 80.6925,
+    "category": "building",
+    "buildingId": "admin-block"
+  },
+  {
+    "id": "node-library",
+    "name": "Central Knowledge Library South Entrance",
+    "latitude": 16.48405,
+    "longitude": 80.6933,
+    "category": "building",
+    "buildingId": "central-library"
   }
 ],
   edges: [
@@ -402,20 +410,20 @@ export const CAMPUS_PATH_NETWORK: CampusPathNetwork = {
   },
   {
     "from": "node-auditorium",
-    "to": "node-admin-lib",
+    "to": "node-admin",
     "distanceMeters": 33.4,
     "accessible": true,
     "name": "Administration Forecourt"
   },
   {
-    "from": "node-admin-lib",
+    "from": "node-admin",
     "to": "node-canteen",
     "distanceMeters": 70.5,
     "accessible": true,
     "name": "Knowledge Plaza Walkway"
   },
   {
-    "from": "node-admin-lib",
+    "from": "node-admin",
     "to": "node-junc-central-plaza",
     "distanceMeters": 68.9,
     "accessible": true,
@@ -560,6 +568,20 @@ export const CAMPUS_PATH_NETWORK: CampusPathNetwork = {
     "distanceMeters": 116.4,
     "accessible": true,
     "name": "Staff Quarters Road"
+  },
+  {
+    "from": "node-admin",
+    "to": "node-library",
+    "distanceMeters": 85.8,
+    "accessible": true,
+    "name": "Knowledge Walkway"
+  },
+  {
+    "from": "node-library",
+    "to": "node-canteen",
+    "distanceMeters": 17.8,
+    "accessible": true,
+    "name": "Library-Canteen Concourse"
   }
 ]
 };

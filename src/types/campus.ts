@@ -28,7 +28,17 @@ export type POICategory =
   | 'restrooms'
   | 'student_services';
 
+export type StructureClassification =
+  | 'independent_building'
+  | 'connected_wing'
+  | 'annex'
+  | 'internal_facility'
+  | 'covered_canopy'
+  | 'uncertain_structure';
+
 export interface Building {
+  classification?: StructureClassification;
+  parentBuildingId?: string;
   id: string;
   name: string;
   code: string;

@@ -1,0 +1,6 @@
+building_id,building_name,floors_available,room_records_count,dataset_source_file,source_classification,navigation_routes_functional
+cse-it-complex,Dr. APJ Abdul Kalam Block (Computing Complex),"5 Floors (0, 1, 2, 3, 4)",52,src/data/indoor/buildings/cseBlock.ts,Handcrafted Architectural Blueprint,TRUE
+ece-eee-block,Electrical Sciences Block (EEE Department),"4 Floors (0, 1, 2, 3)",34,src/data/indoor/buildings/eceBlock.ts,Handcrafted Architectural Blueprint,TRUE
+mech-civil-block,Mechanical Engineering Block (Main),"4 Floors (0, 1, 2, 3)",33,src/data/indoor/buildings/mechCivilBlock.ts,Handcrafted Architectural Blueprint,TRUE
+admin-block,Dr. VR Central Administrative Block,"4 Floors (0, 1, 2, 3)",39,src/data/indoor/buildings/adminLibrary.ts,Handcrafted Architectural Blueprint,TRUE
+remaining-22-buildings,22 Additional Campus Structures,Dynamic Procedural Floors (2 - 5),Runtime Procedural Generation,src/data/indoor/proceduralIndoorGenerator.ts,Procedural Fallback Model (Not Static Data),TRUE (Procedural Blueprints & Search)

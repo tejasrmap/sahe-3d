@@ -1,0 +1,8 @@
+facility_id,facility_name,category,area_sqm,source_type,verification_status,optional_overlay,verification_notes
+cricket-athletic-oval,Main University Athletic Field & Cricket Oval,athletic,18500,OpenStreetMap Survey,verified-survey,FALSE,OSM Way 1418702314 leisure=pitch
+basketball-court-complex,University Floodlit Basketball Courts,court,1050,Architectural Plan & Aerial,verified-aerial,FALSE,Site Plan Legend Item COURT-BB
+volleyball-courts,Campus Volleyball & Throwball Arena,court,875,Architectural Plan & Aerial,verified-aerial,FALSE,Site Plan Legend Item COURT-VB
+open-air-auditorium,Open-Air Amphitheatre & Cultural Stage,amenity,1020,Architectural Plan & Aerial,verified-aerial,FALSE,Site Plan Legend Item OPEN-AUD
+bus-terminal-parking,University Bus Terminal & Transit Bay,parking,3150,Architectural Plan & Aerial,verified-aerial,FALSE,Site Plan Legend Item BUS-TERM
+greenhouse-polyhouse,Agricultural Greenhouse & Botanical Polyhouse,research,800,Architectural Plan & Aerial,approximate-inferred,TRUE,Site Plan Legend Item POLYHOUSE
+vermicompost-plant,Solid Waste Management & Vermicompost Plant,utility,800,Architectural Plan & Aerial,approximate-inferred,TRUE,Site Plan Legend Item COMPOST
