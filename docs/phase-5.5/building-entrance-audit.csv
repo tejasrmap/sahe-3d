@@ -1,0 +1,13 @@
+Building ID,Building Name,Entrance Name,Door Type,Latitude,Longitude,Elevation (m),Connected Node ID,Facade Orientation,Distance to Facade (m),Confidence
+cse-it-complex,VR Siddhartha CSE & Computing Complex,Computing Block East Concourse Portal,main,16.485190,80.691850,19.0,node-cse,east,2.5,verified-aerial
+ece-eee-block,ECE & EEE Electrical Sciences Complex,Electrical Sciences South Concourse Portico,main,16.484920,80.692380,19.0,node-ece,south,2.1,verified-aerial
+mech-civil-block,Mechanical & Civil Engineering Laboratories,Mechanical & Civil South-West Entry Porch,main,16.484900,80.693350,19.0,node-mech,south,2.8,verified-aerial
+admin-central-library,Dr. VR Central Administration & Library Block,Central Administration & Library West Portico,main,16.484796,80.692580,19.0,node-admin-lib,west,3.2,verified-aerial
+auditorium-complex,VR Siddhartha Memorial Auditorium Complex,Memorial Auditorium North Grand Portico,main,16.484280,80.692520,19.0,node-auditorium,north,2.0,verified-aerial
+cafeteria-complex,Central University Food Court & Student Plaza,Cafeteria West Entrance Court,main,16.484198,80.693120,19.0,node-canteen,west,2.4,verified-aerial
+sports-arena,Indoor Sports Stadium & Gymnasium,Indoor Sports Arena East Entrance Portal,main,16.483287,80.692280,19.0,node-sports-complex,east,3.5,verified-aerial
+boys-hostel-complex,Siddhartha Boys Residency Hall,Boys Hostel Main Security Gate & Reception,main,16.485100,80.695713,19.0,node-boys-hostel,west,4.0,verified-aerial
+girls-hostel-complex,Aditya Women's Hall of Residence,Women's Hall Security Gate & Reception,main,16.484003,80.694950,19.0,node-girls-hostel,west,3.8,verified-aerial
+main-entrance-portal,VR Siddhartha Ceremonial Arch & North Gate,Ceremonial Main Entrance Arch Portal,main,16.481820,80.691194,19.0,node-gate,north,1.5,verified-aerial
+parking-plaza,Multi-Bay Campus Vehicle Transit Park,Vehicle Parking Plaza Access Gate,accessible,16.482600,80.691700,19.0,node-parking,west,2.0,verified-aerial
+health-center,University Dispensary & Emergency Health Post,Health Center Accessible Clinic Entrance,accessible,16.482809,80.693480,19.0,node-health-center,west,2.2,verified-aerial

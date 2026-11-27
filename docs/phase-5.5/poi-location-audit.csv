@@ -1,0 +1,16 @@
+POI ID,POI Name,Category,Original Latitude,Original Longitude,Rectified Latitude,Rectified Longitude,Physical Separation (m),Ground Feature Verified
+poi-main-gate,Main Campus Gate & Security Desk,entrance,16.481751,80.691194,16.481820,80.691194,7.7,Ceremonial Arch North Portal
+poi-central-lib,Central Knowledge Repository & Library,library,16.484796,80.692981,16.484796,80.692580,42.8,Library West Portico Entrance
+poi-cse-lab,NVIDIA AI Supercomputing Lab,laboratory,16.485196,80.691326,16.485196,80.691326,0.0,CSE Computing Ground Wing Center
+poi-canteen-court,Main University Cafeteria & Food Court,food,16.484198,80.693365,16.484198,80.693120,26.2,Cafeteria West Entrance Court
+poi-auditorium,Dr. Zakir Husain Auditorium,academic,16.484130,80.692521,16.484280,80.692520,16.7,North Grand Portico
+poi-siemens-coe,Siemens Centre of Excellence,laboratory,16.485250,80.693635,16.485250,80.693635,0.0,Advanced Manufacturing Lab Hub
+poi-sports-ground,University Athletic Ground & Cricket Oval,sports,16.483370,80.691073,16.483370,80.691073,0.0,Athletic Turf & Pavilion
+poi-indoor-gym,Indoor Badminton Courts & Fitness Gym,sports,16.483287,80.692101,16.483287,80.692280,19.1,Sports Complex East Main Door
+poi-sbi-atm,State Bank of India (SBI) ATM & Branch,atm,16.482809,80.693648,16.482700,80.693480,21.6,South Avenue Frontage ATM Kiosk
+poi-medical-dispensary,Campus Medical Health Post,medical,16.482809,80.693648,16.482809,80.693480,17.9,Dispensary Clinic West Entrance
+poi-boys-hostel,Siddhartha Boys Hostel Mess & Lounge,hostel,16.485343,80.695713,16.485100,80.695713,27.0,Boys Hostel Main Security Gate
+poi-girls-hostel,Aditya Women's Hostel Compound,hostel,16.484003,80.695196,16.484003,80.694950,26.2,Women's Hall Security Portal
+poi-parking,Main Visitor & Student Vehicle Parking,parking,16.482538,80.691939,16.482600,80.691700,26.4,Parking Plaza West Access Gate
+poi-placement-cell,Training & Placement Cell (TPO),student_services,16.484796,80.692981,16.484910,80.692981,12.7,TPO North Admin Wing Portal
+poi-restroom-hub,Accessible Restrooms & Water Station,restrooms,16.484250,80.692800,16.484250,80.692800,0.0,Central Concourse Hygiene Point
