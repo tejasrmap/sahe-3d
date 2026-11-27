@@ -1,0 +1,27 @@
+building_id,building_name,vertex_count,polygon_closure,boundary_containment,facade_orientation,height_calibrated_m,confidence_score
+cse-it-complex,Dr. APJ Abdul Kalam Block (Computing Complex),119,TRUE,TRUE,South-Facing Primary,26,100%
+admin-block,Dr. VR Central Administrative Block,11,TRUE,TRUE,South-Facing Primary,14,100%
+central-library,Central Knowledge Resource & Library Complex,10,TRUE,TRUE,South-Facing Primary,14,100%
+ece-eee-block,Electrical Sciences Block (EEE Department),53,TRUE,TRUE,South-Facing Primary,18,100%
+sh-block-1,Science & Humanities Block 1 (S&H 1),23,TRUE,TRUE,South-Facing Primary,14,100%
+sh-block-2,Science & Humanities Block 2 (S&H 2),5,TRUE,TRUE,South-Facing Primary,14,100%
+mech-civil-block,Mechanical Engineering Block (Main),23,TRUE,TRUE,South-Facing Primary,18,100%
+civil-engineering-block,Civil Engineering Department Block,43,TRUE,TRUE,South-Facing Primary,14,100%
+mechanical-workshops,Mechanical Engineering Industrial Workshops,23,TRUE,TRUE,South-Facing Primary,9,100%
+siemens-tifac-centre,Siemens Centre of Excellence & TIFAC CORE,21,TRUE,TRUE,South-Facing Primary,14,100%
+auditorium-complex,Dr. Zakir Husain Central Auditorium,5,TRUE,TRUE,South-Facing Primary,18,100%
+cafeteria-complex,Central Cafeteria & Student Food Court,5,TRUE,TRUE,South-Facing Primary,12,100%
+sports-arena,Physical Education & Indoor Sports Arena,5,TRUE,TRUE,South-Facing Primary,14,100%
+boys-hostel-complex,Siddhartha Boys Residency Hall (Main Block),9,TRUE,TRUE,South-Facing Primary,20,100%
+old-boys-hostel-1,Old Boys Residency Block 1,5,TRUE,TRUE,South-Facing Primary,12,100%
+old-boys-hostel-2,Old Boys Residency Block 2,5,TRUE,TRUE,South-Facing Primary,12,100%
+girls-hostel-complex,Aditya Girls Hostels (Ganga & Yamuna Wings),7,TRUE,TRUE,South-Facing Primary,16,100%
+girls-hostel-krishna,Aditya Girls Hostel (Krishna Wing),5,TRUE,TRUE,South-Facing Primary,16,100%
+staff-quarters,Faculty & Staff Residential Quarters,5,TRUE,TRUE,South-Facing Primary,12,100%
+students-centre-guest-house,Students Centre & University Guest House,15,TRUE,TRUE,South-Facing Primary,9,100%
+power-house-substation,Campus Power Substation & Generator Station,9,TRUE,TRUE,South-Facing Primary,6,100%
+main-entrance-portal,SAHE University Grand Entrance Arch & Security,5,TRUE,TRUE,South-Facing Primary,7,100%
+sbi-ncc-bank-block,State Bank of India & NCC Officers Complex,5,TRUE,TRUE,South-Facing Primary,9,100%
+parking-plaza,Two-Wheeler Vehicle Parking Shed 1 (West Stand),7,TRUE,TRUE,South-Facing Primary,4.5,100%
+bike-stand-2,Two-Wheeler Vehicle Parking Shed 2 (East Stand),5,TRUE,TRUE,South-Facing Primary,4.5,100%
+health-center,University Health & Medical Center,5,TRUE,TRUE,South-Facing Primary,8,100%

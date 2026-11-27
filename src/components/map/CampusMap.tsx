@@ -6,6 +6,7 @@ import { Building, POI, NavigationRoute as NavigationRouteType, MapLayerState } 
 import { CampusBoundary } from './CampusBoundary';
 import { BuildingLayer, MapRenderMode } from './BuildingLayer';
 import { LandscapingLayer } from './LandscapingLayer';
+import { OutdoorFacilitiesLayer } from './OutdoorFacilitiesLayer';
 import { POILayer } from './POILayer';
 import { NavigationRoute } from './NavigationRoute';
 import { UserLocation } from './UserLocation';
